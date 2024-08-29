@@ -21,3 +21,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Ignore zip files
+*.zip
+
+# Ignore specific zip directories
+/.zip

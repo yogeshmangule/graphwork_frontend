@@ -1,0 +1,54 @@
+.card-header .autosuggest {
+ width: 100% !important;
+}
+
+.table th {
+ border-top: 0px !important;
+}
+
+.pagination {
+ float: right;
+}
+
+.date-filter select {
+ width: 30%;
+ display: inline;
+}
+
+.date-filter input {
+ width: 70%;
+ display: inline;
+}
+
+.number-filter select {
+ width: 50%;
+ display: inline;
+}
+
+.number-filter input {
+ width: 50%;
+ display: inline;
+}
+
+.react-confirm-alert-overlay {
+ background: transparent !important;
+}
+
+.confirm-delete {
+ background: white;
+ border: 1px solid #ccc;
+ border-radius: 4px;
+ box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.25);
+}
+
+.confirm-delete .card-header {
+ font-weight: bold;
+}
+
+.confirm-delete input {
+ margin: 0px 5px;
+}
+
+.confirm-delete button {
+ margin: 0px 5px;
+}

@@ -11,3 +11,149 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  /* Stack elements vertically */
+  width: 100%;
+  margin: 0 auto;
+  /* Center horizontally */
+  background-color: #ffffff;
+}
+
+.my-form {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.table {
+  flex-grow: 1;
+  margin-left: 50px;
+}
+
+main {
+  width: 100%;
+  padding: 20px;
+}
+
+.sidebar {
+  background: #000;
+  position: absolute;
+  float: right;
+  color: #fff;
+  /* height: 120vh; */
+  width: auto;
+  transition: all 0.5s;
+}
+
+.top_section {
+  display: flex;
+  align-items: center;
+  padding: 20px 15px;
+}
+
+.logo {
+  font-size: 30px;
+}
+
+.bars {
+  display: flex;
+  font-size: 25px;
+  margin-left: 50px;
+}
+
+.link {
+  display: flex;
+  color: #fff;
+  padding: 10px 15px;
+  gap: 15px;
+  transition: all 0.5s;
+}
+
+.link:hover {
+  background: lightskyblue;
+  color: #000;
+  transition: all 0.5s;
+}
+
+.header__user-info {
+  margin-left: 10px;
+  /* Espaciado entre la imagen y el nombre */
+}
+
+.header {
+  background-color: #808080;
+
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__title {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+}
+
+.header__profile-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.parent-label {
+  float: left;
+}
+
+.parent-rigth {
+  float: right;
+}
+
+.cuadro_princal {
+  border-bottom: 2px solid #ccc;
+  /* Borde en la parte inferior */
+  padding-bottom: 5px;
+  /* Espacio entre el título y el botón */
+}
+
+.titulo_cuadro {
+  margin-left: 50px;
+  font-size: 20px;
+  /* Tamaño del texto del título */
+  font-weight: bold;
+  /* Negrita */
+  /* Espacio entre el título y otros elementos */
+}
+
+.error-message {
+  color: red;
+  /* Adjust color as needed */
+}
+
+
+.header__menu--open {
+  display: block;
+}
+
+.header__menu-item {
+  padding: 10px;
+}
+
+.header__title {
+  font-size: 20px;
+  font-weight: 600;
+}

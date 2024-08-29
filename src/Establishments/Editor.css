@@ -1,0 +1,24 @@
+
+.ModalEstablishment .form-group-clean {
+ margin-bottom: 0px !important;
+}
+
+.ModalEstablishment .tab-content {
+ border: 0px !important;
+}
+
+.ModalEstablishment .uppercase {
+ text-transform: uppercase;
+}
+
+.ModalEstablishment .capitalize {
+ text-transform: capitalize;
+}
+
+.pac-container {
+    z-index: 5000;
+}
+
+.RichTextEditor {
+    min-height: 270px;
+}
