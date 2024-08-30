@@ -40,13 +40,13 @@ code {
 }
 
 .table {
-  flex-grow: 1;
-  margin-left: 50px;
+  flex-grow: 1; 
 }
 
 main {
   width: 100%;
   padding: 20px;
+  padding-left: 60px;
 }
 
 .sidebar {
@@ -62,7 +62,7 @@ main {
 .top_section {
   display: flex;
   align-items: center;
-  padding: 20px 15px;
+  padding: 20px 11px;
 }
 
 .logo {
@@ -88,11 +88,7 @@ main {
   color: #000;
   transition: all 0.5s;
 }
-
-.header__user-info {
-  margin-left: 10px;
-  /* Espaciado entre la imagen y el nombre */
-}
+ 
 
 .header {
   background-color: #808080;
@@ -130,8 +126,7 @@ main {
   /* Espacio entre el título y el botón */
 }
 
-.titulo_cuadro {
-  margin-left: 50px;
+.titulo_cuadro { 
   font-size: 20px;
   /* Tamaño del texto del título */
   font-weight: bold;

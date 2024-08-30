@@ -37,19 +37,6 @@ const CompCreateEncuesta = ({ onClose, setHorarioModalOpen, openAmbiteModel }) =
   const handleModalClose = () => {
     setIsModalOpen(false);
   };
-  // const handleFirstButtonClick = async (e) => {
-  //   try {
-  //     // Supongamos que store() devuelve una promesa con la respuesta del servidor
-  //     const isSuccess = await store(e);
-  //     if (isSuccess) {
-  //       setIsModalOpen(true);
-  //       // onClose()
-  //     } else { }
-  //   } catch (error) {
-  //     console.error('Error al ejecutar store:', error);
-  //     // Puedes manejar el error aquí, por ejemplo, mostrando un mensaje al usuario
-  //   }
-  // };
 
   const handleFirstButtonClick = async (e) => {
     try {

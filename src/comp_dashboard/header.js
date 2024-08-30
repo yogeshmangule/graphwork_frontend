@@ -1,76 +1,11 @@
-// import React, { useState } from 'react';
-// import { Dropdown } from 'react-bootstrap';
-// import usuarioImage from '../img/usuario.png';
-// import logoImage from '../img/log.png';
-// import { handleLogout } from '../login/Logout';
-// import { useNavigate } from 'react-router-dom'
-// import { varAdmin } from "../servicios/api"
-
-// const Header = () => {
-//     const username = localStorage.getItem('username');
-//     const [showMenu, setShowMenu] = useState(false);
-//     const navigate = useNavigate() 
-//     const userRole = localStorage.getItem('userRol');   
-
-
-//     const handleImageClick = () => {
-//         setShowMenu(!showMenu);
-//     };
-
-//     const handleMenuOptionClick = (option) => {
-//         // Implementa la lógica correspondiente para cada opción del menú
-//         if (option === 'usuarios') {
-//             // Acción cuando se selecciona "Usuarios"
-//             navigate('/viewusers');
-//         } else if (option === 'cerrarSesion') {
-
-//             handleLogout(navigate);
-//         }
-
-//         // Cierra el menú después de hacer clic en una opción
-//         setShowMenu(false);
-//     };
-
-//     return (
-//         <header>
-//             <div className="header">
-//                 <div className="corner-image" onClick={handleImageClick} style={{ cursor: 'pointer' }}>
-//                     <img src={logoImage} alt="Logo" style={{ width: '100px', height: '50px' }} />
-//                 </div>
-//                 <h1 className="header__title">AUDITORIA TURÍSTICA LOCALES OCIO</h1>
-//                 <div className="header__user-info">
-//                     <p className="header__username">{username}</p>
-//                     <div onClick={handleImageClick} style={{ cursor: 'pointer' }}>
-//                         <img src={usuarioImage} alt="Imagen de perfil" className="header__profile-image" />
-//                     </div>
-//                     {/* Menú desplegable */}
-//                     <Dropdown show={showMenu} align="end">
-//                         <Dropdown.Menu>
-//                         {userRole === varAdmin && (
-//                                   <Dropdown.Item onClick={() => handleMenuOptionClick('usuarios')}>Usuarios</Dropdown.Item>
-//                               )}
-
-//                             <Dropdown.Item onClick={() => handleMenuOptionClick('cerrarSesion')}>Cerrar Sesión</Dropdown.Item>
-//                         </Dropdown.Menu>
-//                     </Dropdown>
-//                 </div>
-//             </div>
-//         </header>
-//     );
-// };
-
-// export default Header;
-
-
-
-
 import React, { useState } from 'react';
 import { Dropdown } from 'react-bootstrap';
 import usuarioImage from '../img/usuario.png';
 import logoImage from '../img/log.png';
 import { handleLogout } from '../login/Logout';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { varAdmin } from "../servicios/api";
+import { FaBars } from 'react-icons/fa';
 
 const Header = () => {
     const username = localStorage.getItem('username');
@@ -93,33 +28,59 @@ const Header = () => {
 
     return (
         <header className="header">
-            <div className="header__logo" onClick={handleImageClick} style={{ cursor: 'pointer' }}>
-                <img src={logoImage} alt="Logo" />
-            </div>
-            <h1 className="header__title">AUDITORIA TURÍSTICA LOCALES OCIO</h1>
-            <div className="header__user-info">
-                <p className="header__username">{username}</p>
-                <div onClick={handleImageClick} style={{ cursor: 'pointer' }}>
+            <div className='d-flex justify-content-between align-items-center w-100'>
+
+                <div className="header__logo" style={{ cursor: 'pointer' }}>
+                    <Link to={'/'}>
+                        <img src={logoImage} alt="Logo" />
+                    </Link>
+                </div>
+                <h1 className="header__title d-none d-md-block">AUDITORIA TURÍSTICA LOCALES OCIO</h1>
+                <div className="header__user-info">
+                    <p className="header__username">{username}</p>
+                    <Dropdown menuVariant="light">
+                        <Dropdown.Toggle variant="light" id="dropdown-basic">
+                            <img src={usuarioImage} alt="Imagen de perfil" className="header__profile-image" />
+                        </Dropdown.Toggle>
+
+                        <Dropdown.Menu>
+                            {userRole === varAdmin && (
+                                <Dropdown.Item onClick={() => handleMenuOptionClick('usuarios')}>Usuarios</Dropdown.Item>
+                            )}
+                            <Dropdown.Item onClick={() => handleMenuOptionClick('cerrarSesion')}>Cerrar Sesión</Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
+                    {/* <div onClick={handleImageClick} style={{ cursor: 'pointer' }}>
                     <img src={usuarioImage} alt="Imagen de perfil" className="header__profile-image" />
                 </div>
-                <Dropdown show={showMenu} align="end">
+                <Dropdown show={showMenu} align="start">
                     <Dropdown.Menu>
                         {userRole === varAdmin && (
                             <Dropdown.Item onClick={() => handleMenuOptionClick('usuarios')}>Usuarios</Dropdown.Item>
                         )}
                         <Dropdown.Item onClick={() => handleMenuOptionClick('cerrarSesion')}>Cerrar Sesión</Dropdown.Item>
                     </Dropdown.Menu>
-                </Dropdown>
+                </Dropdown> */}
+                </div>
+            </div>
+
+            <div className=' d-block d-md-none'>
+                <h1 className="header__title">AUDITORIA TURÍSTICA LOCALES OCIO</h1>
             </div>
 
             <style jsx>{`
+            .header__user-info .dropdown-toggle::after {
+  display: none !important; 
+}
                 .header {
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
-                    padding: 10px 20px;
+                    padding: 10px 10px;
                     background-color: #f8f9fa;
                     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                    padding-left: 45px;
+                    width: 100%;
                 }
 
                 .header__logo img {
@@ -143,12 +104,15 @@ const Header = () => {
                 .header__username {
                     margin-right: 10px;
                     font-size: 1rem;
+                    margin-bottom: 0;
                 }
 
                 .header__profile-image {
-                    width: 40px;
-                    height: 40px;
-                    border-radius: 50%;
+                  width: 30px;
+                  height: 30px;
+                  border-radius: 50%;
+                  border: 1px solid #000000;
+                  padding: 3px;
                 }
 
                 /* Tablet View */
@@ -171,11 +135,12 @@ const Header = () => {
                 @media (max-width: 768px) {
                     .header {
                         flex-direction: column;
-                        align-items: flex-start;
+                        align-items: center; 
+                            height: 100px;
                     }
 
                     .header__logo img {
-                        width: 60px;
+                        width: 80px;
                     }
 
                     .header__title {
@@ -183,10 +148,7 @@ const Header = () => {
                         margin: 10px 0;
                     }
 
-                    .header__user-info {
-                        align-self: flex-end;
-                        margin-top: 10px;
-                    }
+                   
 
                     .header__username {
                         font-size: 0.9rem;
@@ -195,6 +157,10 @@ const Header = () => {
                     .header__profile-image {
                         width: 35px;
                         height: 35px;
+                    }
+                        .cuadro_princal {
+                        border-bottom: none;
+                        flex-direction: column;  
                     }
                 }
 

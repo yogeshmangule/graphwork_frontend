@@ -1,5 +1,6 @@
+/*  */
 .table-container {
-    margin: 20px;
+    margin: 20px 0;
     padding: 20px;
     background-color: #f9f9f9;
     border-radius: 8px;
@@ -22,7 +23,7 @@
 }
 
 .btn {
-    padding: 10px 20px;
+    padding: 5px 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -89,4 +90,21 @@ select {
     padding: 5px;
     border-radius: 5px;
     border: 1px solid #ddd;
+}
+
+@media screen and (max-width:767px) {
+    .table-container {
+        margin: 0px;
+        padding: 0px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .table-header {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin-bottom: 10px;
+    }
 }
