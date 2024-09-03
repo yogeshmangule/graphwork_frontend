@@ -302,7 +302,7 @@ import { Form } from 'react-bootstrap';
 
 const URI = api + 'servicio/';
 
-const CompEditServicio = ({ id }) => {
+const CompEditServicio = ({ id, getEncuestas, abrirModal }) => {
     const [marca_bebidas_premium, setMarcaBebidasPremium] = useState(false);
     const [marca_bebidas_standar, setMarcaBebidasStandar] = useState(false);
     const [marca_bebidas_blancas, setMarcaBebidasBlancas] = useState(false);
@@ -362,8 +362,10 @@ const CompEditServicio = ({ id }) => {
             encuesta_id: encuestaId,
             user_id: userId,
         });
-        clearFields();
-        window.location.reload();
+        // clearFields();
+        // window.location.reload();
+        getEncuestas();
+        abrirModal()
     };
 
     useEffect(() => {
@@ -397,12 +399,13 @@ const CompEditServicio = ({ id }) => {
     }, [id]);
 
     return (
-        <div className='container form-container mt-4'>
-            <h3 className="text-center mb-4">FICHA SERVICIO</h3>
-            <Form onSubmit={update} className="my-form">
+        // <div className='container form-container mt-4'>
+        <div style={{ padding: '32px 62px' }} className="my-form">
+            <h3 className="mb-4">FICHA SERVICIO</h3>
+            <Form onSubmit={update} >
                 <div className="row mb-3">
                     <div className="col-md-6">
-                        <label className='parent-label form-label'>Marcas bebidas:</label>
+                        <label className=' form-label'>Marcas bebidas:</label>
                         <div className="form-check">
                             <input type="checkbox" className="form-check-input" checked={marca_bebidas_premium}
                                 onChange={() => setMarcaBebidasPremium(prev => !prev)} />
@@ -431,7 +434,7 @@ const CompEditServicio = ({ id }) => {
                     </div>
 
                     <div className="col-md-6">
-                        <label className='parent-label form-label'>Vajilla:</label>
+                        <label className=' form-label'>Vajilla:</label>
                         <div className="form-check">
                             <input type="checkbox" className="form-check-input" checked={vajilla_tubo_extra}
                                 onChange={() => setVajillaTuboExtra(prev => !prev)} />
@@ -560,7 +563,7 @@ const CompEditServicio = ({ id }) => {
                     <input value={observServicio} onChange={(e) => setObservServicio(e.target.value)} type="text" className='form-control' />
                 </div>
 
-                <div className="mt-3 text-center">
+                <div className="mt-3 ">
                     <button type='submit' className='btn btn-success btn-ladda'>
                         Modificar
                     </button>

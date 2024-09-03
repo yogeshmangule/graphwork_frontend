@@ -378,7 +378,7 @@ const options_bu = [
   { value: "Muy Malo", label: "Muy Malo" },
 ];
 
-const CompEditEncuesta = ({ id }) => {
+const CompEditEncuesta = ({ id, getEncuestas, abrirModal }) => {
   const [encuestas, setEncuesta] = useState(new Date());
   const [pista, setPista] = useState('');
   const [escenario, setEscenario] = useState('');
@@ -443,8 +443,10 @@ const CompEditEncuesta = ({ id }) => {
         Observ_instal: Observ_instal,
       });
 
-      clearFields();
-      window.location.reload();
+      // clearFields();
+      // window.location.reload();
+      getEncuestas();
+      abrirModal()
     } catch (error) {
       console.error('Error al enviar la solicitud POST:', error);
       alert('Se produjo un error al enviar la solicitud. Por favor, inténtelo de nuevo más tarde.');
@@ -474,7 +476,8 @@ const CompEditEncuesta = ({ id }) => {
   }, [id]);
 
   return (
-    <div className='form-container'>
+    // <div className='form-container'>
+    <div style={{ padding: '32px 62px' }} className="my-form">
       <h3>FICHA FUNCIONAMIENTO E INSTALACIONES</h3>
       <Form onSubmit={update} className="my-form">
         <div className='mb-3'>

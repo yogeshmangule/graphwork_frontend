@@ -359,9 +359,10 @@ const CompCreateMalaPracticas = ({ setCreateValoracionOpen, openCreateValoracion
   };
 
   return (
-    <div className='form-container container'>
+    // <div className='form-container container'>
+    <div style={{ padding: '32px 62px' }} className="my-form">
       <h3>FICHA MALAS PRÁCTICAS</h3>
-      <Form onSubmit={store} className='my-form'>
+      <Form onSubmit={store} >
         <p>Marca aquellas que SI se cumplan</p>
 
         <div className="form-check">

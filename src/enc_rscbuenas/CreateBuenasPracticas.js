@@ -263,9 +263,10 @@ const CompCreateBuenasPracticas = ({ setCreateMalasOpen, openCreateMalasModel })
   };
 
   return (
-    <div className='form-container container'>
+    // <div className='form-container container'>
+    <div style={{ padding: '32px 62px' }} className="my-form">
       <h3>FICHA BUENAS PRÁCTICAS</h3>
-      <Form onSubmit={store} className='my-form'>
+      <Form onSubmit={store} >
         <p>Seleccionas Aquellas que SI se cumplan</p>
         <div className='form-group d-flex align-items-center'>
           <label className='flex-grow-1'>Realiza campañas informativas online:</label>

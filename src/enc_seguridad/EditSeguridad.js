@@ -368,7 +368,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
 const URI = api + 'seguridad/';
-const CompEditEncuesta = ({ id }) => {
+const CompEditEncuesta = ({ id, getEncuestas, abrirModal }) => {
   const [encuestas, setEncuesta] = useState(new Date());
   const [evacuacion_entrada, setEvacuacionEntrada] = useState(false);
   const [evacuacion_pista, setEvacuacionPista] = useState(false);
@@ -454,8 +454,10 @@ const CompEditEncuesta = ({ id }) => {
         Cuño_precio,
         observ_func
       });
-      clearFields();
-      window.location.reload();
+      // clearFields();
+      // window.location.reload();
+      getEncuestas();
+      abrirModal()
     } catch (error) {
       console.error('Error al enviar la solicitud POST:', error);
       alert('Se produjo un error al enviar la solicitud. Por favor, inténtelo de nuevo más tarde.');
@@ -488,11 +490,12 @@ const CompEditEncuesta = ({ id }) => {
   }, [id]);
 
   return (
-    <div className='container form-container mt-4'>
-      <h3 className="text-center">FICHA SEGURIDAD</h3>
-      <Form onSubmit={update} className="my-form">
+    // <div className='container form-container mt-4'>
+    <div style={{ padding: '32px 62px' }} className="my-form">
+      <h3 >FICHA SEGURIDAD</h3>
+      <Form onSubmit={update} >
         <div className="mb-3">
-          <label className='parent-label form-label'>Señalética seguridad: ¿vías evacuación?</label>
+          <label className='form-label'>Señalética seguridad: ¿vías evacuación?</label>
           <div className="form-check">
             <input type="checkbox" className="form-check-input" checked={evacuacion_entrada}
               onChange={() => setEvacuacionEntrada(prev => !prev)} />
@@ -533,7 +536,7 @@ const CompEditEncuesta = ({ id }) => {
         </div>
 
         <div className="mb-3">
-          <label className='parent-label form-label'>Sistema control aforos:</label>
+          <label className=' form-label'>Sistema control aforos:</label>
           <Form.Select
             value={controlaforo ? "Si" : "No"}
             onChange={(e) => setControlaforo(e.target.value === "Si" ? true : false)}>
@@ -544,7 +547,7 @@ const CompEditEncuesta = ({ id }) => {
         </div>
 
         <div className="mb-3">
-          <label className='parent-label form-label'>Camaras de vigilancia:</label>
+          <label className=' form-label'>Camaras de vigilancia:</label>
           <Form.Select
             value={Camaras ? "Si" : "No"}
             onChange={(e) => setCamaras(e.target.value === "Si" ? true : false)}>
@@ -555,7 +558,7 @@ const CompEditEncuesta = ({ id }) => {
         </div>
 
         <div className="mb-3">
-          <label className='parent-label form-label'>Grado de ocupacion:</label>
+          <label className=' form-label'>Grado de ocupacion:</label>
           <Form.Select
             value={ocupacion}
             onChange={(e) => setOcupacion(e.target.value)}>
@@ -579,7 +582,7 @@ const CompEditEncuesta = ({ id }) => {
 
         <label className='parent-label form-label'>Funcionamiento General</label>
         <div className="mb-3">
-          <label className='parent-label form-label'>En que horario se produce el pico de más actividad:</label>
+          <label className=' form-label'>En que horario se produce el pico de más actividad:</label>
           <Form.Select
             value={hora_actv}
             onChange={(e) => setHoraActv(e.target.value)}>
@@ -592,7 +595,7 @@ const CompEditEncuesta = ({ id }) => {
         </div>
 
         <div className="mb-3">
-          <label className='parent-label form-label'>Sistema de pago:</label>
+          <label className=' form-label'>Sistema de pago:</label>
           <div className="form-check">
             <input
               type="checkbox"
@@ -666,7 +669,7 @@ const CompEditEncuesta = ({ id }) => {
           />
         </div>
 
-        <div className="mt-3 text-center">
+        <div className="mt-3 ">
           <button type='submit' className='btn btn-success btn-ladda'>
             Modificar Seguridad
           </button>

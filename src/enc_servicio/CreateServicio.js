@@ -405,9 +405,10 @@ const CompCreateServicio = ({ setCreateEspectaculoOpen, openCreateEspectaculoMod
     };
 
     return (
-        <div className='container form-container mt-4'>
+        // <div className='container form-container mt-4'>
+        <div style={{ padding: '32px 62px' }} className="my-form">
             <h3 className="mb-4">FICHA SERVICIO</h3>
-            <Form onSubmit={store} className="my-form">
+            <Form onSubmit={store} >
                 <div className="row mb-3">
                     <div className="col-md-6">
                         <label className=' form-label'>Marcas bebidas:</label>

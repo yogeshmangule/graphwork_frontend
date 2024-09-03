@@ -292,7 +292,7 @@ const options = [
   { value: "otro", label: "Otro" },
 ];
 
-const CompEditEncuesta = ({ id }) => {
+const CompEditEncuesta = ({ id, getEntornos, abrirModal }) => {
   const [encuestas, setEncuesta] = useState(new Date());
   const [urbanismo, setUrbanismo] = useState('');
   const [org_colas, setOrgColas] = useState('');
@@ -358,8 +358,10 @@ const CompEditEncuesta = ({ id }) => {
         protestas,
         observ_entorno,
       });
-      clearFields();
-      window.location.reload();
+      // clearFields();
+      // window.location.reload();
+      getEntornos();
+      abrirModal()
     } catch (error) {
       console.error('Error al enviar la solicitud POST:', error);
       alert('Se produjo un error al enviar la solicitud. Por favor, inténtelo de nuevo más tarde.');
@@ -389,9 +391,10 @@ const CompEditEncuesta = ({ id }) => {
   }, [id]);
 
   return (
-    <div className='container form-container mt-4'>
-      <h3 className="text-center mb-4">FICHA ENTORNO</h3>
-      <Form onSubmit={update} className="my-form">
+    // <div className='container form-container mt-4'>
+    <div style={{ padding: '32px 62px' }} className="my-form">
+      <h3 className=" mb-4">FICHA ENTORNO</h3>
+      <Form onSubmit={update} >
 
         <div className="mb-3">
           <label className='parent-label form-label'>Configuración urbanística:</label>
@@ -528,7 +531,7 @@ const CompEditEncuesta = ({ id }) => {
           />
         </div>
 
-        <div className="mt-3 text-center">
+        <div className="mt-3 ">
           <button type='submit' className='btn btn-success btn-ladda'>
             Enviar Entorno
           </button>

@@ -243,7 +243,7 @@ const ShowEspectaculo = () => {
                   <th>Ambiente Musical<br /></th>
                   <th>Estilo Musical <br /></th>
                   <th>Observaciones de Espectaculos <br /></th>
-                  <th>Acciones <br />
+                  <th style={{ textAlign: "center" }}>Acciones <br />
                     <button className='btn btn-success' onClick={handleButtonClick} style={{ marginLeft: '10px' }}>
                       <i className='fa fa-leaf'></i>
                     </button>
@@ -269,8 +269,8 @@ const ShowEspectaculo = () => {
                       {encuesta.estilo_musical_otro !== null && encuesta.estilo_musical_otro}
                     </td>
                     <td> {encuesta.observ_espectaculos} </td>
-                    <td>
-                      <ShowModalEditEspec className="btn btn-success btn-info" id={encuesta.ID} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+                    <td style={{ textAlign: "center" }}>
+                      <ShowModalEditEspec className="btn btn-success btn-info" id={encuesta.ID} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} getEncuestas={getEncuestas} />
                     </td>
                   </tr>
                 ))}

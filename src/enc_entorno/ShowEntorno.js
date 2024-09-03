@@ -186,7 +186,7 @@ const ShowEntorno = () => {
     <div>
       <Header />
       <Sidebar>
-        <div className="container mt-4">
+        <div className="container-fluid mt-2">
           <div className="row mb-3">
             <div className="col-12">
               <h2 className="titulo_cuadro text-center">Encuesta: Entorno</h2>
@@ -211,7 +211,7 @@ const ShowEntorno = () => {
                     </th>
                     <th>Urbanismo</th>
                     <th>Observaciones de Entorno</th>
-                    <th>
+                    <th style={{ textAlign: "center" }}>
                       Acciones
                       <br />
                       <button
@@ -229,12 +229,13 @@ const ShowEntorno = () => {
                       <td>{entorno.marca_comercial}</td>
                       <td>{entorno.urbanismo ? 'Si' : 'No'}</td>
                       <td>{entorno.observ_entorno}</td>
-                      <td>
+                      <td style={{ textAlign: "center" }}>
                         <ShowModalEditEntorno
                           className="btn btn-success btn-info"
                           id={entorno.ID}
                           isOpen={isModalOpen}
                           onClose={() => setIsModalOpen(false)}
+                          getEntornos={getEntornos}
                         />
                       </td>
                     </tr>

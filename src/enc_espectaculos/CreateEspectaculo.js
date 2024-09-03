@@ -522,9 +522,10 @@ const CompCreateEspecta = ({ setCreatePersonalOpen, openCreatePersonalModel }) =
   };
 
   return (
-    <div className='form-container'>
+    // <div className='form-container'>
+    <div style={{ padding: '32px 62px' }} className="my-form">
       <h3>FICHA ESPECTACULOS</h3>
-      <Form className="my-form">
+      <Form >
         <div className="row">
           <div className="col-12 col-md-6 mb-3">
             <label className=' form-label'>Ambientación musical:</label><br />

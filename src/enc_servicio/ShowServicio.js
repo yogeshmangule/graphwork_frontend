@@ -256,7 +256,7 @@ const ShowServicio = () => {
   };
 
   return (
-    <div className="container-fluid">
+    <div className="container-fluid mt-2">
       <Header />
       <Sidebar>
         <div className="row mt-2">
@@ -271,14 +271,8 @@ const ShowServicio = () => {
             <table className="table mt-3">
               <thead className="table-secondary">
                 <tr>
-                  <th>Marca Comercial</th>
-                  <th>Bebidas</th>
-                  <th>Vajilla</th>
-                  <th>Observaciones de Servicio</th>
-                  <th>Acciones</th>
-                </tr>
-                <tr>
-                  <td>
+                  <th>Marca Comercial
+                    <br />
                     <input
                       type="text"
                       placeholder="Buscar por alias"
@@ -286,8 +280,15 @@ const ShowServicio = () => {
                       onChange={handleSearchMarcaChange}
                       className="form-control"
                     />
-                  </td>
-                  <td colSpan="4">
+                  </th>
+                  <th>Bebidas</th>
+                  <th>Vajilla</th>
+                  <th>Observaciones de Servicio</th>
+                  {/* <th style={{ textAlign: "center" }}>Acciones</th>
+                   */}
+                  <th style={{ textAlign: "center" }}>
+                    Acciones
+                    <br />
                     <button
                       className="btn btn-success"
                       onClick={handleButtonClick}
@@ -295,7 +296,7 @@ const ShowServicio = () => {
                     >
                       <i className="fa fa-leaf"></i>
                     </button>
-                  </td>
+                  </th>
                 </tr>
               </thead>
               <tbody>
@@ -317,12 +318,13 @@ const ShowServicio = () => {
                       {encuesta.vajilla_otras !== null && encuesta.vajilla_otras}
                     </td>
                     <td>{encuesta.observ_servicio}</td>
-                    <td>
+                    <td style={{ textAlign: "center" }}>
                       <ShowModalEdit
                         className="btn-info"
                         id={encuesta.ID}
                         isOpen={isModalOpen}
                         onClose={() => setIsModalOpen(false)}
+                        getEncuestas={getEncuestas}
                       />
                     </td>
                   </tr>

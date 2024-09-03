@@ -125,9 +125,9 @@ const ModalCreateMarketing = ({ isOpen, setCreateMarketingOpen }) => {
 
   const modalStyles = {
     width: "80%", // Ajusta el ancho del modal para dispositivos móviles
-    maxWidth: "800px", // Establece el ancho máximo del modal para dispositivos más grandes
-    margin: "0 auto", // Centra el modal horizontalmente
-    top: "10%", // Da un pequeño margen superior en la pantalla
+    maxWidth: "100%", // Establece el ancho máximo del modal para dispositivos más grandes
+    // margin: "0 auto", // Centra el modal horizontalmente
+    // top: "10%", // Da un pequeño margen superior en la pantalla
   };
 
   return (

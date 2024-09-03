@@ -224,7 +224,7 @@ const ShowSeguridad = () => {
     <div>
       <Header />
       <Sidebar>
-        <div className='container mt-4'>
+        <div className='container-fluid mt-2'>
           <div className='row'>
             <div className='col-12'>
               <div className='d-flex justify-content-between align-items-center mb-3'>
@@ -250,7 +250,7 @@ const ShowSeguridad = () => {
                       <th>Evacuación</th>
                       <th>Control de Aforo</th>
                       <th>Observaciones de Seguridad</th>
-                      <th>
+                      <th style={{ textAlign: "center" }}>
                         Acciones
                         <br />
                         <button className='btn btn-success' onClick={handleButtonClick}>
@@ -272,12 +272,13 @@ const ShowSeguridad = () => {
                         </td>
                         <td>{encuesta.controlaforo}</td>
                         <td>{encuesta.Observ_segur}</td>
-                        <td>
+                        <td style={{ textAlign: "center" }}>
                           <ShowModalEditSeguridad
                             className="btn btn-success btn-info"
                             id={encuesta.ID}
                             isOpen={isModalOpen}
                             onClose={() => setIsModalOpen(false)}
+                            getEncuestas={getEncuestas}
                           />
                         </td>
                       </tr>

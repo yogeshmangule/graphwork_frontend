@@ -239,7 +239,7 @@ const CompShowInstalacion = () => {
                         <div className='col-12'>
                             <div className='table-responsive'>
                                 <table className='table table-bordered mt-3' style={{ textAlign: "left" }}>
-                                    <thead className='table-secondary'>
+                                    <thead className='table-secondary' style={{ textAlign: "center" }}>
                                         <tr>
                                             <th>Marca Comercial <br />
                                                 <input
@@ -252,7 +252,7 @@ const CompShowInstalacion = () => {
                                             </th>
                                             <th>Pista<br /></th>
                                             <th>Escenario <br /></th>
-                                            <th>Acciones <br />
+                                            <th style={{ textAlign: "center" }}>Acciones <br />
                                                 <button className='btn btn-success' onClick={handleButtonClick} style={{ marginLeft: '10px' }}>
                                                     <i className='fa fa-leaf'></i>
                                                 </button>
@@ -265,8 +265,8 @@ const CompShowInstalacion = () => {
                                                 <td>{encuesta.marca_comercial}</td>
                                                 <td>{encuesta.pista ? 'Si' : 'No'}</td>
                                                 <td>{encuesta.escenario ? 'Si' : 'No'}</td>
-                                                <td>
-                                                    <ShowModalEdit className='btn btn-success btn-info' id={encuesta.ID} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+                                                <td style={{ textAlign: "center" }}>
+                                                    <ShowModalEdit className='btn btn-success btn-info' id={encuesta.ID} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} getEncuestas={getEncuestas} />
                                                 </td>
                                             </tr>
                                         ))}

@@ -232,7 +232,7 @@ const ShowPersonal = () => {
                   <th>Número trabajadores Barras <br /></th>
                   <th>Idiomas: (Barras y office:) <br /></th>
                   <th>Observaciones (Módulo Personal) <br /></th>
-                  <th>Acciones <br />
+                  <th style={{ textAlign: "center" }}>Acciones <br />
                     <button className='btn btn-success' onClick={handleButtonClick} style={{ marginLeft: '10px' }}>
                       <i className='fa fa-leaf'></i>
                     </button>
@@ -256,8 +256,8 @@ const ShowPersonal = () => {
                       {encuesta.pers_barra_idioma_otro !== null && encuesta.pers_barra_idioma_otro}
                     </td>
                     <td> {encuesta.observ_personal} </td>
-                    <td>
-                      <ShowModalEditPersona className='btn btn-success btn-info' id={encuesta.ID} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+                    <td style={{ textAlign: "center" }}>
+                      <ShowModalEditPersona className='btn btn-success btn-info' id={encuesta.ID} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} getEncuestas={getEncuestas} />
                     </td>
                   </tr>
                 ))}

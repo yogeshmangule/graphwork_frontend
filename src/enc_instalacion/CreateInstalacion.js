@@ -569,9 +569,10 @@ const CompCreateInstalacion = ({ setcreateSeguridadOpen, openCreateSeguridadMode
   };
 
   return (
-    <div className="form-container">
+    // <div className="form-container">
+    <div style={{ padding: '32px 62px' }} className="my-form">
       <h3>FICHA FUNCIONAMIENTO E INSTALACIONES</h3>
-      <Form onSubmit={store} className="my-form">
+      <Form onSubmit={store} >
         <div className="mb-3">
           <label className="parent-label form-label">Tamaño aprox. pista:</label>
           <Form.Select value={pista} onChange={(e) => setPista(e.target.value)}>

@@ -115,7 +115,7 @@ const ModalCreateSeguridad = ({ isOpen, setcreateSeguridadOpen }) => {
   }, []);
 
   const modalStyles = {
-    maxWidth: "800px", // Establish the maximum width of the modal
+    maxWidth: "100%", // Establish the maximum width of the modal
     width: "80%", // Ensure the modal width is responsive to screen size
   };
 

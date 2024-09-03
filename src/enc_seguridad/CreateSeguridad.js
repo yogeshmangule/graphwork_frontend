@@ -446,9 +446,10 @@ const CompCreateSeguridad = ({ setCreateEntornoOpen, openCreateEntornoModel }) =
   };
 
   return (
-    <div className="container form-container">
+    // <div className="container form-container">
+    <div style={{ padding: '32px 62px' }} className="my-form">
       <h3>FICHA SEGURIDAD</h3>
-      <Form onSubmit={store} className="my-form">
+      <Form onSubmit={store} >
         <div className="mb-3">
           <label className=' form-label'>Señalética seguridad: ¿vías evacuación?</label>
           <div className="form-check">

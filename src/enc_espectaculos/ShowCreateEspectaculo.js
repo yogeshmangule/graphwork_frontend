@@ -168,8 +168,8 @@ const ModalCreateEspectaculo = ({ isOpen, setCreateEspectaculoOpen }) => {
 
   const modalStyles = {
     width: "80%", // Adjusts modal width
-    maxWidth: "800px", // Sets the maximum modal width
-    margin: 'auto',
+    maxWidth: "100%", // Sets the maximum modal width
+    // margin: 'auto',
   };
 
   return (

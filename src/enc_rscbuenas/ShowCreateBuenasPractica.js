@@ -122,8 +122,8 @@ const ModalCreatePrecio = ({ isOpen, setCreatePrecioBuOpen }) => {
 
   const modalStyles = {
     width: "80%", // Use full width for smaller screens
-    maxWidth: "800px", // Maximum width for larger screens
-    margin: "0 auto", // Center the modal horizontally
+    maxWidth: "100%", // Maximum width for larger screens
+    // margin: "0 auto", // Center the modal horizontally
   };
 
   return (

@@ -108,9 +108,10 @@ const CompEditHorario = ({ id, getEncuestas, abrirModal }) => {
   }, [id]);
 
   return (
-    <div className='form-container'>
+    // <div className='form-container'>
+    <div style={{ padding: '32px 62px' }} className="my-form">
       <h3>FICHA HORARIO</h3>
-      <Form onSubmit={update} className="my-form">
+      <Form onSubmit={update} >
         {[
           { label: 'Lunes', fromTime: horaLde, toTime: horaLa, setFromTime: setHoraLde, setToTime: setHoraLa },
           { label: 'Martes', fromTime: horaMde, toTime: horaMa, setFromTime: setHoraMde, setToTime: setHoraMa },

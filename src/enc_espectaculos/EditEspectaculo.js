@@ -358,7 +358,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 
 const URI = api + 'espectaculo/';
 
-const CompEditEspecta = ({ id }) => {
+const CompEditEspecta = ({ id, getEncuestas, abrirModal }) => {
   const history = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const userId = localStorage.getItem('userId');
@@ -472,7 +472,9 @@ const CompEditEspecta = ({ id }) => {
         observ_espectaculos: observEspectaculos
       });
 
-      window.location.reload();
+      // window.location.reload();
+      getEncuestas();
+      abrirModal();
 
     } catch (error) {
       console.error('Error al enviar la solicitud POST:', error);
@@ -515,7 +517,8 @@ const CompEditEspecta = ({ id }) => {
   }, [id]);
 
   return (
-    <div className='form-container'>
+    // <div className='form-container'>
+    <div style={{ padding: '32px 62px' }} className="my-form">
       <style>{`
                 .form-container {
                     margin: 20px;
@@ -530,7 +533,7 @@ const CompEditEspecta = ({ id }) => {
 
                 .form-group {
                     flex: 1;
-                    min-width: 250px;
+                  
                     margin-right: 10px;
                 }
 
@@ -576,7 +579,7 @@ const CompEditEspecta = ({ id }) => {
                 }
             `}</style>
       <h3>FICHA ESPECTACULOS</h3>
-      <Form onSubmit={update} className="my-form">
+      <Form onSubmit={update} >
         <div className="form-group-row">
           <div className="form-group">
             <label className='parent-label form-label'>Ambientación musical:</label><br /><br />

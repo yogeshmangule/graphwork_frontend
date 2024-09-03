@@ -1310,7 +1310,7 @@ const CompCreateEncuesta = ({ abrirModal, setEncuestaModalOpen, openHorarioModal
       if (isSuccess) {
         setEncuestaModalOpen(false);
         // setTimeout(() => {
-          openHorarioModal();
+        openHorarioModal();
         // }, 2000);
       }
     } catch (error) {
@@ -1434,9 +1434,10 @@ const CompCreateEncuesta = ({ abrirModal, setEncuestaModalOpen, openHorarioModal
 
 
   return (
-    <div className='form-container'>
+    // <div className='form-container'>
+    <div style={{ padding: '32px 62px' }} className="my-form">
       <h3>FICHA ENCUESTA</h3>
-      <Form onSubmit={store} className="my-form">
+      <Form onSubmit={store} >
         <div className='mb-3'>
           <label className='parent-label form-label'>Fecha de Visita</label>
           <DatePicker

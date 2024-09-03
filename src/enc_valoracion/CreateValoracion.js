@@ -188,9 +188,10 @@ const CreateValoracion = ({ setCreateValoracionOpen }) => {
   };
 
   return (
-    <div className='container form-container'>
+    // <div className='container form-container'>
+    <div style={{ padding: '32px 62px' }} className="my-form">
       <h3 className='my-3'>Crear Valoración</h3>
-      <Form className='my-form' onSubmit={store}>
+      <Form  onSubmit={store}>
         <div className='form-group'>
           <label className=' form-label'>Local e instalaciones:</label>
           <Form.Select

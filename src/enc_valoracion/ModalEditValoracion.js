@@ -65,11 +65,11 @@ class ShowModalEdit extends React.Component {
   }
 
   render() {
-    const { id } = this.props;
+    const { id, getEncuestas } = this.props;
     const modalStyles = {
-      width: "90%", // Adjusted width to be more responsive
-      maxWidth: "800px", // Sets the maximum width
-      margin: "0 auto", // Centers the modal on mobile
+      width: "80%", // Adjusted width to be more responsive
+      maxWidth: "100%", // Sets the maximum width
+      // margin: "0 auto", // Centers the modal on mobile
     };
 
     const headerButtonStyles = {
@@ -78,7 +78,7 @@ class ShowModalEdit extends React.Component {
 
     return (
       <>
-        <div className="d-flex justify-content-end mb-2">
+        <div className="d-flex justify-content-center mb-2">
           <Button
             className="btn btn-success btn-info"
             onClick={this.abrirModal}
@@ -88,17 +88,11 @@ class ShowModalEdit extends React.Component {
         </div>
 
         <Modal isOpen={this.state.abierto} style={modalStyles}>
-          <ModalHeader>
-            <Button
-              color="secondary"
-              onClick={this.abrirModal}
-              style={headerButtonStyles}
-            >
-              Cerrar
-            </Button>
+          <ModalHeader toggle={this.abrirModal}>
+
           </ModalHeader>
           <ModalBody>
-            {id && <EditValoracion id={id} />}
+            {id && <EditValoracion id={id} getEncuestas={getEncuestas} abrirModal={this.abrirModal} />}
           </ModalBody>
         </Modal>
       </>

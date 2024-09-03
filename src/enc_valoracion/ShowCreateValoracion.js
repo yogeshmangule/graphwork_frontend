@@ -112,8 +112,8 @@ const ModalCreateValoracion = ({ isOpen, setCreateValoracionOpen }) => {
 
   const modalStyles = {
     width: "80%", // Adjusted width to be more responsive
-    maxWidth: "800px", // Sets the maximum width for larger screens
-    margin: "0 auto", // Centers the modal horizontally on mobile
+    maxWidth: "100%", // Sets the maximum width for larger screens
+    // margin: "0 auto", // Centers the modal horizontally on mobile
   };
 
   return (

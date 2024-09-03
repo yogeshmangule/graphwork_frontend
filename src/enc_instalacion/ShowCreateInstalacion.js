@@ -126,8 +126,8 @@ const ModalCreateInstalacion = ({ isOpen, setcreateInstalacionOpen }) => {
 
   const modalStyles = {
     width: "80%", // Adjust the width for responsiveness
-    maxWidth: "800px", // Set maximum width for the modal
-    margin: "0 auto", // Center the modal horizontally
+    maxWidth: "100%", // Set maximum width for the modal
+    // margin: "0 auto", // Center the modal horizontally
   };
 
   return (

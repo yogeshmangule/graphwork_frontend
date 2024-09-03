@@ -64,12 +64,12 @@ class ShowModalEdit extends React.Component {
   };
 
   render() {
-    const { id } = this.props;
+    const { id, getEncuestas } = this.props;
     const modalStyles = {
-      width: "90%", // Ajusta el ancho del modal para que ocupe un 90% del viewport en dispositivos pequeños
-      maxWidth: "800px", // Establece el ancho máximo del modal
-      margin: "0 auto", // Centra el modal horizontalmente
-      top: "10%", // Da un pequeño margen superior en la pantalla
+      width: "80%", // Ajusta el ancho del modal para que ocupe un 90% del viewport en dispositivos pequeños
+      maxWidth: "100%", // Establece el ancho máximo del modal
+      // margin: "0 auto", // Centra el modal horizontalmente
+      // top: "10%", // Da un pequeño margen superior en la pantalla
     };
 
     return (
@@ -77,7 +77,7 @@ class ShowModalEdit extends React.Component {
         <div className="principal">
           <div className="secundario">
             <Button
-              className="parent-rigth btn btn-success btn-info"
+              className=" btn btn-success btn-info"
               onClick={this.abrirModal}
             >
               <i className="fas fa-edit"></i>
@@ -86,21 +86,11 @@ class ShowModalEdit extends React.Component {
         </div>
 
         <Modal isOpen={this.state.abierto} style={modalStyles}>
-          <ModalHeader>
-            <Button
-              style={{
-                marginLeft: 'auto',
-                marginRight: '20px',
-              }}
-              color="secondary"
-              onClick={this.abrirModal}
-            >
-              Cerrar
-            </Button>
+          <ModalHeader toggle={this.abrirModal}>
           </ModalHeader>
           <ModalBody>
             <>
-              {id && <EditMarketing id={id} />}
+              {id && <EditMarketing id={id} getEncuestas={getEncuestas} abrirModal={this.abrirModal} />}
             </>
           </ModalBody>
         </Modal>

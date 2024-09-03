@@ -232,7 +232,7 @@ import { Form, Row, Col } from 'react-bootstrap';
 
 const URI = api + 'rscmala/';
 
-const CompEditMalaPracticas = ({ id }) => {
+const CompEditMalaPracticas = ({ id, getEncuestas, abrirModal }) => {
   const [malaConsum, setMalaConsum] = useState(false);
   const [doblesPuertas, setDoblesPuertas] = useState(false);
   const [actiPersonal, setActiPersonal] = useState(false);
@@ -298,8 +298,10 @@ const CompEditMalaPracticas = ({ id }) => {
       encuesta_id: encuestaId,
       user_id: userId,
     });
-    clearFields();
-    window.location.reload();
+    // clearFields();
+    // window.location.reload();
+    getEncuestas();
+    abrirModal()
   };
 
   useEffect(() => {
@@ -328,9 +330,10 @@ const CompEditMalaPracticas = ({ id }) => {
   }, [id]);
 
   return (
-    <div className='form-container'>
+    // <div className='form-container'>
+    <div style={{ padding: '32px 62px' }} className="my-form">
       <h3>FICHA MALAS PRÁCTICAS</h3>
-      <Form onSubmit={update} className='my-form'>
+      <Form onSubmit={update} >
         <p>Marca aquellas que SI se cumplan</p>
 
         <Row className="mb-3">

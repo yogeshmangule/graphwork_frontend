@@ -133,7 +133,7 @@ const ModalCreateHorario = ({ isOpen, setHorarioModalOpen }) => {
 
   return (
     <>
-      <Modal isOpen={isOpen} style={{ width: '80%', maxWidth: '800px' }}>
+      <Modal isOpen={isOpen} style={{ width: '80%', maxWidth: '100%' }}>
         <ModalBody>
           <CreateHorario abrirModal={toggleHoriorModel} setHorarioModalOpen={setHorarioModalOpen} openAmbiteModel={openAmbiteModel} />
 

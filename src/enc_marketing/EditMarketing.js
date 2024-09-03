@@ -729,7 +729,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 const URI = api + 'marketing/';
 
-const EditMarketing = ({ id }) => {
+const EditMarketing = ({ id, abrirModal, getEncuestas }) => {
   const [encuestas, setEncuesta] = useState(new Date());
   const [linkDrive, setLinkDrive] = useState('');
   const [web_activo, setWebActiva] = useState(false);
@@ -898,8 +898,10 @@ const EditMarketing = ({ id }) => {
         encuesta_id: encuestaId,
         user_id: userId,
       });
-      clearFields();
-      window.location.reload();
+      // clearFields();
+      // window.location.reload();
+      getEncuestas();
+      abrirModal();
     } catch (error) {
       console.error('Error al enviar la solicitud POST:', error);
       alert(
@@ -962,10 +964,11 @@ const EditMarketing = ({ id }) => {
   }, [id]);
 
   return (
-    <div className="container form-container">
+    // <div className="container form-container">
+    <div style={{ padding: '32px 62px' }} className='my-form'>
       <h3>FICHA MARKETING</h3>
-      <label className="parent-label form-label">Offline Imagen local. Contenidos. Fotos</label>
-      <Form onSubmit={store} className="my-form">
+      <label className=" form-label">Offline Imagen local. Contenidos. Fotos</label>
+      <Form onSubmit={store} >
         <div className="row">
           <div className="col-md-6 mb-3">
             <label className="parent-label form-label">Link carpeta en Drive</label>

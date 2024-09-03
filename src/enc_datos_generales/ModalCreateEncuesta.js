@@ -152,7 +152,7 @@ const ModalCreateEncuesta = () => {
         </div>
       </div>
 
-      <Modal isOpen={isEncuestaModalOpen} style={{ width: '80%', maxWidth: '800px' }}>
+      <Modal isOpen={isEncuestaModalOpen} style={{ width: '80%', maxWidth: '100%' }}>
         <ModalHeader toggle={toggleEncuestaModal}></ModalHeader>
         <ModalBody>
           <CreateEncuesta abrirModal={toggleEncuestaModal} setEncuestaModalOpen={setEncuestaModalOpen} openHorarioModal={openHorarioModal} />

@@ -174,7 +174,7 @@ const ShowMalasPracticas = () => {
   };
 
   return (
-    <div className="container-fluid">
+    <div className="container-fluid mt-2">
       <Header />
       <Sidebar>
         <div className='mt-2 row'>
@@ -187,13 +187,8 @@ const ShowMalasPracticas = () => {
             <table className='mt-3 table table-bordered' style={{ textAlign: "left" }}>
               <thead className='table-secondary'>
                 <tr>
-                  <th>Marca Comercial</th>
-                  <th>Observaciones Malas Practicas</th>
-                  <th>Observaciones Incidentes</th>
-                  <th>Acciones</th>
-                </tr>
-                <tr>
-                  <th>
+                  <th>Marca Comercial
+                    <br />
                     <input
                       type="text"
                       placeholder="Buscar por alias"
@@ -202,9 +197,12 @@ const ShowMalasPracticas = () => {
                       className="form-control"
                     />
                   </th>
-                  <th colSpan="3">
+                  <th>Observaciones Malas Practicas</th>
+                  <th>Observaciones Incidentes</th>
+                  <th style={{ textAlign: "center" }}>Acciones
+                    <br />
                     <button className='btn btn-success' onClick={handleButtonClick} style={{ marginLeft: '10px' }}>
-                      <i className='fa fa-leaf'></i> Buscar
+                      <i className='fa fa-leaf'></i>
                     </button>
                   </th>
                 </tr>
@@ -215,12 +213,13 @@ const ShowMalasPracticas = () => {
                     <td>{encuesta.marca_comercial}</td>
                     <td>{encuesta.observ_malas}</td>
                     <td>{encuesta.observ_incid}</td>
-                    <td>
+                    <td style={{ textAlign: "center" }}>
                       <ShowModalEditMla
                         className='btn btn-success btn-info'
                         id={encuesta.ID}
                         isOpen={isModalOpen}
                         onClose={() => setIsModalOpen(false)}
+                        getEncuestas={getEncuestas}
                       />
                     </td>
                   </tr>

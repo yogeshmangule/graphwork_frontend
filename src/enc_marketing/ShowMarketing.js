@@ -239,7 +239,7 @@ const ShowMarketing = () => {
                     <th>Instagram activo<br /></th>
                     <th>Otra red social activa<br /></th>
                     <th>Observaciones (Módulo Marketing)<br /></th>
-                    <th>Acciones<br />
+                    <th style={{ textAlign: "center" }}>Acciones<br />
                       <button
                         className='btn btn-success'
                         onClick={handleButtonClick}
@@ -283,12 +283,13 @@ const ShowMarketing = () => {
                         )}
                       </td>
                       <td>{encuesta.Observ_marketing}</td>
-                      <td>
+                      <td style={{ textAlign: "center" }}>
                         <ShowModalEditMar
                           className='btn btn-success btn-info'
                           id={encuesta.ID}
                           isOpen={isModalOpen}
                           onClose={() => setIsModalOpen(false)}
+                          getEncuestas={getEncuestas}
                         />
                       </td>
                     </tr>

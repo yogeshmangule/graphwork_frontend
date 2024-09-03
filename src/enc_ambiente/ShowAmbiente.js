@@ -363,7 +363,7 @@ const CompShowAmbiente = () => {
                     <td>{encuesta.musicaS}</td>
                     <td>{encuesta.musicaD}</td>
                     <td>
-                      <ShowModalEdit className='btn btn-success btn-info' id={encuesta.ID} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+                      <ShowModalEdit className='btn btn-success btn-info' id={encuesta.ID} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} getEncuestas={getEncuestas} />
                     </td>
                   </tr>
                 ))}
@@ -390,7 +390,7 @@ const CompShowAmbiente = () => {
         th, td {
           white-space: nowrap;
           padding: 8px;
-          text-align: left;
+          text-align: center;
         }
 
         @media (max-width: 768px) {

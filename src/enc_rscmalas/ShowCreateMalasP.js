@@ -120,9 +120,9 @@ const ModalCreateMalas = ({ isOpen, setCreateMalasOpen }) => {
 
 
   const modalStyles = {
-    maxWidth: '800px', // Ensure the modal takes full width on mobile
+    maxWidth: '100%', // Ensure the modal takes full width on mobile
     width: '80%', // Adjust the width of the modal for responsiveness
-    margin: '0 auto', // Center the modal
+    // margin: '0 auto', // Center the modal
   };
 
   return (

@@ -65,11 +65,11 @@ class ShowModalEdit extends React.Component {
   };
 
   render() {
-    const { id } = this.props;
+    const { id, getEncuestas } = this.props;
     const modalStyles = {
-      width: "90%", // Adjusts the modal width to be more responsive
-      maxWidth: "800px", // Maximum width for larger screens
-      margin: "auto", // Centers the modal horizontally
+      width: "80%", // Adjusts the modal width to be more responsive
+      maxWidth: "100%", // Maximum width for larger screens
+      // margin: "auto", // Centers the modal horizontally
     };
 
     return (
@@ -84,19 +84,11 @@ class ShowModalEdit extends React.Component {
         </div>
 
         <Modal isOpen={this.state.abierto} style={modalStyles}>
-          <ModalHeader>
-            <div className="d-flex justify-content-between w-100">
-              <h5>Edit Buenas Practicas</h5>
-              <Button
-                className="btn btn-secondary"
-                onClick={this.abrirModal}
-              >
-                Cerrar
-              </Button>
-            </div>
+          <ModalHeader toggle={this.abrirModal}>
+
           </ModalHeader>
           <ModalBody>
-            {id && <EditBuenasP id={id} />}
+            {id && <EditBuenasP id={id} getEncuestas={getEncuestas} abrirModal={this.abrirModal} />}
           </ModalBody>
         </Modal>
       </>

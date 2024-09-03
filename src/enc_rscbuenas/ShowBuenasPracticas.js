@@ -178,7 +178,7 @@ const ShowBuenasPracticas = () => {
     <div>
       <Header />
       <Sidebar>
-        <div className="container mt-2">
+        <div className="container-fluid mt-2">
           <div className="row mb-3">
             <div className="col-12">
               <div className="card">
@@ -205,7 +205,7 @@ const ShowBuenasPracticas = () => {
                       />
                     </th>
                     <th>Observaciones Buenas<br /></th>
-                    <th>
+                    <th style={{ textAlign: "center" }}>
                       Acciones <br />
                       <button className="btn btn-success mt-2" onClick={handleButtonClick}>
                         <i className="fa fa-leaf"></i>
@@ -218,11 +218,12 @@ const ShowBuenasPracticas = () => {
                     <tr key={encuesta.ID}>
                       <td>{encuesta.marca_comercial}</td>
                       <td>{encuesta.observ_buenas}</td>
-                      <td>
+                      <td style={{ textAlign: "center" }}>
                         <ShowModalEditBue
                           id={encuesta.ID}
                           isOpen={isModalOpen}
                           onClose={() => setIsModalOpen(false)}
+                          getEncuestas={getEncuestas}
                         />
                       </td>
                     </tr>

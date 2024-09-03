@@ -393,9 +393,10 @@ const CompCreatePersonal = ({ setCreateMarketingOpen, openCreateMarketingModel }
   };
 
   return (
-    <div className='form-container'>
+    // <div className='form-container'>
+    <div style={{ padding: '32px 62px' }} className="my-form">
       <h3>FICHA PERSONAL</h3>
-      <Form onSubmit={store} className="my-form">
+      <Form onSubmit={store} >
         <div className='mb-3'>
           <label className=' form-label'>Número trabajadores de Seguridad y control accesos:</label>
           <input value={persSeguridad} onChange={(e) => setPersSeguridad(e.target.value)} type="text" className='form-control' />

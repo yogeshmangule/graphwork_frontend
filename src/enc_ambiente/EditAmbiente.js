@@ -526,7 +526,7 @@ const options = [
   { value: "otro", label: "Otro" },
 ];
 
-const CompEditEncuesta = ({ id }) => {
+const CompEditEncuesta = ({ id, getEncuestas, abrirModal }) => {
   const [encuestas, setEncuesta] = useState(new Date());
   const [musicaL, setMusicaL] = useState('');
   const [musicaM, setMusicaM] = useState('');
@@ -663,7 +663,9 @@ const CompEditEncuesta = ({ id }) => {
         Observ: Observ,
       });
 
-      window.location.reload();
+      // window.location.reload();
+      getEncuestas()
+      abrirModal();
     } catch (error) {
       console.error('Error al enviar la solicitud POST:', error);
       alert('Se produjo un error al enviar la solicitud. Por favor, inténtelo de nuevo más tarde.');
@@ -741,9 +743,10 @@ const CompEditEncuesta = ({ id }) => {
   }, [id]);
 
   return (
-    <div className='form-container'>
+    // <div className='form-container'>
+    <div style={{ padding: '32px 62px' }} className="my-form">
       <h3>FICHA AMBIENTE</h3>
-      <Form onSubmit={update} className="my-form">
+      <Form onSubmit={update} >
         <div className="form-group">
           <label className='parent-label form-label'>Música Lunes</label>
           <Form.Select value={musicaL} onChange={handleChangeLunes}>
@@ -921,7 +924,6 @@ const CompEditEncuesta = ({ id }) => {
                 }
 
                 h3 {
-                    text-align: center;
                     margin-bottom: 20px;
                 }
 

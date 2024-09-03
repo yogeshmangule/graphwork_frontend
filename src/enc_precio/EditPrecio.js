@@ -467,7 +467,7 @@ import { Form } from 'react-bootstrap';
 
 const URI = api + 'precio/';
 
-const CompEditPrecios = ({ id }) => {
+const CompEditPrecios = ({ id, abrirModal, getEncuestas }) => {
   const [tipoEntradas, setTipoEntradas] = useState('');
   const [tipoEntradasO, setTipoEntradasO] = useState('');
   const [precioAnticipada, setPrecioAnticipada] = useState('');
@@ -570,8 +570,10 @@ const CompEditPrecios = ({ id }) => {
         Obsrv_att_turist: obsrvAttTurist
       });
 
-      clearFields();
-      window.location.reload();
+      // clearFields();
+      // window.location.reload();
+      getEncuestas();
+      abrirModal()
     } catch (error) {
       console.error('Error while saving data:', error);
       setHasErrors(true);
@@ -626,9 +628,10 @@ const CompEditPrecios = ({ id }) => {
   }, [id]);
 
   return (
-    <div className="container">
-      <h3 className="text-center my-4">PRECIO ENTRADAS</h3>
-      <Form onSubmit={update} className="my-form">
+    // <div className="container form-container">
+    <div style={{ padding: '32px 62px' }} className="my-form">
+      <h3 className=" my-4">PRECIO ENTRADAS</h3>
+      <Form onSubmit={update} >
         <div className="row mb-3">
           <div className="col-12 col-md-6">
             <label className='parent-label form-label'>Observaciones:</label>

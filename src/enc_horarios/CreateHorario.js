@@ -135,10 +135,11 @@ const CompCreateEncuesta = ({ onClose, setHorarioModalOpen, openAmbiteModel }) =
 
 
   return (
-    <div className='form-container'>
+    // <div className='form-container'>
+    <div style={{ padding: '32px 62px' }} className="my-form">
 
       <h3>FICHA HORARIO</h3>
-      <Form onSubmit={store} className="my-form">
+      <Form onSubmit={store} >
         <div className='mb-3' style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
           <div style={{ marginRight: '10px' }}>
             <label className='parent-label form-label'>Lunes de:</label>

@@ -292,7 +292,7 @@ import '../App.css';
 
 const URI = api + 'personal/';
 
-const CompEditEncuesta = ({ id }) => {
+const CompEditEncuesta = ({ id, getEncuestas, abrirModal }) => {
   const [encuestas, setEncuesta] = useState(new Date());
   const [persSeguridad, setPersSeguridad] = useState(0);
   const [persSegImagen, setPersSegImagen] = useState('');
@@ -331,7 +331,9 @@ const CompEditEncuesta = ({ id }) => {
         pers_cocteleria: persCocteleria,
         observ_personal: observPersonal,
       });
-      navigate('/somewhere'); // replace with your route
+      // navigate('/somewhere'); // replace with your route
+      getEncuestas();
+      abrirModal()
     } catch (error) {
       console.error('Error al enviar la solicitud POST:', error);
       alert('Se produjo un error al enviar la solicitud. Por favor, inténtelo de nuevo más tarde.');
@@ -362,9 +364,10 @@ const CompEditEncuesta = ({ id }) => {
   }, [id]);
 
   return (
-    <div className='form-container'>
+    // <div className='form-container'>
+    <div style={{ padding: '32px 62px' }} className="my-form">
       <h3>FICHA PERSONAL</h3>
-      <Form onSubmit={update} className="my-form">
+      <Form onSubmit={update} >
         <div className='mb-3'>
           <label className='parent-label form-label'>Número trabajadores de Seguridad y control accesos:</label>
           <input value={persSeguridad} onChange={(e) => setPersSeguridad(e.target.value)} type="text" className='form-control' />
@@ -393,7 +396,7 @@ const CompEditEncuesta = ({ id }) => {
         </div>
 
         <div className='mb-3'>
-          <label className='parent-label form-label'>Idiomas: (Seguridad y control accesos:)</label>
+          <label className=' form-label'>Idiomas: (Seguridad y control accesos:)</label>
           <div style={{ textAlign: 'left' }}>
             <input type="checkbox" checked={persSegIdiomaIngles} onChange={() => setPersSegIdiomaIngles(prev => !prev)} /> Inglés <br />
             <input type="checkbox" checked={persSegIdiomaFrances} onChange={() => setPersSegIdiomaFrances(prev => !prev)} /> Fránces <br />
@@ -440,7 +443,7 @@ const CompEditEncuesta = ({ id }) => {
         </div>
 
         <div className='mb-3'>
-          <label className='parent-label form-label'>Idiomas: (Barras y office:)</label>
+          <label className=' form-label'>Idiomas: (Barras y office:)</label>
           <div style={{ textAlign: 'left' }}>
             <input type="checkbox" checked={persBarraIdiomaIngles} onChange={() => setPersBarraIdiomaIngles(prev => !prev)} /> Inglés <br />
             <input type="checkbox" checked={persBarraIdiomaFrances} onChange={() => setPersBarraIdiomaFrances(prev => !prev)} /> Fránces <br />

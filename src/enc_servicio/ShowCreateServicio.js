@@ -121,8 +121,8 @@ const ModalCreateServicio = ({ isOpen, setCreateServicioOpen }) => {
 
   const modalStyles = {
     width: "80%", // Adjusts the width of the modal for responsiveness
-    maxWidth: "800px", // Sets the maximum width of the modal
-    margin: "auto", // Centers the modal on the screen
+    maxWidth: "100%", // Sets the maximum width of the modal
+    // margin: "auto", // Centers the modal on the screen
   };
 
   return (

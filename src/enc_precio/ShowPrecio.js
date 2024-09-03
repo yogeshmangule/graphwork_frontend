@@ -174,7 +174,7 @@ const ShowPrecio = () => {
 
   return (
     // <div className="d-flex flex-column flex-lg-row">
-    <div className="container-fluid">
+    <div className="container-fluid mt-2">
       <Header />
       <Sidebar className="flex-grow-1">
         <div className="mt-2 row mx-2">
@@ -189,8 +189,9 @@ const ShowPrecio = () => {
                   <th>Marca Comercial</th>
                   <th>Tipo Entrada</th>
                   <th>Precio taquilla</th>
-                  <th>
+                  <th style={{ textAlign: "center" }}>
                     Acciones
+                    <br />
                     <button className="btn btn-success ml-2" onClick={handleButtonClick}>
                       <i className="fa fa-leaf"></i>
                     </button>
@@ -203,12 +204,13 @@ const ShowPrecio = () => {
                     <td>{encuesta.marca_comercial}</td>
                     <td>{encuesta.tipo_entradas}</td>
                     <td>{encuesta.precio_anticipada}</td>
-                    <td>
+                    <td style={{ textAlign: "center" }}>
                       <ShowModalEditPrecio
                         className="btn btn-success btn-info"
                         id={encuesta.ID}
                         isOpen={isModalOpen}
                         onClose={() => setIsModalOpen(false)}
+                        getEncuestas={getEncuestas}
                       />
                     </td>
                   </tr>

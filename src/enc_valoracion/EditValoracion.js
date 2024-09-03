@@ -158,7 +158,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const URI = api + 'valoracion/';
 
-const EditValoracion = ({ id }) => {
+const EditValoracion = ({ id, getEncuestas, abrirModal }) => {
   const [valLocal, setValLocal] = useState('');
   const [valPersonal, setValPersonal] = useState('');
   const [valAmbiente, setValAmbiente] = useState('');
@@ -192,8 +192,10 @@ const EditValoracion = ({ id }) => {
         user_id: userId,
       });
 
-      clearFields();
-      window.location.reload();
+      // clearFields();
+      // window.location.reload();
+      getEncuestas();
+      abrirModal();
     } catch (error) {
       console.error('Error al enviar la valoración:', error);
     }
@@ -214,9 +216,10 @@ const EditValoracion = ({ id }) => {
   }, [id]);
 
   return (
-    <div className='container form-container'>
-      <h3 className='text-center my-3'>Editar Valoración</h3>
-      <Form onSubmit={store} className='my-form'>
+    // <div className='container form-container'>
+    <div style={{ padding: '32px 62px' }} className="my-form">
+      <h3 className=' my-3'>Editar Valoración</h3>
+      <Form onSubmit={store} >
         <div className='form-group'>
           <label className='parent-label form-label'>Local e instalaciones:</label>
           <Form.Select
@@ -297,7 +300,7 @@ const EditValoracion = ({ id }) => {
           />
         </div>
 
-        <div className='text-center mt-3'>
+        <div className='mt-3'>
           <button type='submit' className='btn btn-primary'>
             Guardar
           </button>

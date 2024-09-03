@@ -17,8 +17,8 @@ class ShowModalEdit extends React.Component {
     const { id, getEncuestas } = this.props;
     const modalStyles = {
       width: "80%", // Adjust the modal width
-      maxWidth: "800px", // Set the maximum width of the modal
-      margin: "0 auto", // Center the modal horizontally
+      maxWidth: "100%", // Set the maximum width of the modal
+      // margin: "0 auto", // Center the modal horizontally
     };
 
     return (

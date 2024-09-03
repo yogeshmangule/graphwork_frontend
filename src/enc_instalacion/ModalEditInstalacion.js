@@ -51,7 +51,7 @@
 
 
 import React from 'react';
-import '../App.css';
+// import '../App.css';
 import { Button, Modal, ModalHeader, ModalBody } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import EditInstalacion from './EditInstalacion';
@@ -66,17 +66,17 @@ class ShowModalEdit extends React.Component {
   };
 
   render() {
-    const { id } = this.props;
+    const { id, getEncuestas } = this.props;
     const modalStyles = {
-      width: "90%", // Adjust the width for responsiveness
-      maxWidth: "800px", // Set maximum width for the modal
-      margin: "0 auto", // Center the modal horizontally
+      width: "80%", // Adjust the width for responsiveness
+      maxWidth: "100%", // Set maximum width for the modal
+      // margin: "0 auto", // Center the modal horizontally
     };
 
     return (
       <>
         <div className="principal">
-          <div className="secundario d-flex justify-content-end"> {/* Use Bootstrap utility classes */}
+          <div className="secundario d-flex justify-content-center"> {/* Use Bootstrap utility classes */}
             <Button
               className='btn btn-success btn-info'
               onClick={this.abrirModal}>
@@ -90,9 +90,60 @@ class ShowModalEdit extends React.Component {
             {/* Remove the additional close button */}
           </ModalHeader>
           <ModalBody>
-            {id && <EditInstalacion id={id} />}
+            {id && <EditInstalacion id={id} getEncuestas={getEncuestas} abrirModal={this.abrirModal} />}
           </ModalBody>
         </Modal>
+
+        <style jsx>{`
+          .principal {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+          }
+
+          .secundario {
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+          }
+
+          .custom-modal {
+            width: 80%;
+            max-width: 100%;
+            
+          }
+
+          .close-button {
+            margin-left: auto;
+          }
+
+          @media (max-width: 768px) {
+            .custom-modal {
+              width: 80%;
+              max-width: 100%;
+              padding: 10px;
+            }
+
+            .close-button {
+              margin-left: auto;
+              margin-right: 10px;
+            }
+          }
+
+          @media (max-width: 480px) {
+            .custom-modal {
+              width: 80%;
+              max-width: 100%;
+              padding: 5px;
+            }
+
+            .close-button {
+              margin-left: auto;
+              margin-right: 5px;
+            }
+          }
+        `}</style>
       </>
     );
   }

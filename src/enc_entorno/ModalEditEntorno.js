@@ -65,27 +65,26 @@ class ShowModalEdit extends React.Component {
   }
 
   render() {
-    const { id } = this.props;
+    const { id, getEntornos } = this.props;
     const modalStyles = {
-      maxWidth: "800px", // Establish the maximum width of the modal
-      width: "100%", // Ensure the modal width is responsive to screen size
+      maxWidth: "100%", // Establish the maximum width of the modal
+      width: "80%", // Ensure the modal width is responsive to screen size
     };
 
     return (
       <>
-        <div className="d-flex justify-content-end">
+        <div className="d-flex justify-content-center">
           <Button className='btn btn-success btn-info' onClick={this.abrirModal}>
             <i className="fas fa-edit"></i>
           </Button>
         </div>
 
         <Modal isOpen={this.state.abierto} style={modalStyles} centered>
-          <ModalHeader className="d-flex justify-content-between">
-            <span>Edit Entorno</span>
-            <Button color="secondary" onClick={this.abrirModal}>Cerrar</Button>
+          <ModalHeader toggle={this.abrirModal}>
+
           </ModalHeader>
           <ModalBody>
-            {id && <EditEntorno id={id} />}
+            {id && <EditEntorno id={id} getEntornos={getEntornos} abrirModal={this.abrirModal} />}
           </ModalBody>
         </Modal>
       </>

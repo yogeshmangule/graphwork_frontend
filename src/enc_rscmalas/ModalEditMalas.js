@@ -65,11 +65,11 @@ class ShowModalEdit extends React.Component {
   };
 
   render() {
-    const { id } = this.props;
+    const { id, getEncuestas } = this.props;
     const modalStyles = {
       maxWidth: '100%', // Ensure the modal takes full width on mobile
-      width: '90%', // Adjust the width of the modal
-      margin: '0 auto', // Center the modal
+      width: '80%', // Adjust the width of the modal
+      // margin: '0 auto', // Center the modal
     };
 
     const closeButtonStyles = {
@@ -79,20 +79,18 @@ class ShowModalEdit extends React.Component {
 
     return (
       <>
-        <div className="d-flex justify-content-end">
+        <div className="d-flex justify-content-center">
           <Button className='btn btn-success btn-info' onClick={this.abrirModal}>
             <i className="fas fa-edit"></i>
           </Button>
         </div>
 
         <Modal isOpen={this.state.abierto} style={modalStyles} centered>
-          <ModalHeader>
-            <Button style={closeButtonStyles} color="secondary" onClick={this.abrirModal}>
-              Cerrar
-            </Button>
+          <ModalHeader toggle={this.abrirModal}>
+
           </ModalHeader>
           <ModalBody>
-            {id && <EditMlasP id={id} />}
+            {id && <EditMlasP id={id} getEncuestas={getEncuestas} abrirModal={this.abrirModal} />}
           </ModalBody>
         </Modal>
       </>

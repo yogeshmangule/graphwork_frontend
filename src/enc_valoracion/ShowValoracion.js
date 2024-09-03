@@ -203,7 +203,7 @@ const ShowValoracion = () => {
                   </th>
                   <th>Valoración Local<br /></th>
                   <th>Valoración Personal<br /></th>
-                  <th>Acciones <br />
+                  <th style={{ textAlign: "center" }}>Acciones <br />
                     <button className='btn btn-success' onClick={handleButtonClick} style={{ marginLeft: '10px' }}>
                       <i className='fa fa-leaf'></i>
                     </button>
@@ -216,8 +216,8 @@ const ShowValoracion = () => {
                     <td> {encuesta.marca_comercial}</td>
                     <td> {encuesta.val_local}</td>
                     <td> {encuesta.val_personal}</td>
-                    <td>
-                      <ShowModalEditVal className="btn btn-success btn-info" id={encuesta.ID} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+                    <td style={{ textAlign: "center" }}>
+                      <ShowModalEditVal className="btn btn-success btn-info" id={encuesta.ID} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} getEncuestas={getEncuestas} />
                     </td>
                   </tr>
                 ))}

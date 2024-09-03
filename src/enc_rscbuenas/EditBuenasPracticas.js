@@ -153,7 +153,7 @@ import { Form } from 'react-bootstrap';
 
 const URI = api + 'rscbuena/';
 
-const CompEditBuenasPracticas = ({ id }) => {
+const CompEditBuenasPracticas = ({ id, getEncuestas, abrirModal }) => {
   const [infoOnline, setInfoOline] = useState('');
   const [medicionSala, setMedicionSala] = useState(false);
   const [ruido, setRuido] = useState(false);
@@ -193,8 +193,10 @@ const CompEditBuenasPracticas = ({ id }) => {
       sello_calidad: selloCalidad,
       observ_buenas: observaciones,
     });
-    clearFields();
-    window.location.reload();
+    // clearFields();
+    // window.location.reload();
+    getEncuestas();
+    abrirModal()
   };
 
   useEffect(() => {
@@ -215,9 +217,10 @@ const CompEditBuenasPracticas = ({ id }) => {
   }, [id]);
 
   return (
-    <div className='container my-4'>
+    // <div className='container form-container my-4'>
+    <div style={{ padding: '32px 62px' }} className="my-form">
       <h3>FICHA BUENAS PRÁCTICAS</h3>
-      <Form onSubmit={update} className='my-form'>
+      <Form onSubmit={update} >
         <p>Seleccionas Aquellas que SI se cumplan</p>
 
         <div className='form-group d-flex align-items-center mb-3'>
