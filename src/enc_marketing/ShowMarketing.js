@@ -234,11 +234,11 @@ const ShowMarketing = () => {
                         className='form-control'
                       />
                     </th>
-                    <th>Sitio web activo<br /></th>
-                    <th>Facebook activo<br /></th>
-                    <th>Instagram activo<br /></th>
-                    <th>Otra red social activa<br /></th>
-                    <th>Observaciones (Módulo Marketing)<br /></th>
+                    <th className="d-md-table-cell d-none">Sitio web activo<br /></th>
+                    <th className="d-md-table-cell d-none">Facebook activo<br /></th>
+                    <th className="d-md-table-cell d-none">Instagram activo<br /></th>
+                    <th className="d-md-table-cell d-none">Otra red social activa<br /></th>
+                    <th className="d-md-table-cell d-none">Observaciones (Módulo Marketing)<br /></th>
                     <th style={{ textAlign: "center" }}>Acciones<br />
                       <button
                         className='btn btn-success'
@@ -254,8 +254,8 @@ const ShowMarketing = () => {
                   {encuestas.map((encuesta) => (
                     <tr key={encuesta.ID}>
                       <td>{encuesta.marca_comercial}</td>
-                      <td>{encuesta.web_activo}</td>
-                      <td>
+                      <td className="d-md-table-cell d-none">{encuesta.web_activo}</td>
+                      <td className="d-md-table-cell d-none">
                         {encuesta.facebook && encuesta.facebook.toLowerCase() === 'si' ? (
                           <>
                             {encuesta.facebook} publicaciones al mes: {encuesta.facebook_publ_mes}
@@ -264,7 +264,7 @@ const ShowMarketing = () => {
                           'No'
                         )}
                       </td>
-                      <td>
+                      <td className="d-md-table-cell d-none">
                         {encuesta.instagram && encuesta.instagram.toLowerCase() === 'si' ? (
                           <>
                             {encuesta.instagram} publicaciones al mes: {encuesta.instagram_publ_mes}
@@ -273,7 +273,7 @@ const ShowMarketing = () => {
                           'No'
                         )}
                       </td>
-                      <td>
+                      <td className="d-md-table-cell d-none">
                         {encuesta.otras_redes && encuesta.otras_redes.toLowerCase() === 'si' && encuesta.otras_redes_publ_mes ? (
                           <>
                             {encuesta.otras_redes_cual} publicaciones al mes: {encuesta.otras_redes_publ_mes}
@@ -282,7 +282,7 @@ const ShowMarketing = () => {
                           'No'
                         )}
                       </td>
-                      <td>{encuesta.Observ_marketing}</td>
+                      <td className="d-md-table-cell d-none">{encuesta.Observ_marketing}</td>
                       <td style={{ textAlign: "center" }}>
                         <ShowModalEditMar
                           className='btn btn-success btn-info'

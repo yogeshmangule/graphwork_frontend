@@ -628,8 +628,8 @@ const CompEditPrecios = ({ id, abrirModal, getEncuestas }) => {
   }, [id]);
 
   return (
-    // <div className="container form-container">
-    <div style={{ padding: '32px 62px' }} className="my-form">
+    // <div className="container form-container" style={{ padding: '32px 62px' }}>
+    <div className="my-form form-style">
       <h3 className=" my-4">PRECIO ENTRADAS</h3>
       <Form onSubmit={update} >
         <div className="row mb-3">
@@ -882,7 +882,7 @@ const CompEditPrecios = ({ id, abrirModal, getEncuestas }) => {
           </Form.Select>
           {turisticPersIdiomas && (
             <div className="mt-2">
-              <label className='parent-label form-label'>Sí, cuales (atención personal en idiomas)</label>
+              <label className=' form-label'>Sí, cuales (atención personal en idiomas)</label>
               <div>
                 <input type="checkbox" checked={turisticPersIdiomasCualIngles}
                   onChange={() => setTuristicPersIdiomasCualIngles(prev => !prev)} /> Inglés <br />
@@ -907,7 +907,7 @@ const CompEditPrecios = ({ id, abrirModal, getEncuestas }) => {
         </div>
 
         <div className="mb-3">
-          <label className='parent-label form-label'>Señalética en idiomas: </label>
+          <label className=' form-label'>Señalética en idiomas: </label>
           <Form.Select
             value={senalIdiomas ? 'Si' : 'No'}
             onChange={(e) => {
@@ -926,7 +926,7 @@ const CompEditPrecios = ({ id, abrirModal, getEncuestas }) => {
           </Form.Select>
           {senalIdiomas && (
             <div className="mt-2">
-              <label className='parent-label form-label'>Sí, cuales (señalética en idiomas)</label>
+              <label className='form-label'>Sí, cuales (señalética en idiomas)</label>
               <div>
                 <input type="checkbox" checked={senalIdiomasCualIngles}
                   onChange={() => setSenalIdiomasCualIngles(prev => !prev)} /> Inglés <br />
@@ -999,7 +999,7 @@ const CompEditPrecios = ({ id, abrirModal, getEncuestas }) => {
           </Form.Select>
           {ventaOnlineIdiomas && (
             <div className="mt-2">
-              <label className='parent-label form-label'>Sí, cuales (señalética en idiomas)</label>
+              <label className='form-label'>Sí, cuales (señalética en idiomas)</label>
               <div>
                 <input type="checkbox" checked={ventaOnlineIdiomasCualIngles}
                   onChange={() => setVentaOnlineIdiomasCualIngles(prev => !prev)} /> Inglés <br />
@@ -1033,12 +1033,23 @@ const CompEditPrecios = ({ id, abrirModal, getEncuestas }) => {
           />
         </div>
 
-        <div className="mt-3 text-center">
+        <div className="mt-3">
           <button type="submit" className="btn btn-success btn-ladda">
             Registrar
           </button>
         </div>
       </Form>
+      <style jsx>{`
+      .form-style{
+       padding: 32px 62px
+      }
+
+        @media (max-width: 480px) {
+         .form-style{
+       padding: 0px
+      }}
+
+        `}</style>
     </div>
   );
 };

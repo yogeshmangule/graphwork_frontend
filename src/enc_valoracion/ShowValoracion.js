@@ -201,8 +201,8 @@ const ShowValoracion = () => {
                       onChange={handleSearchMarcaChange}
                     />
                   </th>
-                  <th>Valoración Local<br /></th>
-                  <th>Valoración Personal<br /></th>
+                  <th className="d-md-table-cell d-none">Valoración Local<br /></th>
+                  <th className="d-md-table-cell d-none">Valoración Personal<br /></th>
                   <th style={{ textAlign: "center" }}>Acciones <br />
                     <button className='btn btn-success' onClick={handleButtonClick} style={{ marginLeft: '10px' }}>
                       <i className='fa fa-leaf'></i>
@@ -214,8 +214,8 @@ const ShowValoracion = () => {
                 {encuestas.map((encuesta) => (
                   <tr key={encuesta.ID}>
                     <td> {encuesta.marca_comercial}</td>
-                    <td> {encuesta.val_local}</td>
-                    <td> {encuesta.val_personal}</td>
+                    <td className="d-md-table-cell d-none"> {encuesta.val_local}</td>
+                    <td className="d-md-table-cell d-none"> {encuesta.val_personal}</td>
                     <td style={{ textAlign: "center" }}>
                       <ShowModalEditVal className="btn btn-success btn-info" id={encuesta.ID} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} getEncuestas={getEncuestas} />
                     </td>

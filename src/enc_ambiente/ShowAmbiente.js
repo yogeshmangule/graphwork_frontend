@@ -335,15 +335,15 @@ const CompShowAmbiente = () => {
                       onChange={handleSearchMarcaChange}
                     />
                   </th>
-                  <th>Edades<br /></th>
-                  <th>Lunes<br /></th>
-                  <th>Martes <br /></th>
-                  <th>Miercoles<br /></th>
-                  <th>Jueves <br /></th>
-                  <th>Viernes <br /></th>
-                  <th>Sabado <br /></th>
-                  <th>Domingo <br /></th>
-                  <th>Acciones <br />
+                  <th className='d-md-table-cell d-none'>Edades<br /></th>
+                  <th className='d-md-table-cell d-none'>Lunes<br /></th>
+                  <th className='d-md-table-cell d-none'>Martes <br /></th>
+                  <th className='d-md-table-cell d-none'>Miercoles<br /></th>
+                  <th className='d-md-table-cell d-none'>Jueves <br /></th>
+                  <th className='d-md-table-cell d-none'>Viernes <br /></th>
+                  <th className='d-md-table-cell d-none'>Sabado <br /></th>
+                  <th className='d-md-table-cell d-none'>Domingo <br /></th>
+                  <th className="text-center">Acciones <br />
                     <button className='btn btn-success' onClick={handleButtonClick} style={{ marginLeft: '10px' }}>
                       <i className='fa fa-leaf'></i>
                     </button>
@@ -354,15 +354,15 @@ const CompShowAmbiente = () => {
                 {encuestas.map((encuesta) => (
                   <tr key={encuesta.ID}>
                     <td>{encuesta.marca_comercial}</td>
-                    <td>{encuesta.edad}</td>
-                    <td>{encuesta.musicaL}</td>
-                    <td>{encuesta.musicaM}</td>
-                    <td>{encuesta.musicaX}</td>
-                    <td>{encuesta.musicaJ}</td>
-                    <td>{encuesta.musicaV}</td>
-                    <td>{encuesta.musicaS}</td>
-                    <td>{encuesta.musicaD}</td>
-                    <td>
+                    <td className='d-md-table-cell d-none'>{encuesta.edad}</td>
+                    <td className='d-md-table-cell d-none'>{encuesta.musicaL}</td>
+                    <td className='d-md-table-cell d-none'>{encuesta.musicaM}</td>
+                    <td className='d-md-table-cell d-none'>{encuesta.musicaX}</td>
+                    <td className='d-md-table-cell d-none'>{encuesta.musicaJ}</td>
+                    <td className='d-md-table-cell d-none'>{encuesta.musicaV}</td>
+                    <td className='d-md-table-cell d-none'>{encuesta.musicaS}</td>
+                    <td className='d-md-table-cell d-none'>{encuesta.musicaD}</td>
+                    <td className="text-center">
                       <ShowModalEdit className='btn btn-success btn-info' id={encuesta.ID} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} getEncuestas={getEncuestas} />
                     </td>
                   </tr>

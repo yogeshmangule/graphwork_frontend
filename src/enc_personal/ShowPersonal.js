@@ -227,11 +227,11 @@ const ShowPersonal = () => {
                       onChange={handleSearchMarcaChange}
                     />
                   </th>
-                  <th>Personal de seguridad<br /></th>
-                  <th>Idiomas: (Seguridad y control accesos:) <br /></th>
-                  <th>Número trabajadores Barras <br /></th>
-                  <th>Idiomas: (Barras y office:) <br /></th>
-                  <th>Observaciones (Módulo Personal) <br /></th>
+                  <th className='d-md-table-cell d-none'>Personal de seguridad<br /></th>
+                  <th className='d-md-table-cell d-none'>Idiomas: (Seguridad y control accesos:) <br /></th>
+                  <th className='d-md-table-cell d-none'>Número trabajadores Barras <br /></th>
+                  <th className='d-md-table-cell d-none'>Idiomas: (Barras y office:) <br /></th>
+                  <th className='d-md-table-cell d-none'>Observaciones (Módulo Personal) <br /></th>
                   <th style={{ textAlign: "center" }}>Acciones <br />
                     <button className='btn btn-success' onClick={handleButtonClick} style={{ marginLeft: '10px' }}>
                       <i className='fa fa-leaf'></i>
@@ -243,19 +243,19 @@ const ShowPersonal = () => {
                 {encuestas.map((encuesta) => (
                   <tr key={encuesta.ID}>
                     <td> {encuesta.marca_comercial}</td>
-                    <td> {encuesta.pers_seguridad}</td>
-                    <td>
+                    <td className='d-md-table-cell d-none'> {encuesta.pers_seguridad}</td>
+                    <td className='d-md-table-cell d-none'>
                       {encuesta.pers_seg_idioma_ingles && 'Inglés, '}
                       {encuesta.pers_seg_idioma_frances && 'Fránces, '}
                       {encuesta.pers_seg_idioma_otra !== null && encuesta.pers_seg_idioma_otra}
                     </td>
-                    <td> {encuesta.pers_barra}</td>
-                    <td>
+                    <td className='d-md-table-cell d-none'> {encuesta.pers_barra}</td>
+                    <td className='d-md-table-cell d-none'>
                       {encuesta.pers_barra_idioma_ingles && 'Inglés, '}
                       {encuesta.pers_barra_idioma_frances && 'Fránces, '}
                       {encuesta.pers_barra_idioma_otro !== null && encuesta.pers_barra_idioma_otro}
                     </td>
-                    <td> {encuesta.observ_personal} </td>
+                    <td className='d-md-table-cell d-none'> {encuesta.observ_personal} </td>
                     <td style={{ textAlign: "center" }}>
                       <ShowModalEditPersona className='btn btn-success btn-info' id={encuesta.ID} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} getEncuestas={getEncuestas} />
                     </td>

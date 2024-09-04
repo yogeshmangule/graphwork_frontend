@@ -895,7 +895,7 @@ const EditMarketing = ({ id, abrirModal, getEncuestas }) => {
         reserva_mesa_tel: reservaMesaTel,
         reserva_mesa_rrpp: reservaMesaRrpp,
         Observ_marketing: observMarketing,
-        encuesta_id: encuestaId,
+        // encuesta_id: encuestaId,
         user_id: userId,
       });
       // clearFields();
@@ -964,8 +964,8 @@ const EditMarketing = ({ id, abrirModal, getEncuestas }) => {
   }, [id]);
 
   return (
-    // <div className="container form-container">
-    <div style={{ padding: '32px 62px' }} className='my-form'>
+    // <div className="container form-container" style={{ padding: '32px 62px' }}>
+    <div className='my-form form-style'>
       <h3>FICHA MARKETING</h3>
       <label className=" form-label">Offline Imagen local. Contenidos. Fotos</label>
       <Form onSubmit={store} >
@@ -1564,6 +1564,17 @@ const EditMarketing = ({ id, abrirModal, getEncuestas }) => {
           </button>
         </div>
       </Form>
+      <style jsx>{`
+      .form-style{
+       padding: 32px 62px
+      }
+
+        @media (max-width: 480px) {
+         .form-style{
+       padding: 0px
+      }}
+
+        `}</style>
     </div>
   );
 };

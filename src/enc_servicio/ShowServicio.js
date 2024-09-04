@@ -281,9 +281,9 @@ const ShowServicio = () => {
                       className="form-control"
                     />
                   </th>
-                  <th>Bebidas</th>
-                  <th>Vajilla</th>
-                  <th>Observaciones de Servicio</th>
+                  <th className='d-md-table-cell d-none'>Bebidas</th>
+                  <th className='d-md-table-cell d-none'>Vajilla</th>
+                  <th className='d-md-table-cell d-none'>Observaciones de Servicio</th>
                   {/* <th style={{ textAlign: "center" }}>Acciones</th>
                    */}
                   <th style={{ textAlign: "center" }}>
@@ -303,13 +303,13 @@ const ShowServicio = () => {
                 {encuestas.map((encuesta) => (
                   <tr key={encuesta.ID}>
                     <td>{encuesta.marca_comercial}</td>
-                    <td>
+                    <td className='d-md-table-cell d-none'>
                       {encuesta.marca_bebidas_premium && 'Premium, '}
                       {encuesta.marca_bebidas_standar && 'Marca Standar, '}
                       {encuesta.marca_bebidas_blancas && 'Marca Blancas, '}
                       {encuesta.marca_bebidas_otro !== null && encuesta.marca_bebidas_otro}
                     </td>
-                    <td>
+                    <td className='d-md-table-cell d-none'>
                       {encuesta.vajilla_tubo_extra && 'Tubo Extra, '}
                       {encuesta.vajilla_tubo_standar && 'Tubo Standar, '}
                       {encuesta.vajilla_copa_balon && 'Copa Balón, '}
@@ -317,7 +317,7 @@ const ShowServicio = () => {
                       {encuesta.vajilla_plastico && 'Plástico, '}
                       {encuesta.vajilla_otras !== null && encuesta.vajilla_otras}
                     </td>
-                    <td>{encuesta.observ_servicio}</td>
+                    <td className='d-md-table-cell d-none'>{encuesta.observ_servicio}</td>
                     <td style={{ textAlign: "center" }}>
                       <ShowModalEdit
                         className="btn-info"

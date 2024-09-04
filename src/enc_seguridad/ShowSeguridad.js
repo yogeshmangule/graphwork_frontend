@@ -247,9 +247,9 @@ const ShowSeguridad = () => {
                           className='form-control'
                         />
                       </th>
-                      <th>Evacuación</th>
-                      <th>Control de Aforo</th>
-                      <th>Observaciones de Seguridad</th>
+                      <th className="d-md-table-cell d-none">Evacuación</th>
+                      <th className="d-md-table-cell d-none">Control de Aforo</th>
+                      <th className="d-md-table-cell d-none">Observaciones de Seguridad</th>
                       <th style={{ textAlign: "center" }}>
                         Acciones
                         <br />
@@ -263,15 +263,15 @@ const ShowSeguridad = () => {
                     {encuestas.map((encuesta) => (
                       <tr key={encuesta.ID}>
                         <td>{encuesta.marca_comercial}</td>
-                        <td>
+                        <td className="d-md-table-cell d-none">
                           {encuesta.evacuacion_entrada && 'Entrada, '}
                           {encuesta.evacuacion_pista && 'Pista, '}
                           {encuesta.evacuacion_accesoWC && 'Acceso WC, '}
                           {encuesta.evacuacion_barras && 'Barras, '}
                           {encuesta.evacuacion_otro !== null && encuesta.evacuacion_otro}
                         </td>
-                        <td>{encuesta.controlaforo}</td>
-                        <td>{encuesta.Observ_segur}</td>
+                        <td className="d-md-table-cell d-none">{encuesta.controlaforo}</td>
+                        <td className="d-md-table-cell d-none">{encuesta.Observ_segur}</td>
                         <td style={{ textAlign: "center" }}>
                           <ShowModalEditSeguridad
                             className="btn btn-success btn-info"

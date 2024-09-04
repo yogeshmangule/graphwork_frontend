@@ -14,7 +14,7 @@ class ShowModalEdit extends React.Component {
   }
 
   render() {
-    const { id } = this.props;
+    const { id, getUsers } = this.props;
     console.log(id);
     const modalStyles = {
       position: "absolute",
@@ -33,20 +33,45 @@ class ShowModalEdit extends React.Component {
           </div>
         </div>
 
-        <Modal isOpen={this.state.abierto} style={modalStyles}>
-          <ModalHeader >
+        <Modal isOpen={this.state.abierto} className='custom-modal'>
+          <ModalHeader toggle={this.abrirModal}>
 
-            <Button style={{ marginLeft: '500px', marginRight: '20px' }} color="secondary" onClick={this.abrirModal}>Cerrar</Button>
+            {/* <Button style={{ marginLeft: '500px', marginRight: '20px' }} color="secondary" onClick={this.abrirModal}>Cerrar</Button> */}
           </ModalHeader>
           <ModalBody>
             <>
-              {id && <EditUser id={id} />}
+              {id && <EditUser id={id} getUsers={getUsers} abrirModal={this.abrirModal}/>}
               {console.log("Valor de id:", id)}
 
             </>
           </ModalBody>
 
         </Modal>
+        <style jsx>{`  
+          .custom-modal {
+            width: 80%;
+            max-width: 100%;
+              margin-right: auto;
+           margin-left: auto;
+          }
+              @media (min-width: 576px){
+              
+          }
+
+          @media (max-width: 768px) {
+           .custom-modal {
+            width: 80%;  
+             }
+            }
+
+            
+          @media (max-width: 480px) {
+           .custom-modal {
+            width: 80%;
+        }
+            }
+
+         `}</style>
       </>
     )
   }

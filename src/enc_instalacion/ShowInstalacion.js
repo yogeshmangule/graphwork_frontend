@@ -250,8 +250,8 @@ const CompShowInstalacion = () => {
                                                     className="form-control"
                                                 />
                                             </th>
-                                            <th>Pista<br /></th>
-                                            <th>Escenario <br /></th>
+                                            <th className='d-md-table-cell d-none'>Pista<br /></th>
+                                            <th className='d-md-table-cell d-none'>Escenario <br /></th>
                                             <th style={{ textAlign: "center" }}>Acciones <br />
                                                 <button className='btn btn-success' onClick={handleButtonClick} style={{ marginLeft: '10px' }}>
                                                     <i className='fa fa-leaf'></i>
@@ -263,8 +263,8 @@ const CompShowInstalacion = () => {
                                         {encuestas.map((encuesta) => (
                                             <tr key={encuesta.ID}>
                                                 <td>{encuesta.marca_comercial}</td>
-                                                <td>{encuesta.pista ? 'Si' : 'No'}</td>
-                                                <td>{encuesta.escenario ? 'Si' : 'No'}</td>
+                                                <td className='d-md-table-cell d-none'>{encuesta.pista ? 'Si' : 'No'}</td>
+                                                <td className='d-md-table-cell d-none'>{encuesta.escenario ? 'Si' : 'No'}</td>
                                                 <td style={{ textAlign: "center" }}>
                                                     <ShowModalEdit className='btn btn-success btn-info' id={encuesta.ID} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} getEncuestas={getEncuestas} />
                                                 </td>

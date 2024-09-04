@@ -217,8 +217,8 @@ const CompEditBuenasPracticas = ({ id, getEncuestas, abrirModal }) => {
   }, [id]);
 
   return (
-    // <div className='container form-container my-4'>
-    <div style={{ padding: '32px 62px' }} className="my-form">
+    // <div className='container form-container my-4' style={{ padding: '32px 62px' }}>
+    <div className="my-form form-style">
       <h3>FICHA BUENAS PRÁCTICAS</h3>
       <Form onSubmit={update} >
         <p>Seleccionas Aquellas que SI se cumplan</p>
@@ -274,11 +274,22 @@ const CompEditBuenasPracticas = ({ id, getEncuestas, abrirModal }) => {
         </div>
 
         <div className='mt-3'>
-          <button type='submit' className='btn btn-primary w-100'>
+          <button type='submit' className='btn btn-primary w-auto'>
             Guardar
           </button>
         </div>
       </Form>
+      <style jsx>{`
+      .form-style{
+       padding: 32px 62px
+      }
+
+        @media (max-width: 480px) {
+         .form-style{
+       padding: 0px
+      }}
+
+        `}</style>
     </div>
   );
 };

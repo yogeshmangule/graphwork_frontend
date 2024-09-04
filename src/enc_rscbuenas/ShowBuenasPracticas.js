@@ -204,7 +204,7 @@ const ShowBuenasPracticas = () => {
                         className="form-control"
                       />
                     </th>
-                    <th>Observaciones Buenas<br /></th>
+                    <th className="d-md-table-cell d-none">Observaciones Buenas<br /></th>
                     <th style={{ textAlign: "center" }}>
                       Acciones <br />
                       <button className="btn btn-success mt-2" onClick={handleButtonClick}>
@@ -217,7 +217,7 @@ const ShowBuenasPracticas = () => {
                   {encuestas.map((encuesta) => (
                     <tr key={encuesta.ID}>
                       <td>{encuesta.marca_comercial}</td>
-                      <td>{encuesta.observ_buenas}</td>
+                      <td className="d-md-table-cell d-none">{encuesta.observ_buenas}</td>
                       <td style={{ textAlign: "center" }}>
                         <ShowModalEditBue
                           id={encuesta.ID}

@@ -187,8 +187,8 @@ const ShowPrecio = () => {
               <thead className="table-secondary">
                 <tr>
                   <th>Marca Comercial</th>
-                  <th>Tipo Entrada</th>
-                  <th>Precio taquilla</th>
+                  <th className="d-md-table-cell d-none">Tipo Entrada</th>
+                  <th className="d-md-table-cell d-none">Precio taquilla</th>
                   <th style={{ textAlign: "center" }}>
                     Acciones
                     <br />
@@ -202,8 +202,8 @@ const ShowPrecio = () => {
                 {encuestas.map((encuesta) => (
                   <tr key={encuesta.ID}>
                     <td>{encuesta.marca_comercial}</td>
-                    <td>{encuesta.tipo_entradas}</td>
-                    <td>{encuesta.precio_anticipada}</td>
+                    <td className="d-md-table-cell d-none">{encuesta.tipo_entradas}</td>
+                    <td className="d-md-table-cell d-none">{encuesta.precio_anticipada}</td>
                     <td style={{ textAlign: "center" }}>
                       <ShowModalEditPrecio
                         className="btn btn-success btn-info"

@@ -476,148 +476,168 @@ const CompEditEncuesta = ({ id, getEncuestas, abrirModal }) => {
   }, [id]);
 
   return (
-    // <div className='form-container'>
-    <div style={{ padding: '32px 62px' }} className="my-form">
-      <h3>FICHA FUNCIONAMIENTO E INSTALACIONES</h3>
-      <Form onSubmit={update} className="my-form">
-        <div className='mb-3'>
-          <label className='parent-label form-label'>Tamaño aprox. pista:</label>
-          <Form.Select value={pista} onChange={(e) => setPista(e.target.value)} className="form-control">
-            <option value="">Selecciona una opción</option>
-            <option value="25m2">25m2</option>
-            <option value="25m2 y 50m2">25m2 y 50m2</option>
-            <option value="Más de 50m2">Más de 50m2</option>
-          </Form.Select>
-        </div>
+    <>
+      {/* // <div className='form-container' style={{ padding: '32px 62px' }} > */}
+      <div className="my-form form-style">
+        <h3>FICHA FUNCIONAMIENTO E INSTALACIONES</h3>
+        <Form onSubmit={update} className="my-form">
+          <div className='mb-3'>
+            <label className='parent-label form-label'>Tamaño aprox. pista:</label>
+            <Form.Select value={pista} onChange={(e) => setPista(e.target.value)} className="form-control">
+              <option value="">Selecciona una opción</option>
+              <option value="25m2">25m2</option>
+              <option value="25m2 y 50m2">25m2 y 50m2</option>
+              <option value="Más de 50m2">Más de 50m2</option>
+            </Form.Select>
+          </div>
 
-        <div className='mb-3'>
-          <label className='parent-label form-label'>Escenario</label>
-          <Form.Select value={escenario} onChange={(e) => setEscenario(e.target.value)} className="form-control">
-            <option value="">Selecciona una opción</option>
-            <option value="Si">Si</option>
-            <option value="No">No</option>
-          </Form.Select>
-        </div>
+          <div className='mb-3'>
+            <label className='parent-label form-label'>Escenario</label>
+            <Form.Select value={escenario} onChange={(e) => setEscenario(e.target.value)} className="form-control">
+              <option value="">Selecciona una opción</option>
+              <option value="Si">Si</option>
+              <option value="No">No</option>
+            </Form.Select>
+          </div>
 
-        <div className='mb-3'>
-          <label className='parent-label form-label'>Dispone de zona de mesas (% ocupación superficie local):</label>
-          <Form.Select value={zonamesas} onChange={(e) => setZonamesas(e.target.value)} className="form-control">
-            {options.map((opt) => (
-              <option key={opt.value} value={opt.value}>
-                {opt.label}
-              </option>
-            ))}
-          </Form.Select>
-          {zonamesas === 'Si' && (
-            <div className='mt-3'>
-              <label className='parent-label form-label'>Sí, dispone de zona de mesas</label>
-              <Form.Select value={perc_mesas} onChange={(e) => setPerc_mesas(e.target.value)} className="form-control">
-                <option value="">Selecciona una opción</option>
-                <option value="Hasta 25%">Hasta 25%</option>
-                <option value="Del 25% al 50%">Del 25% al 50%</option>
-                <option value="Más del 50%">Más del 50%</option>
-              </Form.Select>
-            </div>
-          )}
-        </div>
+          <div className='mb-3'>
+            <label className='parent-label form-label'>Dispone de zona de mesas (% ocupación superficie local):</label>
+            <Form.Select value={zonamesas} onChange={(e) => setZonamesas(e.target.value)} className="form-control">
+              {options.map((opt) => (
+                <option key={opt.value} value={opt.value}>
+                  {opt.label}
+                </option>
+              ))}
+            </Form.Select>
+            {zonamesas === 'Si' && (
+              <div className='mt-3'>
+                <label className='parent-label form-label'>Sí, dispone de zona de mesas</label>
+                <Form.Select value={perc_mesas} onChange={(e) => setPerc_mesas(e.target.value)} className="form-control">
+                  <option value="">Selecciona una opción</option>
+                  <option value="Hasta 25%">Hasta 25%</option>
+                  <option value="Del 25% al 50%">Del 25% al 50%</option>
+                  <option value="Más del 50%">Más del 50%</option>
+                </Form.Select>
+              </div>
+            )}
+          </div>
 
-        <div className='mb-3'>
-          <label className='parent-label form-label'>Número de barras</label>
-          <input value={barras} onChange={(e) => setBarras(e.target.value)} type="text" className='form-control' />
-        </div>
+          <div className='mb-3'>
+            <label className='parent-label form-label'>Número de barras</label>
+            <input value={barras} onChange={(e) => setBarras(e.target.value)} type="text" className='form-control' />
+          </div>
 
-        <div className='mb-3'>
-          <label className='parent-label form-label'>Metros lineales totales</label>
-          <input value={barrasmetros} onChange={(e) => setBarrasmetros(e.target.value)} type="text" className='form-control' />
-        </div>
+          <div className='mb-3'>
+            <label className='parent-label form-label'>Metros lineales totales</label>
+            <input value={barrasmetros} onChange={(e) => setBarrasmetros(e.target.value)} type="text" className='form-control' />
+          </div>
 
-        <div className='mb-3'>
-          <label className='parent-label form-label'>Número de personas trabajando:</label>
-          <input value={barraspersons} onChange={(e) => setBarraspersons(e.target.value)} type="text" className='form-control' />
-        </div>
+          <div className='mb-3'>
+            <label className='parent-label form-label'>Número de personas trabajando:</label>
+            <input value={barraspersons} onChange={(e) => setBarraspersons(e.target.value)} type="text" className='form-control' />
+          </div>
 
-        <div className='mb-3'>
-          <label className='parent-label form-label'>Decoración y originalidad:</label>
-          <Form.Select value={decoracion} onChange={handleChangeDe} className="form-control">
-            <option value="">Selecciona una opción</option>
-            <option value="Moderno/Espectacular">Moderno/Espectacular</option>
-            <option value="Elegante/Clasico">Elegante/Clasico</option>
-            <option value="Underground">Underground</option>
-            <option value="otro">Otro</option>
-          </Form.Select>
-          {decoracion === 'otro' && (
-            <div className="mt-3">
-              <label>Otro:</label>
-              <input type="text" value={decoracionO} onChange={handleOtroChangeDe} className="form-control" />
-            </div>
-          )}
-        </div>
+          <div className='mb-3'>
+            <label className='parent-label form-label'>Decoración y originalidad:</label>
+            <Form.Select value={decoracion} onChange={handleChangeDe} className="form-control">
+              <option value="">Selecciona una opción</option>
+              <option value="Moderno/Espectacular">Moderno/Espectacular</option>
+              <option value="Elegante/Clasico">Elegante/Clasico</option>
+              <option value="Underground">Underground</option>
+              <option value="otro">Otro</option>
+            </Form.Select>
+            {decoracion === 'otro' && (
+              <div className="mt-3">
+                <label>Otro:</label>
+                <input type="text" value={decoracionO} onChange={handleOtroChangeDe} className="form-control" />
+              </div>
+            )}
+          </div>
 
-        <div className='mb-3'>
-          <label className='parent-label form-label'>Climatización Temperatura:</label>
-          <Form.Select value={climatizacion} onChange={(e) => setClimatizacion(e.target.value)} className="form-control">
-            {options.map((opt) => (
-              <option key={opt.value} value={opt.value}>
-                {opt.label}
-              </option>
-            ))}
-          </Form.Select>
-          {climatizacion === 'Si' && (
-            <div className="mt-3">
-              <label className='parent-label form-label'>Temperatura de la climatización</label>
-              <Form.Select value={climat_temp} onChange={(e) => setClimat_temp(e.target.value)} className="form-control">
-                <option value="">Selecciona una opción</option>
-                <option value="Calor">Calor</option>
-                <option value="Frio">Frio</option>
-                <option value="Agradable">Agradable</option>
-              </Form.Select>
-            </div>
-          )}
-        </div>
+          <div className='mb-3'>
+            <label className='parent-label form-label'>Climatización Temperatura:</label>
+            <Form.Select value={climatizacion} onChange={(e) => setClimatizacion(e.target.value)} className="form-control">
+              {options.map((opt) => (
+                <option key={opt.value} value={opt.value}>
+                  {opt.label}
+                </option>
+              ))}
+            </Form.Select>
+            {climatizacion === 'Si' && (
+              <div className="mt-3">
+                <label className='parent-label form-label'>Temperatura de la climatización</label>
+                <Form.Select value={climat_temp} onChange={(e) => setClimat_temp(e.target.value)} className="form-control">
+                  <option value="">Selecciona una opción</option>
+                  <option value="Calor">Calor</option>
+                  <option value="Frio">Frio</option>
+                  <option value="Agradable">Agradable</option>
+                </Form.Select>
+              </div>
+            )}
+          </div>
 
-        <div className='mb-3'>
-          <label className='parent-label form-label'>Limpieza de los servicios durante la sesión:</label>
-          <Form.Select value={limp_durante} onChange={(e) => setLimp_durante(e.target.value)} className="form-control">
-            {options_bu.map((opt) => (
-              <option key={opt.value} value={opt.value}>
-                {opt.label}
-              </option>
-            ))}
-          </Form.Select>
-        </div>
+          <div className='mb-3'>
+            <label className='parent-label form-label'>Limpieza de los servicios durante la sesión:</label>
+            <Form.Select value={limp_durante} onChange={(e) => setLimp_durante(e.target.value)} className="form-control">
+              {options_bu.map((opt) => (
+                <option key={opt.value} value={opt.value}>
+                  {opt.label}
+                </option>
+              ))}
+            </Form.Select>
+          </div>
 
-        <div className='mb-3'>
-          <label className='parent-label form-label'>Limpieza de los servicios en sesión:</label>
-          <Form.Select value={limp_ensesion} onChange={(e) => setLimp_ensesion(e.target.value)} className="form-control">
-            <option value="">Selecciona una opción</option>
-            <option value="Si">Si</option>
-            <option value="No">No</option>
-          </Form.Select>
-        </div>
+          <div className='mb-3'>
+            <label className='parent-label form-label'>Limpieza de los servicios en sesión:</label>
+            <Form.Select value={limp_ensesion} onChange={(e) => setLimp_ensesion(e.target.value)} className="form-control">
+              <option value="">Selecciona una opción</option>
+              <option value="Si">Si</option>
+              <option value="No">No</option>
+            </Form.Select>
+          </div>
 
-        <div className='mb-3'>
-          <label className='parent-label form-label'>Mantenimiento instalaciones:</label>
-          <Form.Select value={Mantenimiento} onChange={(e) => setMantenimiento(e.target.value)} className="form-control">
-            {options_bu.map((opt) => (
-              <option key={opt.value} value={opt.value}>
-                {opt.label}
-              </option>
-            ))}
-          </Form.Select>
-        </div>
+          <div className='mb-3'>
+            <label className='parent-label form-label'>Mantenimiento instalaciones:</label>
+            <Form.Select value={Mantenimiento} onChange={(e) => setMantenimiento(e.target.value)} className="form-control">
+              {options_bu.map((opt) => (
+                <option key={opt.value} value={opt.value}>
+                  {opt.label}
+                </option>
+              ))}
+            </Form.Select>
+          </div>
 
-        <div className='mb-3'>
-          <label className='parent-label form-label'>Observaciones (Módulo de Instalaciones):</label>
-          <input value={Observ_instal} onChange={(e) => setObserv_instal(e.target.value)} type="text" className='form-control' />
-        </div>
+          <div className='mb-3'>
+            <label className='parent-label form-label'>Observaciones (Módulo de Instalaciones):</label>
+            <input value={Observ_instal} onChange={(e) => setObserv_instal(e.target.value)} type="text" className='form-control' />
+          </div>
 
-        <div className="mt-3">
-          <button type='submit' className='btn btn-success btn-ladda'>
-            Modificar Instalaciones
-          </button>
-        </div>
-      </Form>
-    </div>
+          <div className="mt-3">
+            <button type='submit' className='btn btn-success btn-ladda'>
+              Modificar Instalaciones
+            </button>
+          </div>
+        </Form>
+      </div>
+      <style jsx>{`
+           .form-style{
+       padding: 32px 62px
+      }
+          @media (max-width: 768px) {
+                                 .form-style{
+       padding: 0px
+      }
+        }
+
+
+          @media (max-width: 480px) {
+                           .form-style{
+       padding: 0px
+      }
+        }
+           
+        `}</style>
+    </>
   );
 }
 

@@ -1434,208 +1434,221 @@ const CompCreateEncuesta = ({ abrirModal, setEncuestaModalOpen, openHorarioModal
 
 
   return (
-    // <div className='form-container'>
-    <div style={{ padding: '32px 62px' }} className="my-form">
-      <h3>FICHA ENCUESTA</h3>
-      <Form onSubmit={store} >
-        <div className='mb-3'>
-          <label className='parent-label form-label'>Fecha de Visita</label>
-          <DatePicker
-            selected={fechaVisita}
-            onChange={(date) => setFechaVisita(date)}
-            dateFormat="yyyy-MM-dd"
-            placeholderText="Seleccionar fecha"
-            className='form-control'
-          />
-          {hasErrors && !fechaVisita && <span className="error-message">Requiere que ingrese Fecha de Visita.</span>}
-        </div>
-
-        <div className='mb-3'>
-          <label className='parent-label form-label'>Hora de Visita</label>
-          <DatePicker
-            selected={horaVisita}
-            onChange={(date) => setHoraVisita(date)}
-            showTimeSelect
-            showTimeSelectOnly
-            timeIntervals={15}
-            timeCaption="Hora"
-            dateFormat="HH:mm"
-            placeholderText="Seleccionar hora"
-            className='form-control'
-          />
-          {hasErrors && !horaVisita && <span className="error-message">Requiere que ingrese Hora de Visita.</span>}
-        </div>
-
-        <div className='mb-3'>
-          <label className='parent-label form-label'>Usuario</label>
-          <Form.Select
-            value={user_id}
-            onChange={(e) => setUserId(e.target.value)}
-            className='form-control'
-          >
-            <option value="">Selecciona una opción</option>
-            {usersData.map((user, index) => (
-              <option value={user.ID} key={index}>{user.username}</option>
-            ))}
-          </Form.Select>
-          {hasErrors && !user_id && <span className="error-message">Selecciona un usuario.</span>}
-        </div>
-
-        <div className='mb-3'>
-          <label className='parent-label form-label'>Establecimientos</label>
-          <Form.Select
-            value={Id_estab}
-            onChange={handleEstabChange}  // Attach the handler here
-            className='form-control'
-          >
-            <option value="">Selecciona una opción</option>
-            {estabData.map((estab, index) => (
-              <option value={estab.ID} key={index}>{estab.name}</option>
-            ))}
-          </Form.Select>
-
-          {hasErrors && !Id_estab && <span className="error-message">Selecciona un establecimiento.</span>}
-        </div>
-
-        <div className='mb-3'>
-          <label className='parent-label form-label'>Marca Comercial</label>
-          <input
-            value={marcaComercial}
-            // onChange={(e) => setMarcaComercial(e.target.value)}
-            type="text"
-            className='form-control'
-          />
-
-        </div>
-
-        <div className='mb-3'>
-          <label className='parent-label form-label'>Nombre Completo</label>
-          <input
-            value={fullName}
-            onChange={(e) => setFullName(e.target.value)}
-            type="text"
-            className='form-control'
-          />
-        </div>
-
-        <div className='mb-3'>
-          <label className='parent-label form-label'>Dirección</label>
-          <input
-            value={direccion}
-            onChange={(e) => setDireccion(e.target.value)}
-            type="text"
-            className='form-control'
-          />
-        </div>
-        <div className='mb-3'>
-          <input
-            value={direccion2}
-            onChange={(e) => setDireccion2(e.target.value)}
-            type="text"
-            className='form-control'
-          />
-        </div>
-        <div className='row'>
-          <div className='col-md-4 col-12 mb-3'>
-            <label className='parent-label form-label'>Ciudad</label>
-            <input
-              value={ciudad}
-              onChange={(e) => setCiudad(e.target.value)}
-              type="text"
+    <>
+      {/* // <div className='form-container' style={{ padding: '32px 62px' }}> */}
+      <div className="my-form form-style">
+        <h3>FICHA ENCUESTA</h3>
+        <Form onSubmit={store} >
+          <div className='mb-3'>
+            <label className='parent-label form-label'>Fecha de Visita</label>
+            <DatePicker
+              selected={fechaVisita}
+              onChange={(date) => setFechaVisita(date)}
+              dateFormat="yyyy-MM-dd"
+              placeholderText="Seleccionar fecha"
               className='form-control'
             />
+            {hasErrors && !fechaVisita && <span className="error-message">Requiere que ingrese Fecha de Visita.</span>}
           </div>
 
-          <div className='col-md-4 col-12 mb-3'>
-            <label className='parent-label form-label'>Provincia</label>
-            <input
-              value={provincia}
-              onChange={(e) => setProvincia(e.target.value)}
-              type="text"
+          <div className='mb-3'>
+            <label className='parent-label form-label'>Hora de Visita</label>
+            <DatePicker
+              selected={horaVisita}
+              onChange={(date) => setHoraVisita(date)}
+              showTimeSelect
+              showTimeSelectOnly
+              timeIntervals={15}
+              timeCaption="Hora"
+              dateFormat="HH:mm"
+              placeholderText="Seleccionar hora"
               className='form-control'
             />
+            {hasErrors && !horaVisita && <span className="error-message">Requiere que ingrese Hora de Visita.</span>}
           </div>
 
-          <div className='col-md-4 col-12 mb-3'>
-            <label className='parent-label form-label'>Código Postal</label>
-            <input
-              value={codigoPostal}
-              onChange={(e) => setCodigoPostal(e.target.value)}
-              type="text"
+          <div className='mb-3'>
+            <label className='parent-label form-label'>Usuario</label>
+            <Form.Select
+              value={user_id}
+              onChange={(e) => setUserId(e.target.value)}
               className='form-control'
-            />
-          </div>
-        </div>
-
-        <div className='mb-3'>
-          <label className='parent-label form-label'>Licencia</label>
-          <input
-            value={licencia}
-            onChange={(e) => setLicencia(e.target.value)}
-            type="text"
-            className='form-control'
-          />
-        </div>
-
-        <div className='mb-3'>
-          <label className='parent-label form-label'>Dimensiones</label>
-          <Form.Select
-            value={dimensiones}
-            onChange={(e) => setDimensiones(e.target.value)}
-            className='form-control'
-          >
-            <option value="">Selecciona una opción</option>
-            <option value="0-200">0 a 200m2</option>
-            <option value="200-500">200 a 500m2</option>
-            <option value="500-1000">500 a 1.000m2</option>
-            <option value="1000+">Más de 1.000m2</option>
-          </Form.Select>
-        </div>
-
-        <div className='mb-3'>
-          <label className='parent-label form-label'>Teléfono</label>
-          <input
-            value={telefono}
-            onChange={(e) => setTelefono(e.target.value)}
-            type="text"
-            className='form-control'
-          />
-        </div>
-
-        <div className='mb-3'>
-          <label className='parent-label form-label'>Email</label>
-          <input
-            value={email}
-            onChange={handleEmailChange}
-            type="text"
-            className='form-control'
-          />
-          {emailError && <span className="error-message">{emailError}</span>}
-        </div>
-
-        {!isModalOpen && (
-          <div className="mt-3">
-            <button
-              className='btn btn-success btn-ladda'
-              onClick={(e) => handleFirstButtonClick(e)}
             >
-              Registrar Datos
-            </button>
+              <option value="">Selecciona una opción</option>
+              {usersData.map((user, index) => (
+                <option value={user.ID} key={index}>{user.username}</option>
+              ))}
+            </Form.Select>
+            {hasErrors && !user_id && <span className="error-message">Selecciona un usuario.</span>}
+          </div>
+
+          <div className='mb-3'>
+            <label className='parent-label form-label'>Establecimientos</label>
+            <Form.Select
+              value={Id_estab}
+              onChange={handleEstabChange}  // Attach the handler here
+              className='form-control'
+            >
+              <option value="">Selecciona una opción</option>
+              {estabData.map((estab, index) => (
+                <option value={estab.ID} key={index}>{estab.name}</option>
+              ))}
+            </Form.Select>
+
+            {hasErrors && !Id_estab && <span className="error-message">Selecciona un establecimiento.</span>}
+          </div>
+
+          <div className='mb-3'>
+            <label className='parent-label form-label'>Marca Comercial</label>
+            <input
+              value={marcaComercial}
+              // onChange={(e) => setMarcaComercial(e.target.value)}
+              type="text"
+              className='form-control'
+            />
+
+          </div>
+
+          <div className='mb-3'>
+            <label className='parent-label form-label'>Nombre Completo</label>
+            <input
+              value={fullName}
+              onChange={(e) => setFullName(e.target.value)}
+              type="text"
+              className='form-control'
+            />
+          </div>
+
+          <div className='mb-3'>
+            <label className='parent-label form-label'>Dirección</label>
+            <input
+              value={direccion}
+              onChange={(e) => setDireccion(e.target.value)}
+              type="text"
+              className='form-control'
+            />
+          </div>
+          <div className='mb-3'>
+            <input
+              value={direccion2}
+              onChange={(e) => setDireccion2(e.target.value)}
+              type="text"
+              className='form-control'
+            />
+          </div>
+          <div className='row'>
+            <div className='col-md-4 col-12 mb-3'>
+              <label className='parent-label form-label'>Ciudad</label>
+              <input
+                value={ciudad}
+                onChange={(e) => setCiudad(e.target.value)}
+                type="text"
+                className='form-control'
+              />
+            </div>
+
+            <div className='col-md-4 col-12 mb-3'>
+              <label className='parent-label form-label'>Provincia</label>
+              <input
+                value={provincia}
+                onChange={(e) => setProvincia(e.target.value)}
+                type="text"
+                className='form-control'
+              />
+            </div>
+
+            <div className='col-md-4 col-12 mb-3'>
+              <label className='parent-label form-label'>Código Postal</label>
+              <input
+                value={codigoPostal}
+                onChange={(e) => setCodigoPostal(e.target.value)}
+                type="text"
+                className='form-control'
+              />
+            </div>
+          </div>
+
+          <div className='mb-3'>
+            <label className='parent-label form-label'>Licencia</label>
+            <input
+              value={licencia}
+              onChange={(e) => setLicencia(e.target.value)}
+              type="text"
+              className='form-control'
+            />
+          </div>
+
+          <div className='mb-3'>
+            <label className='parent-label form-label'>Dimensiones</label>
+            <Form.Select
+              value={dimensiones}
+              onChange={(e) => setDimensiones(e.target.value)}
+              className='form-control'
+            >
+              <option value="">Selecciona una opción</option>
+              <option value="0-200">0 a 200m2</option>
+              <option value="200-500">200 a 500m2</option>
+              <option value="500-1000">500 a 1.000m2</option>
+              <option value="1000+">Más de 1.000m2</option>
+            </Form.Select>
+          </div>
+
+          <div className='mb-3'>
+            <label className='parent-label form-label'>Teléfono</label>
+            <input
+              value={telefono}
+              onChange={(e) => setTelefono(e.target.value)}
+              type="text"
+              className='form-control'
+            />
+          </div>
+
+          <div className='mb-3'>
+            <label className='parent-label form-label'>Email</label>
+            <input
+              value={email}
+              onChange={handleEmailChange}
+              type="text"
+              className='form-control'
+            />
+            {emailError && <span className="error-message">{emailError}</span>}
+          </div>
+
+          {!isModalOpen && (
+            <div className="mt-3">
+              <button
+                className='btn btn-success btn-ladda'
+                onClick={(e) => handleFirstButtonClick(e)}
+              >
+                Registrar Datos
+              </button>
+            </div>
+          )}
+
+
+        </Form>
+        {isModalOpen && (
+          <div className="mt-3">
+            <ShowModal
+              onClick={handleModalClose}
+              isOpen={isModalOpen}
+              onClose={handleModalClose}
+            />
           </div>
         )}
+      </div>
+      <style jsx>{`
+      .form-style{
+       padding: 32px 62px
+      }
 
+        @media (max-width: 480px) {
+         .form-style{
+       padding: 0px
+      }}
 
-      </Form>
-      {isModalOpen && (
-        <div className="mt-3">
-          <ShowModal
-            onClick={handleModalClose}
-            isOpen={isModalOpen}
-            onClose={handleModalClose}
-          />
-        </div>
-      )}
-    </div>
+        `}</style>
+    </>
   );
 }
 

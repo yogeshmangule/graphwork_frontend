@@ -295,7 +295,7 @@ const CompEditMalaPracticas = ({ id, getEncuestas, abrirModal }) => {
       altercados: altercados,
       altercados_desc: altercadosDesc,
       observ_incid: observIncid,
-      encuesta_id: encuestaId,
+      // encuesta_id: encuestaId,
       user_id: userId,
     });
     // clearFields();
@@ -330,8 +330,8 @@ const CompEditMalaPracticas = ({ id, getEncuestas, abrirModal }) => {
   }, [id]);
 
   return (
-    // <div className='form-container'>
-    <div style={{ padding: '32px 62px' }} className="my-form">
+    // <div className='form-container' style={{ padding: '32px 62px' }}>
+    <div className="my-form form-style">
       <h3>FICHA MALAS PRÁCTICAS</h3>
       <Form onSubmit={update} >
         <p>Marca aquellas que SI se cumplan</p>
@@ -518,6 +518,17 @@ const CompEditMalaPracticas = ({ id, getEncuestas, abrirModal }) => {
           </button>
         </div>
       </Form>
+      <style jsx>{`
+      .form-style{
+       padding: 32px 62px
+      }
+
+        @media (max-width: 480px) {
+         .form-style{
+       padding: 0px
+      }}
+
+        `}</style>
     </div>
   );
 };

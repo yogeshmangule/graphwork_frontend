@@ -188,7 +188,7 @@ const EditValoracion = ({ id, getEncuestas, abrirModal }) => {
         val_interes: valInteres,
         observ_val: observVal,
         archivo: archivo,
-        encuesta_id: encuestaId,
+        // encuesta_id: encuestaId,
         user_id: userId,
       });
 
@@ -216,8 +216,8 @@ const EditValoracion = ({ id, getEncuestas, abrirModal }) => {
   }, [id]);
 
   return (
-    // <div className='container form-container'>
-    <div style={{ padding: '32px 62px' }} className="my-form">
+    // <div className='container form-container' style={{ padding: '32px 62px' }}>
+    <div className="my-form form-style">
       <h3 className=' my-3'>Editar Valoración</h3>
       <Form onSubmit={store} >
         <div className='form-group'>
@@ -306,6 +306,17 @@ const EditValoracion = ({ id, getEncuestas, abrirModal }) => {
           </button>
         </div>
       </Form>
+      <style jsx>{`
+      .form-style{
+       padding: 32px 62px
+      }
+
+        @media (max-width: 480px) {
+         .form-style{
+       padding: 0px
+      }}
+
+        `}</style>
     </div>
   );
 };

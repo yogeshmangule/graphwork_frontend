@@ -85,7 +85,7 @@ class ShowModalEdit extends React.Component {
           </Button>
         </div>
 
-        <Modal isOpen={this.state.abierto} style={modalStyles} centered>
+        <Modal isOpen={this.state.abierto} className='custom-modal' centered>
           <ModalHeader toggle={this.abrirModal}>
 
           </ModalHeader>
@@ -93,6 +93,31 @@ class ShowModalEdit extends React.Component {
             {id && <EditMlasP id={id} getEncuestas={getEncuestas} abrirModal={this.abrirModal} />}
           </ModalBody>
         </Modal>
+        <style jsx>{`  
+          .custom-modal {
+            width: 80%;
+            max-width: 100%;
+              margin-right: auto;
+           margin-left: auto;
+          }
+              @media (min-width: 576px){
+              
+          }
+
+          @media (max-width: 768px) {
+           .custom-modal {
+            width: 80%;  
+             }
+            }
+
+            
+          @media (max-width: 480px) {
+           .custom-modal {
+            width: 80%;
+        }
+            }
+
+         `}</style>
       </>
     );
   }

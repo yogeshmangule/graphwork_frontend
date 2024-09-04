@@ -197,8 +197,8 @@ const ShowMalasPracticas = () => {
                       className="form-control"
                     />
                   </th>
-                  <th>Observaciones Malas Practicas</th>
-                  <th>Observaciones Incidentes</th>
+                  <th className="d-md-table-cell d-none">Observaciones Malas Practicas</th>
+                  <th className="d-md-table-cell d-none">Observaciones Incidentes</th>
                   <th style={{ textAlign: "center" }}>Acciones
                     <br />
                     <button className='btn btn-success' onClick={handleButtonClick} style={{ marginLeft: '10px' }}>
@@ -211,8 +211,8 @@ const ShowMalasPracticas = () => {
                 {encuestas.map((encuesta) => (
                   <tr key={encuesta.ID}>
                     <td>{encuesta.marca_comercial}</td>
-                    <td>{encuesta.observ_malas}</td>
-                    <td>{encuesta.observ_incid}</td>
+                    <td className="d-md-table-cell d-none">{encuesta.observ_malas}</td>
+                    <td className="d-md-table-cell d-none">{encuesta.observ_incid}</td>
                     <td style={{ textAlign: "center" }}>
                       <ShowModalEditMla
                         className='btn btn-success btn-info'

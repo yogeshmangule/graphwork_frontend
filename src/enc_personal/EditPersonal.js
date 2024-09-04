@@ -364,8 +364,8 @@ const CompEditEncuesta = ({ id, getEncuestas, abrirModal }) => {
   }, [id]);
 
   return (
-    // <div className='form-container'>
-    <div style={{ padding: '32px 62px' }} className="my-form">
+    // <div className='form-container' style={{ padding: '32px 62px' }}>
+    <div className="my-form form-style">
       <h3>FICHA PERSONAL</h3>
       <Form onSubmit={update} >
         <div className='mb-3'>
@@ -496,6 +496,9 @@ const CompEditEncuesta = ({ id, getEncuestas, abrirModal }) => {
         .form-control {
           margin-bottom: 10px;
         }
+            .form-style{
+       padding: 32px 62px
+      }
 
         @media (max-width: 768px) {
           .form-container {
@@ -522,6 +525,9 @@ const CompEditEncuesta = ({ id, getEncuestas, abrirModal }) => {
           .parent-label {
             font-size: 0.9em;
           }
+              .form-style{
+       padding: 0px
+      }
 
           .btn {
             font-size: 1em;

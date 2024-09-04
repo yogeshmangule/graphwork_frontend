@@ -82,13 +82,38 @@ class ShowModalEdit extends React.Component {
           </Button>
         </div>
 
-        <Modal isOpen={this.state.abierto} className="modal-dialog-centered" style={modalStyles}>
+        <Modal isOpen={this.state.abierto} className="modal-dialog-centered custom-modal" centered>
           <ModalHeader toggle={this.abrirModal} className="d-flex justify-content-between align-items-center">
           </ModalHeader>
           <ModalBody>
             {id && <EditPrecio id={id} getEncuestas={getEncuestas} abrirModal={this.abrirModal} />}
           </ModalBody>
         </Modal>
+        <style jsx>{`  
+          .custom-modal {
+            width: 80%;
+            max-width: 100%;
+              margin-right: auto;
+           margin-left: auto;
+          }
+              @media (min-width: 576px){
+              
+          }
+
+          @media (max-width: 768px) {
+           .custom-modal {
+            width: 80%;  
+             }
+            }
+
+            
+          @media (max-width: 480px) {
+           .custom-modal {
+            width: 80%;
+        }
+            }
+
+         `}</style>
       </>
     )
   }

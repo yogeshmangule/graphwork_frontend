@@ -431,7 +431,7 @@ const CompShowUsers = () => {
                     <td> {miFuncion(user.createdAt)} </td>
                     <td>
                       <div className='d-flex justify-content-center gap-1'>
-                        <ShowModalEdit className='parent-rigth btn btn-success btn-info' id={user.ID} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+                        <ShowModalEdit className='parent-rigth btn btn-success btn-info' id={user.ID} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} getUsers={getUsers} />
                         {userRole === varAdmin && (
                           <button onClick={() => deleteUser(user.ID)}
                             className={`btn ${user.status === 1 ? 'btn-danger' : 'btn-success'}`}

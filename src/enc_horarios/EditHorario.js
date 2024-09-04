@@ -69,7 +69,7 @@ const CompEditHorario = ({ id, getEncuestas, abrirModal }) => {
         horaSa: horaS2,
         horaDde: horaD1,
         horaDa: horaD2,
-        encuesta_id: encuestaId,
+        // encuesta_id: encuestaId,
         user_id: userId,
         horaotras: horaotras,
       });
@@ -108,8 +108,8 @@ const CompEditHorario = ({ id, getEncuestas, abrirModal }) => {
   }, [id]);
 
   return (
-    // <div className='form-container'>
-    <div style={{ padding: '32px 62px' }} className="my-form">
+    // <div className='form-container' style={{ padding: '32px 62px' }}>
+    <div className="my-form form-style">
       <h3>FICHA HORARIO</h3>
       <Form onSubmit={update} >
         {[
@@ -136,7 +136,7 @@ const CompEditHorario = ({ id, getEncuestas, abrirModal }) => {
                 className='form-control'
               />
             </div>
-            <div>
+            <div style={{ marginRight: '10px' }}>
               <label className='parent-label form-label'>a:</label>
               <DatePicker
                 selected={day.toTime}
@@ -171,6 +171,9 @@ const CompEditHorario = ({ id, getEncuestas, abrirModal }) => {
       </Form>
 
       <style jsx>{`
+      .form-style{
+       padding: 32px 62px
+      }
         .form-container {
           max-width: 800px;
           margin: 0 auto;
@@ -185,13 +188,12 @@ const CompEditHorario = ({ id, getEncuestas, abrirModal }) => {
         }
 
         @media (max-width: 768px) {
+      
           .form-container {
             padding: 15px;
           }
 
-          .mb-3 {
-            flex-direction: column !important;
-          }
+          
 
           .btn-ladda {
             width: 100%;
@@ -200,12 +202,18 @@ const CompEditHorario = ({ id, getEncuestas, abrirModal }) => {
         }
 
         @media (max-width: 480px) {
+         .form-style{
+       padding: 12px 48px
+      }
           .form-container {
             padding: 10px;
           }
 
           .form-label {
             font-size: 14px;
+          }
+            .mb-3 {
+            flex-direction: column !important;
           }
 
           .btn-ladda {

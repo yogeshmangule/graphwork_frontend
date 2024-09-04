@@ -359,7 +359,7 @@ const CompEditServicio = ({ id, getEncuestas, abrirModal }) => {
             venta_botellas: ventaBotellas,
             shisas,
             observ_servicio: observServicio,
-            encuesta_id: encuestaId,
+            // encuesta_id: encuestaId,
             user_id: userId,
         });
         // clearFields();
@@ -399,8 +399,8 @@ const CompEditServicio = ({ id, getEncuestas, abrirModal }) => {
     }, [id]);
 
     return (
-        // <div className='container form-container mt-4'>
-        <div style={{ padding: '32px 62px' }} className="my-form">
+        // <div className='container form-container mt-4' style={{ padding: '32px 62px' }}>
+        <div className="my-form form-style">
             <h3 className="mb-4">FICHA SERVICIO</h3>
             <Form onSubmit={update} >
                 <div className="row mb-3">
@@ -569,6 +569,17 @@ const CompEditServicio = ({ id, getEncuestas, abrirModal }) => {
                     </button>
                 </div>
             </Form>
+            <style jsx>{`
+      .form-style{
+       padding: 32px 62px
+      }
+
+        @media (max-width: 480px) {
+         .form-style{
+       padding: 0px
+      }}
+
+        `}</style>
         </div>
     );
 };

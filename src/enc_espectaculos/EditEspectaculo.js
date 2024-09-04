@@ -517,9 +517,12 @@ const CompEditEspecta = ({ id, getEncuestas, abrirModal }) => {
   }, [id]);
 
   return (
-    // <div className='form-container'>
-    <div style={{ padding: '32px 62px' }} className="my-form">
+    // <div className='form-container' style={{ padding: '32px 62px' }}>
+    <div  className="my-form form-style">
       <style>{`
+        .form-style{
+       padding: 32px 62px
+      }
                 .form-container {
                     margin: 20px;
                 }
@@ -568,6 +571,9 @@ const CompEditEspecta = ({ id, getEncuestas, abrirModal }) => {
                     .form-container {
                         margin: 10px;
                     }
+                         .form-style{
+       padding: 0px
+      }
 
                     .form-group {
                         min-width: 100%;

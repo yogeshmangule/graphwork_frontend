@@ -85,7 +85,7 @@ class ShowModalEdit extends React.Component {
           </div>
         </div>
 
-        <Modal isOpen={this.state.abierto} style={modalStyles}>
+        <Modal isOpen={this.state.abierto} className='custom-modal' centered>
           <ModalHeader toggle={this.abrirModal}>
             {/* Remove the additional close button */}
           </ModalHeader>
@@ -120,7 +120,7 @@ class ShowModalEdit extends React.Component {
 
           @media (max-width: 768px) {
             .custom-modal {
-              width: 80%;
+              width: auto;
               max-width: 100%;
               padding: 10px;
             }
@@ -133,7 +133,7 @@ class ShowModalEdit extends React.Component {
 
           @media (max-width: 480px) {
             .custom-modal {
-              width: 80%;
+              width: auto !important;
               max-width: 100%;
               padding: 5px;
             }

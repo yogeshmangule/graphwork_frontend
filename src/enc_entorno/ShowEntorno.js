@@ -209,8 +209,8 @@ const ShowEntorno = () => {
                         className="form-control"
                       />
                     </th>
-                    <th>Urbanismo</th>
-                    <th>Observaciones de Entorno</th>
+                    <th className='d-md-table-cell d-none'>Urbanismo</th>
+                    <th className='d-md-table-cell d-none'>Observaciones de Entorno</th>
                     <th style={{ textAlign: "center" }}>
                       Acciones
                       <br />
@@ -227,8 +227,8 @@ const ShowEntorno = () => {
                   {entornos.map((entorno) => (
                     <tr key={entorno.ID}>
                       <td>{entorno.marca_comercial}</td>
-                      <td>{entorno.urbanismo ? 'Si' : 'No'}</td>
-                      <td>{entorno.observ_entorno}</td>
+                      <td className='d-md-table-cell d-none'>{entorno.urbanismo ? 'Si' : 'No'}</td>
+                      <td className='d-md-table-cell d-none'>{entorno.observ_entorno}</td>
                       <td style={{ textAlign: "center" }}>
                         <ShowModalEditEntorno
                           className="btn btn-success btn-info"

@@ -76,7 +76,7 @@ class ShowModalEdit extends React.Component {
           </div>
         </div>
 
-        <Modal isOpen={this.state.abierto} className="custom-modal">
+        <Modal isOpen={this.state.abierto} className="custom-modal" centered>
           <ModalHeader toggle={this.abrirModal}></ModalHeader>
           <ModalBody>
             <>
@@ -95,7 +95,7 @@ class ShowModalEdit extends React.Component {
 
           .secundario {
             display: flex;
-            justify-content: flex-end;
+            justify-content: center;
             width: 100%;
           }
 
@@ -109,13 +109,13 @@ class ShowModalEdit extends React.Component {
             margin-left: auto;
           }
 
-          @media (max-width: 768px) {
-            .custom-modal {
-              width: 80%;
-              max-width: 100%;
-              padding: 10px;
-            }
+          @media (min-width: 576px){
+          }
 
+          @media (max-width: 768px) {
+           .custom-modal {
+            width: auto;  
+          }
             .close-button {
               margin-left: auto;
               margin-right: 10px;
@@ -123,11 +123,11 @@ class ShowModalEdit extends React.Component {
           }
 
           @media (max-width: 480px) {
-            .custom-modal {
-              width: 80%;
-              max-width: 100%;
-              padding: 5px;
-            }
+           .custom-modal {
+            width: auto;
+            
+            
+          }
 
             .close-button {
               margin-left: auto;

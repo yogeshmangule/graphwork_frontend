@@ -240,9 +240,9 @@ const ShowEspectaculo = () => {
                       onChange={handleSearchMarcaChange}
                     />
                   </th>
-                  <th>Ambiente Musical<br /></th>
-                  <th>Estilo Musical <br /></th>
-                  <th>Observaciones de Espectaculos <br /></th>
+                  <th className='d-md-table-cell d-none'>Ambiente Musical<br /></th>
+                  <th className='d-md-table-cell d-none'>Estilo Musical <br /></th>
+                  <th className='d-md-table-cell d-none'>Observaciones de Espectaculos <br /></th>
                   <th style={{ textAlign: "center" }}>Acciones <br />
                     <button className='btn btn-success' onClick={handleButtonClick} style={{ marginLeft: '10px' }}>
                       <i className='fa fa-leaf'></i>
@@ -254,21 +254,21 @@ const ShowEspectaculo = () => {
                 {encuestas.map((encuesta) => (
                   <tr key={encuesta.ID}>
                     <td> {encuesta.marca_comercial}</td>
-                    <td>
+                    <td className='d-md-table-cell d-none'>
                       {encuesta.amb_musical_no && 'NO '}
                       {encuesta.amb_musical_residente && 'Residente, '}
                       {encuesta.amb_musical_playlist && 'Play List, '}
                       {encuesta.amb_musical_liveset && 'Live Set, '}
                       {encuesta.amb_musical_gruposm && 'Grupos Músicales, '}
                     </td>
-                    <td>
+                    <td className='d-md-table-cell d-none'>
                       {encuesta.estilo_musical_comercial && 'Comercial y Grandes Éxitos, '}
                       {encuesta.estilo_musical_reggaeton && 'Reggaetón y Urbana, '}
                       {encuesta.estilo_musical_electro && 'Electrónica, '}
                       {encuesta.estilo_musical_remember && 'Remember, '}
                       {encuesta.estilo_musical_otro !== null && encuesta.estilo_musical_otro}
                     </td>
-                    <td> {encuesta.observ_espectaculos} </td>
+                    <td className='d-md-table-cell d-none'> {encuesta.observ_espectaculos} </td>
                     <td style={{ textAlign: "center" }}>
                       <ShowModalEditEspec className="btn btn-success btn-info" id={encuesta.ID} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} getEncuestas={getEncuestas} />
                     </td>
