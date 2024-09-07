@@ -12,7 +12,7 @@ const DashboardComponent = () => {
       <div className="dashboard-container">
         <Header />
         <Sidebar>
-          <div className="dashboard-main">
+          <div className="dashboard-main" >
 
             <div className="cuadro_princal">
               <div className="titulo_cuadro">

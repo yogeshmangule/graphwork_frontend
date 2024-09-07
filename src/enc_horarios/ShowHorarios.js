@@ -359,7 +359,7 @@ const CompShowHorarios = () => {
                   <th className='d-md-table-cell d-none'>Domingo</th>
                   <th className="text-center">Acciones <br />
                     <button
-                      className="btn btn-success"
+                      className="btn btn-success w-auto"
                     // onClick={handleButtonClick}
                     >
                       <i className="fa fa-leaf"></i>
@@ -377,9 +377,9 @@ const CompShowHorarios = () => {
                     <td className='d-md-table-cell d-none'>{encuesta.horaVde} am hasta {encuesta.horaVa} pm</td>
                     <td className='d-md-table-cell d-none'>{encuesta.horaSde} am hasta {encuesta.horaSa} pm</td>
                     <td className='d-md-table-cell d-none'>{encuesta.horaDde} am hasta {encuesta.horaDa} pm</td>
-                    <td>
+                    <td className="text-center">
                       <ShowModalEdit
-                        className="btn btn-success btn-info"
+                        className="btn btn-success"
                         id={encuesta.ID}
                         isOpen={isModalOpen}
                         onClose={() => setIsModalOpen(false)}
@@ -436,10 +436,6 @@ const CompShowHorarios = () => {
           .form-control {
             font-size: 14px;
             padding: 5px;
-          }
-
-          .btn {
-            font-size: 14px;
           }
         }
       `}</style>

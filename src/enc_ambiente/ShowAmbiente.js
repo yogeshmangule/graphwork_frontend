@@ -316,15 +316,134 @@ const CompShowAmbiente = () => {
   };
 
   return (
-    <div className="main-container">
+    // <div >
+    //   <Header />
+    //   <Sidebar>
+    //     <div className='mt-2 row'>
+    //       <div className='cuadro_princal'>
+    //         <div className='parent-label titulo_cuadro'>Encuesta: Ambiente</div>
+    //       </div>
+    //       <div className='table-container vh-1 d-flex align-items-center col'>
+    //         <table className='mt-3 table' style={{ textAlign: "left" }}>
+    //           <thead className='table-secondary'>
+    //             <tr>
+    //               <th>Marca Comercial <br />
+    //                 <input
+    //                   type="text"
+    //                   placeholder="Buscar por alias"
+    //                   value={encuestaMarca}
+    //                   onChange={handleSearchMarcaChange}
+    //                 />
+    //               </th>
+    //               <th className='d-md-table-cell d-none'>Edades<br /></th>
+    //               <th className='d-md-table-cell d-none'>Lunes<br /></th>
+    //               <th className='d-md-table-cell d-none'>Martes <br /></th>
+    //               <th className='d-md-table-cell d-none'>Miercoles<br /></th>
+    //               <th className='d-md-table-cell d-none'>Jueves <br /></th>
+    //               <th className='d-md-table-cell d-none'>Viernes <br /></th>
+    //               <th className='d-md-table-cell d-none'>Sabado <br /></th>
+    //               <th className='d-md-table-cell d-none'>Domingo <br /></th>
+    //               <th className="text-center">Acciones <br />
+    //                 <button className='btn btn-success' onClick={handleButtonClick} style={{ marginLeft: '10px' }}>
+    //                   <i className='fa fa-leaf'></i>
+    //                 </button>
+    //               </th>
+    //             </tr>
+    //           </thead>
+    //           <tbody>
+    //             {encuestas.map((encuesta) => (
+    //               <tr key={encuesta.ID}>
+    //                 <td>{encuesta.marca_comercial}</td>
+    //                 <td className='d-md-table-cell d-none'>{encuesta.edad}</td>
+    //                 <td className='d-md-table-cell d-none'>{encuesta.musicaL}</td>
+    //                 <td className='d-md-table-cell d-none'>{encuesta.musicaM}</td>
+    //                 <td className='d-md-table-cell d-none'>{encuesta.musicaX}</td>
+    //                 <td className='d-md-table-cell d-none'>{encuesta.musicaJ}</td>
+    //                 <td className='d-md-table-cell d-none'>{encuesta.musicaV}</td>
+    //                 <td className='d-md-table-cell d-none'>{encuesta.musicaS}</td>
+    //                 <td className='d-md-table-cell d-none'>{encuesta.musicaD}</td>
+    //                 <td className="text-center">
+    //                   <ShowModalEdit className='btn btn-success btn-info' id={encuesta.ID} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} getEncuestas={getEncuestas} />
+    //                 </td>
+    //               </tr>
+    //             ))}
+    //           </tbody>
+    //         </table>
+    //       </div>
+    //     </div>
+    //   </Sidebar>
+
+    //   <style jsx>{`
+    //     .main-container {
+    //       padding: 20px;
+    //     }
+
+    //     .table-container {
+    //       overflow-x: auto;
+    //     }
+
+    //     .table {
+    //       width: 100%;
+    //       margin-bottom: 20px;
+    //     }
+
+    //     th, td {
+    //       white-space: nowrap;
+    //       padding: 8px;
+    //       text-align: center;
+    //     }
+
+    //     @media (max-width: 768px) {
+    //       .titulo_cuadro {
+    //         text-align: center;
+    //       }
+
+    //       .table-container {
+
+    //       }
+
+    //       th, td {
+
+
+    //       }
+
+    //       .btn {
+
+    //       }
+    //     }
+
+    //     @media (max-width: 480px) {
+    //       .titulo_cuadro {
+
+    //         text-align: center;
+    //       }
+
+    //       th, td {
+
+
+    //       }
+
+    //       .btn {
+
+    //       }
+    //     }
+    //   `}</style>
+    // </div>
+    <div >
       <Header />
       <Sidebar>
-        <div className='mt-2 row'>
-          <div className='cuadro_princal'>
-            <div className='parent-label titulo_cuadro'>Encuesta: Ambiente</div>
+        <div className="content-container">
+          <div className="header-container">
+            <div className="title">Encuesta: Ambiente</div>
+            <ShowModal
+              className="btn btn-success"
+              isOpen={isModalOpen}
+              onClose={() => setIsModalOpen(false)}
+            />
           </div>
-          <div className='table-container vh-1 d-flex align-items-center col'>
-            <table className='mt-3 table' style={{ textAlign: "left" }}>
+
+          <div className="table-responsive">
+            <table className="table table-striped mt-3 align-middle">
               <thead className='table-secondary'>
                 <tr>
                   <th>Marca Comercial <br />
@@ -344,7 +463,7 @@ const CompShowAmbiente = () => {
                   <th className='d-md-table-cell d-none'>Sabado <br /></th>
                   <th className='d-md-table-cell d-none'>Domingo <br /></th>
                   <th className="text-center">Acciones <br />
-                    <button className='btn btn-success' onClick={handleButtonClick} style={{ marginLeft: '10px' }}>
+                    <button className='btn btn-success w-auto' onClick={handleButtonClick} >
                       <i className='fa fa-leaf'></i>
                     </button>
                   </th>
@@ -363,7 +482,7 @@ const CompShowAmbiente = () => {
                     <td className='d-md-table-cell d-none'>{encuesta.musicaS}</td>
                     <td className='d-md-table-cell d-none'>{encuesta.musicaD}</td>
                     <td className="text-center">
-                      <ShowModalEdit className='btn btn-success btn-info' id={encuesta.ID} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} getEncuestas={getEncuestas} />
+                      <ShowModalEdit className='btn btn-success ' id={encuesta.ID} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} getEncuestas={getEncuestas} />
                     </td>
                   </tr>
                 ))}
@@ -374,61 +493,54 @@ const CompShowAmbiente = () => {
       </Sidebar>
 
       <style jsx>{`
-        .main-container {
-          padding: 20px;
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+      }
+
+      .title {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .table-responsive {
+        overflow-x: auto;
+      }
+
+      @media (max-width: 768px)
+      {
+        .header-container {
+          flex-direction: column;
+          align-items: flex-start;
         }
 
-        .table-container {
-          overflow-x: auto;
+        .title {
+          font-size: 20px;
         }
 
-        .table {
-          width: 100%;
-          margin-bottom: 20px;
+        .form-control {
+          margin-bottom: 10px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .title {
+          font-size: 18px;
         }
 
-        th, td {
-          white-space: nowrap;
-          padding: 8px;
-          text-align: center;
+        .form-control {
+          font-size: 14px;
+          padding: 5px;
         }
 
-        @media (max-width: 768px) {
-          .titulo_cuadro {
-            font-size: 18px;
-            text-align: center;
-          }
-
-          .table-container {
-            padding: 10px;
-          }
-
-          th, td {
-            font-size: 12px;
-            padding: 4px;
-          }
-
-          .btn {
-            padding: 6px 12px;
-          }
+        .btn {
+          font-size: 14px;
         }
-
-        @media (max-width: 480px) {
-          .titulo_cuadro {
-            font-size: 16px;
-            text-align: center;
-          }
-
-          th, td {
-            font-size: 10px;
-            padding: 2px;
-          }
-
-          .btn {
-            padding: 4px 8px;
-          }
-        }
-      `}</style>
+      }
+    `}</style>
     </div>
   );
 }

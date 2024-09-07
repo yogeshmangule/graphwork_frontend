@@ -175,62 +175,121 @@ const ShowBuenasPracticas = () => {
   };
 
   return (
+    // <div>
+    //   <Header />
+    //   <Sidebar>
+    //     <div >
+    //       <div className="row mb-3">
+    //         <div className="col-12">
+    //           <div className="card">
+    //             <div className="card-header text-center">
+    //               Encuesta: RCS Buenas Practicas
+    //             </div>
+    //           </div>
+    //         </div>
+    //       </div>
+
+    //       {/* <div className="row"> */}
+    //       {/* <div className="col-12"> */}
+    //       <div className='table-responsive'>
+    //         {/* <table className="table table-responsive"> */}
+    //         <table className="table table-striped mt-3 align-middle">
+    //           <thead className="table-secondary">
+    //             <tr>
+    //               <th>
+    //                 Marca Comercial <br />
+    //                 <input
+    //                   type="text"
+    //                   placeholder="Buscar por alias"
+    //                   value={marcaComercial}
+    //                   onChange={handleSearchMarcaChange}
+
+    //                 />
+    //               </th>
+    //               <th className="d-md-table-cell d-none">Observaciones Buenas<br /></th>
+    //               <th style={{ textAlign: "center" }}>
+    //                 Acciones <br />
+    //                 <button className="btn btn-success w-auto" onClick={handleButtonClick}>
+    //                   <i className="fa fa-leaf"></i>
+    //                 </button>
+    //               </th>
+    //             </tr>
+    //           </thead>
+    //           <tbody>
+    //             {encuestas.map((encuesta) => (
+    //               <tr key={encuesta.ID}>
+    //                 <td>{encuesta.marca_comercial}</td>
+    //                 <td className="d-md-table-cell d-none">{encuesta.observ_buenas}</td>
+    //                 <td style={{ textAlign: "center" }}>
+    //                   <ShowModalEditBue
+    //                     className='btn btn-success'
+    //                     id={encuesta.ID}
+    //                     isOpen={isModalOpen}
+    //                     onClose={() => setIsModalOpen(false)}
+    //                     getEncuestas={getEncuestas}
+    //                   />
+    //                 </td>
+    //               </tr>
+    //             ))}
+    //           </tbody>
+    //         </table>
+    //       </div>
+    //       {/* </div> */}
+    //     </div>
+    //   </Sidebar>
+    // </div>
+
     <div>
       <Header />
       <Sidebar>
-        <div className="container-fluid mt-2">
-          <div className="row mb-3">
-            <div className="col-12">
-              <div className="card">
-                <div className="card-header text-center">
-                  Encuesta: RCS Buenas Practicas
-                </div>
-              </div>
-            </div>
+        <div className='mt-2 row'>
+          <div className='cuadro_princal'>
+            <div className='parent-label titulo_cuadro '>  Encuesta: RCS Buenas Practicas</div>
           </div>
 
-          <div className="row">
-            <div className="col-12">
-              <table className="table table-responsive">
-                <thead className="table-secondary">
-                  <tr>
-                    <th>
-                      Marca Comercial <br />
-                      <input
-                        type="text"
-                        placeholder="Buscar por alias"
-                        value={marcaComercial}
-                        onChange={handleSearchMarcaChange}
-                        className="form-control"
+          {/* <div className='vh-1 d-flex align-items-center col'> */}
+          <div className='table-responsive'>
+            {/* <table className='mt-3 table' style={{ textAlign: "left" }}> */}
+            <table className="table table-striped mt-3 align-middle">
+              <thead className="table-secondary">
+                <tr>
+                  <th>
+                    Marca Comercial <br />
+                    <input
+                      type="text"
+                      placeholder="Buscar por alias"
+                      value={marcaComercial}
+                      onChange={handleSearchMarcaChange}
+
+                    />
+                  </th>
+                  <th className="d-md-table-cell d-none">Observaciones Buenas<br /></th>
+                  <th style={{ textAlign: "center" }}>
+                    Acciones <br />
+                    <button className="btn btn-success w-auto" onClick={handleButtonClick}>
+                      <i className="fa fa-leaf"></i>
+                    </button>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {encuestas.map((encuesta) => (
+                  <tr key={encuesta.ID}>
+                    <td>{encuesta.marca_comercial}</td>
+                    <td className="d-md-table-cell d-none">{encuesta.observ_buenas}</td>
+                    <td style={{ textAlign: "center" }}>
+                      <ShowModalEditBue
+                        className='btn btn-success'
+                        id={encuesta.ID}
+                        isOpen={isModalOpen}
+                        onClose={() => setIsModalOpen(false)}
+                        getEncuestas={getEncuestas}
                       />
-                    </th>
-                    <th className="d-md-table-cell d-none">Observaciones Buenas<br /></th>
-                    <th style={{ textAlign: "center" }}>
-                      Acciones <br />
-                      <button className="btn btn-success mt-2" onClick={handleButtonClick}>
-                        <i className="fa fa-leaf"></i>
-                      </button>
-                    </th>
+                    </td>
                   </tr>
-                </thead>
-                <tbody>
-                  {encuestas.map((encuesta) => (
-                    <tr key={encuesta.ID}>
-                      <td>{encuesta.marca_comercial}</td>
-                      <td className="d-md-table-cell d-none">{encuesta.observ_buenas}</td>
-                      <td style={{ textAlign: "center" }}>
-                        <ShowModalEditBue
-                          id={encuesta.ID}
-                          isOpen={isModalOpen}
-                          onClose={() => setIsModalOpen(false)}
-                          getEncuestas={getEncuestas}
-                        />
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </Sidebar>

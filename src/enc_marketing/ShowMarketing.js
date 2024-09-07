@@ -213,7 +213,7 @@ const ShowMarketing = () => {
     <div>
       <Header />
       <Sidebar>
-        <div className='container-fluid mt-2'>
+        <div >
           <div className='row'>
             <div className='col-12 mb-3'>
               <div className='cuadro_princal'>
@@ -221,8 +221,10 @@ const ShowMarketing = () => {
               </div>
             </div>
 
-            <div className='col-12'>
-              <table className='table table-responsive table-bordered table-hover'>
+            {/* <div className='col-12'> */}
+            <div className='table-responsive'>
+              {/* <table className='table table-responsive table-bordered table-hover'> */}
+              <table className="table table-striped mt-3 align-middle">
                 <thead className='table-secondary'>
                   <tr>
                     <th>Marca Comercial <br />
@@ -231,7 +233,7 @@ const ShowMarketing = () => {
                         placeholder='Buscar por alias'
                         value={marcaComercial}
                         onChange={handleSearchMarcaChange}
-                        className='form-control'
+                      // className='form-control'
                       />
                     </th>
                     <th className="d-md-table-cell d-none">Sitio web activo<br /></th>
@@ -241,7 +243,7 @@ const ShowMarketing = () => {
                     <th className="d-md-table-cell d-none">Observaciones (Módulo Marketing)<br /></th>
                     <th style={{ textAlign: "center" }}>Acciones<br />
                       <button
-                        className='btn btn-success'
+                        className='btn btn-success w-auto'
                         onClick={handleButtonClick}
                         style={{ marginLeft: '10px' }}
                       >
@@ -285,7 +287,7 @@ const ShowMarketing = () => {
                       <td className="d-md-table-cell d-none">{encuesta.Observ_marketing}</td>
                       <td style={{ textAlign: "center" }}>
                         <ShowModalEditMar
-                          className='btn btn-success btn-info'
+                          className='btn btn-success'
                           id={encuesta.ID}
                           isOpen={isModalOpen}
                           onClose={() => setIsModalOpen(false)}

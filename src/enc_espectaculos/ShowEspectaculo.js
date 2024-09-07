@@ -225,11 +225,13 @@ const ShowEspectaculo = () => {
       <Sidebar>
         <div className='mt-2 row'>
           <div className='cuadro_princal'>
-            <div className='parent-label titulo_cuadro '>Encuesta: Espectaculo</div>
+            <div className='titulo_cuadro text-start'>Encuesta: Espectaculo</div>
           </div>
 
-          <div className='vh-1 d-flex align-items-center col'>
-            <table className='mt-3 table' style={{ textAlign: "left" }}>
+          {/* <div className=' d-flex align-items-center col'> */}
+          <div className='table-responsive'>
+            {/* <table className='mt-3 table' style={{ textAlign: "left" }}> */}
+            <table className="table table-striped mt-3 align-middle">
               <thead className='table-secondary'>
                 <tr>
                   <th>Marca Comercial <br />
@@ -244,7 +246,7 @@ const ShowEspectaculo = () => {
                   <th className='d-md-table-cell d-none'>Estilo Musical <br /></th>
                   <th className='d-md-table-cell d-none'>Observaciones de Espectaculos <br /></th>
                   <th style={{ textAlign: "center" }}>Acciones <br />
-                    <button className='btn btn-success' onClick={handleButtonClick} style={{ marginLeft: '10px' }}>
+                    <button className='btn btn-success w-auto' onClick={handleButtonClick} >
                       <i className='fa fa-leaf'></i>
                     </button>
                   </th>
@@ -270,7 +272,7 @@ const ShowEspectaculo = () => {
                     </td>
                     <td className='d-md-table-cell d-none'> {encuesta.observ_espectaculos} </td>
                     <td style={{ textAlign: "center" }}>
-                      <ShowModalEditEspec className="btn btn-success btn-info" id={encuesta.ID} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} getEncuestas={getEncuestas} />
+                      <ShowModalEditEspec className="btn btn-success " id={encuesta.ID} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} getEncuestas={getEncuestas} />
                     </td>
                   </tr>
                 ))}
@@ -279,79 +281,7 @@ const ShowEspectaculo = () => {
           </div>
         </div>
       </Sidebar>
-      <style jsx>{`
-        .cuadro_princal {
-          margin: 10px;
-          padding: 20px;
-          border: 1px solid #ccc;
-          border-radius: 8px;
-          background-color: #f9f9f9;
-        }
-
-        .titulo_cuadro {
-          font-weight: bold;
-          font-size: 1.5em;
-        }
-
-        .table {
-          width: 100%;
-          margin-bottom: 1rem;
-          color: #212529;
-        }
-
-        .table th, .table td {
-          padding: 0.75rem;
-          vertical-align: top;
-          border-top: 1px solid #dee2e6;
-        }
-
-        .table thead th {
-          vertical-align: bottom;
-          border-bottom: 2px solid #dee2e6;
-        }
-
-        @media (max-width: 768px) {
-          .cuadro_princal {
-            margin: 10px;
-            padding: 15px;
-          }
-
-          .titulo_cuadro {
-            font-size: 1.2em;
-          }
-
-          .table thead th {
-            font-size: 0.85em;
-          }
-
-          .table input {
-            width: 100%;
-            padding: 5px;
-            margin-top: 5px;
-            box-sizing: border-box;
-          }
-
-          .table .btn {
-            width: 100%;
-            margin-top: 10px;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .table thead th {
-            font-size: 0.75em;
-          }
-
-          .table input {
-            font-size: 0.8em;
-            padding: 3px;
-          }
-
-          .table .btn {
-            font-size: 0.9em;
-          }
-        }
-      `}</style>
+     
     </div>
   )
 }

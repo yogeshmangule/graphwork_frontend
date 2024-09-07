@@ -168,9 +168,9 @@ const CompShowEncusta = () => {
                     />
                   </th>
                   <th className='text-center'>
-                    Acciones
+                    Acciones <br />
                     <button
-                      className="btn btn-success"
+                      className="btn btn-success w-auto"
                       onClick={handleButtonClick}
                     >
                       <i className="fa fa-leaf"></i>
@@ -186,9 +186,9 @@ const CompShowEncusta = () => {
                     <td className='d-md-table-cell d-none'>{encuesta.email}</td>
                     <td className='d-md-table-cell d-none'>{encuesta.usuario ? encuesta.usuario.username : null}</td>
                     <td className='d-md-table-cell d-none'>{miFuncion(encuesta.createdAt)}</td>
-                    <td>
+                    <td style={{ textAlign: 'center' }}>
                       <ShowModalEdit
-                        className='parent-rigth btn btn-success btn-info'
+                        className=' btn btn-success'
                         id={encuesta.ID}
                         isOpen={isModalOpen}
                         onClose={() => setIsModalOpen(false)}
@@ -247,9 +247,7 @@ const CompShowEncusta = () => {
          padding: 5px;
        }
 
-       .btn {
-         font-size: 14px;
-       }
+    
      }
    `}</style>
     </div>

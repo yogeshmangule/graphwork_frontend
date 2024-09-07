@@ -68,9 +68,12 @@ class ShowModalEdit extends React.Component {
     const { id, getEncuestas } = this.props;
     return (
       <>
-        <div className="principal">
-          <div className="secundario">
-            <Button className="btn btn-success btn-info" onClick={this.abrirModal}>
+        <div >
+          <div className="">
+            <Button
+              className=" btn btn-success btn-info w-auto"
+              onClick={this.abrirModal}
+            >
               <i className="fas fa-edit"></i>
             </Button>
           </div>

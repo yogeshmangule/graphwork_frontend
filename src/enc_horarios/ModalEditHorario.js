@@ -23,9 +23,12 @@ class ShowModalEdit extends React.Component {
 
     return (
       <>
-        <div className="principal">
-          <div className="secundario">
-            <Button className="btn btn-success btn-info" onClick={this.abrirModal}>
+        <div >
+          <div className="">
+            <Button
+              className=" btn btn-success btn-info w-auto"
+              onClick={this.abrirModal}
+            >
               <i className="fas fa-edit"></i>
             </Button>
           </div>
@@ -63,7 +66,7 @@ class ShowModalEdit extends React.Component {
 
             .btn-info {
               width: 100%;
-              font-size: 16px;
+             
             }
 
             .modal-content {

@@ -262,13 +262,14 @@ const ShowServicio = () => {
         <div className="row mt-2">
           <div className="col-md-12">
             <div className="cuadro_princal">
-              <div className="titulo_cuadro">Encuesta: Servicio</div>
+              <div className="titulo_cuadro text-start">Encuesta: Servicio</div>
             </div>
           </div>
         </div>
         <div className="row">
           <div className="col-md-12">
-            <table className="table mt-3">
+            {/* <table className="table mt-3"> */}
+            <table className="table table-striped mt-3 align-middle">
               <thead className="table-secondary">
                 <tr>
                   <th>Marca Comercial
@@ -290,9 +291,9 @@ const ShowServicio = () => {
                     Acciones
                     <br />
                     <button
-                      className="btn btn-success"
+                      className="btn btn-success w-auto"
                       onClick={handleButtonClick}
-                      style={{ marginLeft: '10px' }}
+
                     >
                       <i className="fa fa-leaf"></i>
                     </button>

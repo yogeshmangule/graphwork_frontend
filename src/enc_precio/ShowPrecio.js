@@ -174,16 +174,18 @@ const ShowPrecio = () => {
 
   return (
     // <div className="d-flex flex-column flex-lg-row">
-    <div className="container-fluid mt-2">
+    <div >
       <Header />
-      <Sidebar className="flex-grow-1">
-        <div className="mt-2 row mx-2">
+      <Sidebar >
+        <div >
           <div className="cuadro_princal w-100">
             <div className="parent-label titulo_cuadro text-center">Encuesta: Precios</div>
           </div>
 
-          <div className="col-12 mt-3 d-flex justify-content-center">
-            <table className="table table-responsive text-left">
+          {/* <div className="col-12 mt-3 d-flex justify-content-center"> */}
+          <div className='table-responsive'>
+            {/* <table className="table table-responsive text-left"> */}
+            <table className="table table-striped mt-3 align-middle">
               <thead className="table-secondary">
                 <tr>
                   <th>Marca Comercial</th>
@@ -192,7 +194,7 @@ const ShowPrecio = () => {
                   <th style={{ textAlign: "center" }}>
                     Acciones
                     <br />
-                    <button className="btn btn-success ml-2" onClick={handleButtonClick}>
+                    <button className="btn btn-success w-auto" onClick={handleButtonClick}>
                       <i className="fa fa-leaf"></i>
                     </button>
                   </th>
@@ -206,7 +208,7 @@ const ShowPrecio = () => {
                     <td className="d-md-table-cell d-none">{encuesta.precio_anticipada}</td>
                     <td style={{ textAlign: "center" }}>
                       <ShowModalEditPrecio
-                        className="btn btn-success btn-info"
+                        className="btn btn-success"
                         id={encuesta.ID}
                         isOpen={isModalOpen}
                         onClose={() => setIsModalOpen(false)}

@@ -75,12 +75,13 @@ class ShowModalEdit extends React.Component {
 
     return (
       <>
-        <div className="principal">
-          <div className="secundario">
-            <Button className='parent-right btn btn-success btn-info' onClick={this.abrirModal}>
-              <i className="fas fa-edit"></i>
-            </Button>
-          </div>
+        <div >
+          <Button
+            className=" btn-success btn-info w-auto"
+            onClick={this.abrirModal}
+          >
+            <i className="fas fa-edit"></i>
+          </Button>
         </div>
 
         <Modal isOpen={this.state.abierto} className='custom-modal' centered>

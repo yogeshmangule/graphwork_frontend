@@ -215,8 +215,10 @@ const ShowPersonal = () => {
             <div className='parent-label titulo_cuadro '>Encuesta: Personal</div>
           </div>
 
-          <div className='vh-1 d-flex align-items-center col'>
-            <table className='mt-3 table' style={{ textAlign: "left" }}>
+          {/* <div className='vh-1 d-flex align-items-center col'> */}
+          <div className='table-responsive'>
+            {/* <table className='mt-3 table' style={{ textAlign: "left" }}> */}
+            <table className="table table-striped mt-3 align-middle">
               <thead className='table-secondary'>
                 <tr>
                   <th>Marca Comercial <br />
@@ -233,7 +235,7 @@ const ShowPersonal = () => {
                   <th className='d-md-table-cell d-none'>Idiomas: (Barras y office:) <br /></th>
                   <th className='d-md-table-cell d-none'>Observaciones (Módulo Personal) <br /></th>
                   <th style={{ textAlign: "center" }}>Acciones <br />
-                    <button className='btn btn-success' onClick={handleButtonClick} style={{ marginLeft: '10px' }}>
+                    <button className='btn btn-success w-auto' onClick={handleButtonClick}>
                       <i className='fa fa-leaf'></i>
                     </button>
                   </th>
@@ -257,7 +259,7 @@ const ShowPersonal = () => {
                     </td>
                     <td className='d-md-table-cell d-none'> {encuesta.observ_personal} </td>
                     <td style={{ textAlign: "center" }}>
-                      <ShowModalEditPersona className='btn btn-success btn-info' id={encuesta.ID} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} getEncuestas={getEncuestas} />
+                      <ShowModalEditPersona className='btn btn-success' id={encuesta.ID} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} getEncuestas={getEncuestas} />
                     </td>
                   </tr>
                 ))}
@@ -267,7 +269,7 @@ const ShowPersonal = () => {
         </div>
       </Sidebar>
 
-      <style jsx>{`
+      {/* <style jsx>{`
         .cuadro_princal {
           margin: 10px;
           padding: 20px;
@@ -350,7 +352,7 @@ const ShowPersonal = () => {
             font-size: 0.9em;
           }
         }
-      `}</style>
+      `}</style> */}
     </div>
   );
 }

@@ -231,9 +231,11 @@ const ShowSeguridad = () => {
                 <h2>Encuesta: Seguridad</h2>
               </div>
             </div>
-            <div className='col-12'>
+            {/* <div className='col-12'> */}
               <div className='table-responsive'>
-                <table className='table table-bordered table-hover'>
+                {/* <table className='table table-bordered table-hover'> */}
+                <table className="table table-striped mt-3 align-middle">
+
                   <thead className='table-secondary'>
                     <tr>
                       <th>
@@ -244,7 +246,7 @@ const ShowSeguridad = () => {
                           placeholder="Buscar por alias"
                           value={marcaComercial}
                           onChange={handleSearchMarcaChange}
-                          className='form-control'
+                          // className='form-control'
                         />
                       </th>
                       <th className="d-md-table-cell d-none">Evacuación</th>
@@ -253,7 +255,7 @@ const ShowSeguridad = () => {
                       <th style={{ textAlign: "center" }}>
                         Acciones
                         <br />
-                        <button className='btn btn-success' onClick={handleButtonClick}>
+                        <button className='btn btn-success w-auto' onClick={handleButtonClick}>
                           <i className='fa fa-leaf'></i>
                         </button>
                       </th>
@@ -274,7 +276,7 @@ const ShowSeguridad = () => {
                         <td className="d-md-table-cell d-none">{encuesta.Observ_segur}</td>
                         <td style={{ textAlign: "center" }}>
                           <ShowModalEditSeguridad
-                            className="btn btn-success btn-info"
+                            className="btn btn-success w-auto"
                             id={encuesta.ID}
                             isOpen={isModalOpen}
                             onClose={() => setIsModalOpen(false)}
@@ -286,7 +288,7 @@ const ShowSeguridad = () => {
                   </tbody>
                 </table>
               </div>
-            </div>
+            {/* </div> */}
           </div>
         </div>
       </Sidebar>

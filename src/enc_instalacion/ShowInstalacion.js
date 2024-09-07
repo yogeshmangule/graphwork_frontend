@@ -238,7 +238,9 @@ const CompShowInstalacion = () => {
 
                         <div className='col-12'>
                             <div className='table-responsive'>
-                                <table className='table table-bordered mt-3' style={{ textAlign: "left" }}>
+                                {/* <table className='table table-bordered mt-3' style={{ textAlign: "left" }}> */}
+                                <table className="table table-striped mt-3 align-middle">
+
                                     <thead className='table-secondary' style={{ textAlign: "center" }}>
                                         <tr>
                                             <th>Marca Comercial <br />
@@ -247,13 +249,13 @@ const CompShowInstalacion = () => {
                                                     placeholder="Buscar por alias"
                                                     value={encuestaMarca}
                                                     onChange={handleSearchMarcaChange}
-                                                    className="form-control"
+                                                    // className="form-control"
                                                 />
                                             </th>
                                             <th className='d-md-table-cell d-none'>Pista<br /></th>
                                             <th className='d-md-table-cell d-none'>Escenario <br /></th>
                                             <th style={{ textAlign: "center" }}>Acciones <br />
-                                                <button className='btn btn-success' onClick={handleButtonClick} style={{ marginLeft: '10px' }}>
+                                                <button className='btn btn-success w-auto' onClick={handleButtonClick} >
                                                     <i className='fa fa-leaf'></i>
                                                 </button>
                                             </th>
@@ -266,7 +268,7 @@ const CompShowInstalacion = () => {
                                                 <td className='d-md-table-cell d-none'>{encuesta.pista ? 'Si' : 'No'}</td>
                                                 <td className='d-md-table-cell d-none'>{encuesta.escenario ? 'Si' : 'No'}</td>
                                                 <td style={{ textAlign: "center" }}>
-                                                    <ShowModalEdit className='btn btn-success btn-info' id={encuesta.ID} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} getEncuestas={getEncuestas} />
+                                                    <ShowModalEdit className='btn btn-success' id={encuesta.ID} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} getEncuestas={getEncuestas} />
                                                 </td>
                                             </tr>
                                         ))}

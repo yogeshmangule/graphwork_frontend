@@ -189,13 +189,14 @@ const ShowEntorno = () => {
         <div className="container-fluid mt-2">
           <div className="row mb-3">
             <div className="col-12">
-              <h2 className="titulo_cuadro text-center">Encuesta: Entorno</h2>
+              <h2 className="titulo_cuadro text-justify">Encuesta: Entorno</h2>
             </div>
           </div>
 
           <div className="row">
             <div className="col-12">
-              <table className="table table-bordered table-hover">
+              {/* <table className="table table-bordered table-hover"> */}
+              <table className="table table-striped mt-3 align-middle">
                 <thead className="table-secondary">
                   <tr>
                     <th>
@@ -206,7 +207,7 @@ const ShowEntorno = () => {
                         placeholder="Buscar por alias"
                         value={marcaComercial}
                         onChange={handleSearchMarcaChange}
-                        className="form-control"
+                      // className="form-control"
                       />
                     </th>
                     <th className='d-md-table-cell d-none'>Urbanismo</th>
@@ -215,7 +216,7 @@ const ShowEntorno = () => {
                       Acciones
                       <br />
                       <button
-                        className="btn btn-success mt-2"
+                        className="btn btn-success w-auto"
                         onClick={handleButtonClick}
                       >
                         <i className="fa fa-leaf"></i>
@@ -231,7 +232,7 @@ const ShowEntorno = () => {
                       <td className='d-md-table-cell d-none'>{entorno.observ_entorno}</td>
                       <td style={{ textAlign: "center" }}>
                         <ShowModalEditEntorno
-                          className="btn btn-success btn-info"
+                          className="btn btn-success"
                           id={entorno.ID}
                           isOpen={isModalOpen}
                           onClose={() => setIsModalOpen(false)}

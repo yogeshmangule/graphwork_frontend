@@ -74,9 +74,9 @@ class ShowModalEdit extends React.Component {
 
     return (
       <>
-        <div className="d-flex justify-content-center mb-3">
+        <div >
           <Button
-            className="btn btn-success btn-info"
+            className=" btn-success btn-info w-auto"
             onClick={this.abrirModal}
           >
             <i className="fas fa-edit"></i>

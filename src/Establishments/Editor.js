@@ -233,27 +233,47 @@ const EditEstablishmentModal = ({ isOpen, setIsEditModalOpen, establishmentId, f
     return (
         <Modal open={isOpen} aria-labelledby="edit-establishment-modal">
             <Box sx={modalStyles}>
-                <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
-                    <HeaderIcon isPhotoUpload={isPhotoUpload} />
-                    <Typography variant="h6" component="h2" sx={{ flexGrow: 1 }}>
-                        {isPhotoUpload ? "Galería de fotos" : "Datos del establecimiento"}
-                    </Typography>
-                    <FormControl variant="outlined" size="small" sx={{ width: 'auto', marginRight: '35%' }}>
-                        <Select
-                            value={currentEstablishment.language}
-                            onChange={handleLanguageChange}
-                        >
-                            <MenuItem value="es_ES">🇪🇸 Español (España)</MenuItem>
-                            <MenuItem value="en_US">🇺🇸 Inglés (Estados Unidos)</MenuItem>
-                        </Select>
-                    </FormControl>
-                    <Box sx={{ display: 'flex', ml: 'auto', gap: 1 }}>
-                        <IconButton disabled={!isPhotoUpload} onClick={handlePhotoUploadToggle}>
-                            <ShoppingBagIcon />
-                        </IconButton>
-                        <IconButton onClick={handlePhotoUploadToggle} disabled={isPhotoUpload}>
-                            <PhotoIcon />
-                        </IconButton>
+                <Box sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    mb: 3,
+                    '@media (max-width:768px)': {
+                        display: 'block',
+                    },
+                    '@media (max-width:480px)': {
+                        display: 'block',
+                    },
+                }}>
+                    {/* sx={{ display: 'flex', alignItems: 'center', mb: 3 }} */}
+                    <Box sx={{ display: 'flex' }}>
+                        <HeaderIcon isPhotoUpload={isPhotoUpload} />
+                        <Typography variant="h6" component="h2" sx={{ flexGrow: 1 }}>
+                            {isPhotoUpload ? "Galería de fotos" : "Datos del establecimiento"}
+                        </Typography>
+                    </Box>
+                    <Box sx={{
+                        display: 'flex',
+                        '@media (max-width:480px)': {
+                            display: 'flex',
+                        },
+                    }}>
+                        <FormControl variant="outlined" size="small" sx={{ width: 'auto', }}>
+                            <Select
+                                value={currentEstablishment.language}
+                                onChange={handleLanguageChange}
+                            >
+                                <MenuItem value="es_ES">🇪🇸 Español (España)</MenuItem>
+                                <MenuItem value="en_US">🇺🇸 Inglés (Estados Unidos)</MenuItem>
+                            </Select>
+                        </FormControl>
+                        <Box sx={{ display: 'flex', ml: 'auto', gap: 1 }}>
+                            <IconButton disabled={!isPhotoUpload} onClick={handlePhotoUploadToggle}>
+                                <ShoppingBagIcon />
+                            </IconButton>
+                            <IconButton onClick={handlePhotoUploadToggle} disabled={isPhotoUpload}>
+                                <PhotoIcon />
+                            </IconButton>
+                        </Box>
                     </Box>
                 </Box>
 
@@ -457,6 +477,17 @@ const EstablishmentForm = ({
                 Guardar cambios
             </Button>
         </Box>
+        <style jsx>{`
+      .form-style{
+       padding: 32px 62px
+      }
+
+        @media (max-width: 480px) {
+         .form-style{
+       padding: 0px
+      }}
+
+        `}</style>
     </>
 );
 
@@ -481,6 +512,7 @@ EditEstablishmentModal.formats = [
     'header', 'font', 'size',
     'color', 'background', 'align'
 ];
+
 
 const modalStyles = {
     position: 'absolute',

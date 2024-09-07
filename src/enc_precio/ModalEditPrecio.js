@@ -76,12 +76,14 @@ class ShowModalEdit extends React.Component {
 
     return (
       <>
-        <div className="d-flex justify-content-center">
-          <Button className="btn btn-success btn-info" onClick={this.abrirModal}>
+        <div >
+          <Button
+            className=" btn-success btn-info w-auto"
+            onClick={this.abrirModal}
+          >
             <i className="fas fa-edit"></i>
           </Button>
         </div>
-
         <Modal isOpen={this.state.abierto} className="modal-dialog-centered custom-modal" centered>
           <ModalHeader toggle={this.abrirModal} className="d-flex justify-content-between align-items-center">
           </ModalHeader>

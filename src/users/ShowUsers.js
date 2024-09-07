@@ -378,7 +378,7 @@ const CompShowUsers = () => {
             <ShowModal className='parent-rigth btn btn-success btn-ladda' isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
           </div>
 
-          <div className=' vh-1 d-flex align-items-center col d-none d-md-block'>
+          <div className=' vh-1 d-flex align-items-center col d-md-block'>
 
 
             <table className='mt-3 table' style={{ textAlign: "left" }}>
@@ -393,14 +393,14 @@ const CompShowUsers = () => {
                       onChange={handleSearchTermChange}
                     />
                   </th>
-                  <th>Correo<br />
+                  <th className="d-md-table-cell d-none">Correo<br />
                     <input
                       type="text"
                       placeholder="Buscar por correo"
                       value={searchCorreo}
                       onChange={handleSearchCorreoChange}
                     /></th>
-                  <th>Estado <br />
+                  <th className="d-md-table-cell d-none">Estado <br />
                     <input
                       type="text"
                       placeholder="Buscar por estado"
@@ -408,7 +408,7 @@ const CompShowUsers = () => {
                       onChange={handleSearchEstadoChange}
                     /></th>
                   {/* Comentando la sección de Fecha de Creación */}
-                  <th>Fecha de creacion <br />
+                  <th className="d-md-table-cell d-none">Fecha de creacion <br />
                     {/*<DatePicker
                           selected={selectedDate} // Agrega un estado para manejar la fecha seleccionada
                           onChange={handleSelectedDateChange} // Maneja el cambio de fecha
@@ -426,9 +426,9 @@ const CompShowUsers = () => {
                 {users.map((user) => (
                   <tr key={user.ID}>
                     <td> {user.username} </td>
-                    <td> {user.email} </td>
-                    <td>  {user.status === 1 ? "Activo" : "Inactivo"} </td>
-                    <td> {miFuncion(user.createdAt)} </td>
+                    <td className="d-md-table-cell d-none"> {user.email} </td>
+                    <td className="d-md-table-cell d-none">  {user.status === 1 ? "Activo" : "Inactivo"} </td>
+                    <td className="d-md-table-cell d-none"> {miFuncion(user.createdAt)} </td>
                     <td>
                       <div className='d-flex justify-content-center gap-1'>
                         <ShowModalEdit className='parent-rigth btn btn-success btn-info' id={user.ID} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} getUsers={getUsers} />
@@ -449,7 +449,7 @@ const CompShowUsers = () => {
             </table>
           </div>
 
-          <div className='p-0 mt-2 d-block d-md-none'>
+          {/* <div className='p-0 mt-2 d-block d-md-none'>
             {users.map((user) => (
 
               <Card key={user.ID} className='mb-1'>
@@ -490,7 +490,7 @@ const CompShowUsers = () => {
 
             ))}
 
-          </div>
+          </div> */}
         </div>
       </Sidebar>
     </div>

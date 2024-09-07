@@ -147,10 +147,10 @@ class ShowModalEdit extends React.Component {
 
     return (
       <>
-        <div className="principal">
-          <div className="secundario">
+        <div >
+          <div className="">
             <Button
-              className="parent-right btn btn-success btn-info"
+              className=" btn btn-success btn-info w-auto"
               onClick={this.abrirModal}
             >
               <i className="fas fa-edit"></i>
@@ -170,58 +170,6 @@ class ShowModalEdit extends React.Component {
             )}
           </ModalBody>
         </Modal>
-
-        <style jsx>{`
-          .principal {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-          }
-
-          .secundario {
-            display: flex;
-            justify-content: flex-end;
-            width: 100%;
-          }
-
-          @media (max-width: 768px) {
-            .principal {
-              padding: 10px;
-            }
-
-            .secundario {
-              justify-content: center;
-            }
-
-            .btn-info {
-              width: 100%;
-              font-size: 16px;
-            }
-
-            .modal-content {
-              width: 100%;
-              max-width: 100%;
-            }
-          }
-
-          @media (max-width: 480px) {
-            .principal {
-              padding: 5px;
-            }
-
-            .btn-info {
-              width: 100%;
-              font-size: 14px;
-              padding: 10px;
-            }
-
-            .modal-content {
-              width: 100%;
-              max-width: 100%;
-            }
-          }
-        `}</style>
       </>
     );
   }
