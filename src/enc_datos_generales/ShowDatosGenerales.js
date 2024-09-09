@@ -68,6 +68,37 @@ const CompShowEncusta = () => {
     getEncuestas();
   };
 
+  // const getEncuestas = async () => {
+  //   try {
+  //     let res;
+  //     if (userRole === varAdmin) {
+  //       res = await axios.get(`${URI}search`, {
+  //         params: {
+  //           marca_comercial: searchMarca,
+  //           full_name: searchNombre,
+  //           email: searchCorreo,
+  //           username: searchUser,
+  //           createdAt: selectedDate,
+  //         },
+  //       });
+  //     } else {
+  //       res = await axios.get(`${URI}user/${userId}`, {
+  //         params: {
+  //           marca_comercial: searchMarca,
+  //           full_name: searchNombre,
+  //           email: searchCorreo,
+  //           username: searchUser,
+  //           createdAt: selectedDate,
+  //         },
+  //       });
+  //     }
+
+  //     setEncuesta(res.data);
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
+
   const getEncuestas = async () => {
     try {
       let res;
@@ -92,12 +123,16 @@ const CompShowEncusta = () => {
           },
         });
       }
-
-      setEncuesta(res.data);
+  
+      // Sorting the response data by 'id_establecimiento'
+      const sortedEncuestas = res.data.sort((a, b) => a.Id_estab - b.Id_estab);
+  
+      setEncuesta(sortedEncuestas); // Set the sorted data to state
     } catch (error) {
       console.error(error);
     }
   };
+  
 
   return (
     <div className="comp-show-users">

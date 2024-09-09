@@ -165,8 +165,12 @@ const ShowPrecio = () => {
           },
         });
       }
-      const encuestas = res.data;
-      setEncuesta(encuestas);
+      // const encuestas = res.data;
+      // setEncuesta(encuestas);
+      // Sorting the response data by 'encuesta_id'
+      const sortedEncuestas = res.data.sort((a, b) => a.encuesta_id - b.encuesta_id);
+
+      setEncuesta(sortedEncuestas); // Set the sorted data to state
     } catch (error) {
       console.error(error);
     }
@@ -178,8 +182,8 @@ const ShowPrecio = () => {
       <Header />
       <Sidebar >
         <div >
-          <div className="cuadro_princal w-100">
-            <div className="parent-label titulo_cuadro text-center">Encuesta: Precios</div>
+          <div className="w-100" style={{ textAlign: 'left' }}>
+            <div className=" titulo_cuadro">Encuesta: Precios</div>
           </div>
 
           {/* <div className="col-12 mt-3 d-flex justify-content-center"> */}

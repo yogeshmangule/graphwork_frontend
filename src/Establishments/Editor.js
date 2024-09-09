@@ -231,11 +231,87 @@ const EditEstablishmentModal = ({ isOpen, setIsEditModalOpen, establishmentId, f
     };
 
     return (
+        // <Modal open={isOpen} aria-labelledby="edit-establishment-modal">
+        //     <Box sx={modalStyles}>
+        //         <Box sx={{
+        //             display: 'flex',
+        //             alignItems: 'center',
+        //             mb: 3,
+        //             '@media (max-width:768px)': {
+        //                 display: 'block',
+        //             },
+        //             '@media (max-width:480px)': {
+        //                 display: 'block',
+        //             },
+        //         }}>
+        //             {/* sx={{ display: 'flex', alignItems: 'center', mb: 3 }} */}
+        //             <Box sx={{ display: 'flex' }}>
+        //                 <HeaderIcon isPhotoUpload={isPhotoUpload} />
+        //                 <Typography variant="h6" component="h2" sx={{ flexGrow: 1 }}>
+        //                     {isPhotoUpload ? "Galería de fotos" : "Datos del establecimiento"}
+        //                 </Typography>
+        //             </Box>
+        //             <Box sx={{
+        //                 display: 'flex',
+        //                 '@media (max-width:480px)': {
+        //                     display: 'flex',
+        //                 },
+        //             }}>
+        //                 <FormControl variant="outlined" size="small" sx={{ width: 'auto', }}>
+        //                     <Select
+        //                         value={currentEstablishment.language}
+        //                         onChange={handleLanguageChange}
+        //                     >
+        //                         <MenuItem value="es_ES">🇪🇸 Español (España)</MenuItem>
+        //                         <MenuItem value="en_US">🇺🇸 Inglés (Estados Unidos)</MenuItem>
+        //                     </Select>
+        //                 </FormControl>
+        //                 <Box sx={{ display: 'flex', ml: 'auto', gap: 1 }}>
+        //                     <IconButton disabled={!isPhotoUpload} onClick={handlePhotoUploadToggle}>
+        //                         <ShoppingBagIcon />
+        //                     </IconButton>
+        //                     <IconButton onClick={handlePhotoUploadToggle} disabled={isPhotoUpload}>
+        //                         <PhotoIcon />
+        //                     </IconButton>
+        //                 </Box>
+        //             </Box>
+        //         </Box>
+
+        //         {isPhotoUpload ? (
+        //             <PhotoUploadSection
+        //                 photos={photos}
+        //                 handlePhotoChange={handlePhotoChange}
+        //                 handlePhotoRemove={handlePhotoRemove}
+        //                 toggleModal={toggleModal}
+        //                 handleSubmit={handleSubmit}
+        //             />
+        //         ) : (
+        //             <EstablishmentForm
+        //                 currentEstablishment={currentEstablishment}
+        //                 handleChange={handleChange}
+        //                 handleDescriptionChange={handleDescriptionChange}
+        //                 suggestions={suggestions}
+        //                 autocompleteActive={autocompleteActive}
+        //                 handleSuggestionClick={handleSuggestionClick}
+        //                 setAutocompleteActive={setAutocompleteActive}
+        //                 handleMapClick={handleMapClick}
+        //                 isLoaded={isLoaded}
+        //                 toggleModal={toggleModal}
+        //                 handleSubmit={handleSubmit}
+        //             />
+        //         )}
+        //     </Box>
+        // </Modal>
+        // import CloseIcon from '@mui/icons-material/Close'; // Import CloseIcon from Material UI
+
         <Modal open={isOpen} aria-labelledby="edit-establishment-modal">
+
             <Box sx={modalStyles}>
+
                 <Box sx={{
                     display: 'flex',
                     alignItems: 'center',
+                    justifyContent: 'space-between', // Add this to align header and close button
                     mb: 3,
                     '@media (max-width:768px)': {
                         display: 'block',
@@ -244,18 +320,16 @@ const EditEstablishmentModal = ({ isOpen, setIsEditModalOpen, establishmentId, f
                         display: 'block',
                     },
                 }}>
-                    {/* sx={{ display: 'flex', alignItems: 'center', mb: 3 }} */}
                     <Box sx={{ display: 'flex' }}>
                         <HeaderIcon isPhotoUpload={isPhotoUpload} />
                         <Typography variant="h6" component="h2" sx={{ flexGrow: 1 }}>
                             {isPhotoUpload ? "Galería de fotos" : "Datos del establecimiento"}
                         </Typography>
                     </Box>
+
                     <Box sx={{
                         display: 'flex',
-                        '@media (max-width:480px)': {
-                            display: 'flex',
-                        },
+                        alignItems: 'center',
                     }}>
                         <FormControl variant="outlined" size="small" sx={{ width: 'auto', }}>
                             <Select
@@ -266,6 +340,7 @@ const EditEstablishmentModal = ({ isOpen, setIsEditModalOpen, establishmentId, f
                                 <MenuItem value="en_US">🇺🇸 Inglés (Estados Unidos)</MenuItem>
                             </Select>
                         </FormControl>
+
                         <Box sx={{ display: 'flex', ml: 'auto', gap: 1 }}>
                             <IconButton disabled={!isPhotoUpload} onClick={handlePhotoUploadToggle}>
                                 <ShoppingBagIcon />
@@ -274,6 +349,15 @@ const EditEstablishmentModal = ({ isOpen, setIsEditModalOpen, establishmentId, f
                                 <PhotoIcon />
                             </IconButton>
                         </Box>
+
+                        {/* Add close button */}
+
+                        <IconButton
+                            onClick={toggleModal} // Call the function to close the modal
+                            sx={{ ml: 2 }} // Adjust spacing if needed
+                        >
+                            <CloseIcon />
+                        </IconButton>
                     </Box>
                 </Box>
 
@@ -302,6 +386,7 @@ const EditEstablishmentModal = ({ isOpen, setIsEditModalOpen, establishmentId, f
                 )}
             </Box>
         </Modal>
+
     );
 };
 

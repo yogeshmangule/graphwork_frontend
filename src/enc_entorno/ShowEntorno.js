@@ -175,8 +175,12 @@ const ShowEntorno = () => {
           },
         });
       }
-      const encuestas = res.data;
-      setEntorno(encuestas);
+      // const encuestas = res.data;
+      // setEntorno(encuestas);
+      // Sorting the response data by 'encuesta_id'
+      const sortedEncuestas = res.data.sort((a, b) => a.encuesta_id - b.encuesta_id);
+
+      setEntorno(sortedEncuestas); // Set the sorted data to state
     } catch (error) {
       console.error(error);
     }

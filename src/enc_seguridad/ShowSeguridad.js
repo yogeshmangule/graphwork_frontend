@@ -213,8 +213,12 @@ const ShowSeguridad = () => {
         });
       }
 
-      const encuestas = res.data;
-      setEncuesta(encuestas);
+      // const encuestas = res.data;
+      // setEncuesta(encuestas);
+      // Sorting the response data by 'encuesta_id'
+      const sortedEncuestas = res.data.sort((a, b) => a.encuesta_id - b.encuesta_id);
+
+      setEncuesta(sortedEncuestas); // Set the sorted data to state
     } catch (error) {
       console.error(error);
     }
@@ -232,62 +236,62 @@ const ShowSeguridad = () => {
               </div>
             </div>
             {/* <div className='col-12'> */}
-              <div className='table-responsive'>
-                {/* <table className='table table-bordered table-hover'> */}
-                <table className="table table-striped mt-3 align-middle">
+            <div className='table-responsive'>
+              {/* <table className='table table-bordered table-hover'> */}
+              <table className="table table-striped mt-3 align-middle">
 
-                  <thead className='table-secondary'>
-                    <tr>
-                      <th>
-                        Marca Comercial
-                        <br />
-                        <input
-                          type="text"
-                          placeholder="Buscar por alias"
-                          value={marcaComercial}
-                          onChange={handleSearchMarcaChange}
-                          // className='form-control'
+                <thead className='table-secondary'>
+                  <tr>
+                    <th>
+                      Marca Comercial
+                      <br />
+                      <input
+                        type="text"
+                        placeholder="Buscar por alias"
+                        value={marcaComercial}
+                        onChange={handleSearchMarcaChange}
+                      // className='form-control'
+                      />
+                    </th>
+                    <th className="d-md-table-cell d-none">Evacuación</th>
+                    <th className="d-md-table-cell d-none">Control de Aforo</th>
+                    <th className="d-md-table-cell d-none">Observaciones de Seguridad</th>
+                    <th style={{ textAlign: "center" }}>
+                      Acciones
+                      <br />
+                      <button className='btn btn-success w-auto' onClick={handleButtonClick}>
+                        <i className='fa fa-leaf'></i>
+                      </button>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {encuestas.map((encuesta) => (
+                    <tr key={encuesta.ID}>
+                      <td>{encuesta.marca_comercial}</td>
+                      <td className="d-md-table-cell d-none">
+                        {encuesta.evacuacion_entrada && 'Entrada, '}
+                        {encuesta.evacuacion_pista && 'Pista, '}
+                        {encuesta.evacuacion_accesoWC && 'Acceso WC, '}
+                        {encuesta.evacuacion_barras && 'Barras, '}
+                        {encuesta.evacuacion_otro !== null && encuesta.evacuacion_otro}
+                      </td>
+                      <td className="d-md-table-cell d-none">{encuesta.controlaforo}</td>
+                      <td className="d-md-table-cell d-none">{encuesta.Observ_segur}</td>
+                      <td style={{ textAlign: "center" }}>
+                        <ShowModalEditSeguridad
+                          className="btn btn-success w-auto"
+                          id={encuesta.ID}
+                          isOpen={isModalOpen}
+                          onClose={() => setIsModalOpen(false)}
+                          getEncuestas={getEncuestas}
                         />
-                      </th>
-                      <th className="d-md-table-cell d-none">Evacuación</th>
-                      <th className="d-md-table-cell d-none">Control de Aforo</th>
-                      <th className="d-md-table-cell d-none">Observaciones de Seguridad</th>
-                      <th style={{ textAlign: "center" }}>
-                        Acciones
-                        <br />
-                        <button className='btn btn-success w-auto' onClick={handleButtonClick}>
-                          <i className='fa fa-leaf'></i>
-                        </button>
-                      </th>
+                      </td>
                     </tr>
-                  </thead>
-                  <tbody>
-                    {encuestas.map((encuesta) => (
-                      <tr key={encuesta.ID}>
-                        <td>{encuesta.marca_comercial}</td>
-                        <td className="d-md-table-cell d-none">
-                          {encuesta.evacuacion_entrada && 'Entrada, '}
-                          {encuesta.evacuacion_pista && 'Pista, '}
-                          {encuesta.evacuacion_accesoWC && 'Acceso WC, '}
-                          {encuesta.evacuacion_barras && 'Barras, '}
-                          {encuesta.evacuacion_otro !== null && encuesta.evacuacion_otro}
-                        </td>
-                        <td className="d-md-table-cell d-none">{encuesta.controlaforo}</td>
-                        <td className="d-md-table-cell d-none">{encuesta.Observ_segur}</td>
-                        <td style={{ textAlign: "center" }}>
-                          <ShowModalEditSeguridad
-                            className="btn btn-success w-auto"
-                            id={encuesta.ID}
-                            isOpen={isModalOpen}
-                            onClose={() => setIsModalOpen(false)}
-                            getEncuestas={getEncuestas}
-                          />
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
+                  ))}
+                </tbody>
+              </table>
+            </div>
             {/* </div> */}
           </div>
         </div>

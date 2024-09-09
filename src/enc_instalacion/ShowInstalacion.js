@@ -216,8 +216,12 @@ const CompShowInstalacion = () => {
                 });
             }
 
-            const encuestas = res.data;
-            setEncuesta(encuestas);
+            // const encuestas = res.data;
+            // setEncuesta(encuestas);
+            // Sorting the response data by 'encuesta_id'
+            const sortedEncuestas = res.data.sort((a, b) => a.encuesta_id - b.encuesta_id);
+
+            setEncuesta(sortedEncuestas); // Set the sorted data to state
 
         } catch (error) {
             console.error(error);
@@ -249,7 +253,7 @@ const CompShowInstalacion = () => {
                                                     placeholder="Buscar por alias"
                                                     value={encuestaMarca}
                                                     onChange={handleSearchMarcaChange}
-                                                    // className="form-control"
+                                                // className="form-control"
                                                 />
                                             </th>
                                             <th className='d-md-table-cell d-none'>Pista<br /></th>
