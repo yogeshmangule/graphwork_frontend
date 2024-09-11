@@ -248,7 +248,7 @@ const ShowBuenasPracticas = () => {
       <Sidebar>
         <div className='mt-2 row'>
           <div className='cuadro_princal'>
-            <div className='parent-label titulo_cuadro '>  Encuesta: RCS Buenas Practicas</div>
+            <div className='titulo_cuadro '>RCS Buenas Practicas</div>
           </div>
 
           {/* <div className='vh-1 d-flex align-items-center col'> */}

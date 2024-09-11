@@ -437,8 +437,8 @@ const CompShowAmbiente = () => {
       <Header />
       <Sidebar>
         <div className="content-container">
-          <div className="header-container">
-            <div className="title">Encuesta: Ambiente</div>
+        <div className='cuadro_princal' >
+            <div className="title"> Ambiente</div>
             <ShowModal
               className="btn btn-success"
               isOpen={isModalOpen}
@@ -506,7 +506,7 @@ const CompShowAmbiente = () => {
       }
 
       .title {
-        font-size: 24px;
+        font-size: 20px;
         font-weight: bold;
       }
 
@@ -532,7 +532,7 @@ const CompShowAmbiente = () => {
 
       @media (max-width: 480px) {
         .title {
-          font-size: 18px;
+          font-size: 20px;
         }
 
         .form-control {

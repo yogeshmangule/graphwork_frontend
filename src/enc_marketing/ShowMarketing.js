@@ -221,7 +221,7 @@ const ShowMarketing = () => {
           <div className='row'>
             <div className='col-12 mb-3'>
               <div className='cuadro_princal'>
-                <h2 className='parent-label titulo_cuadro'>Encuesta: Marketing</h2>
+                <h2 className='titulo_cuadro'>Marketing</h2>
               </div>
             </div>
 

@@ -231,8 +231,9 @@ const ShowSeguridad = () => {
         <div className='container-fluid mt-2'>
           <div className='row'>
             <div className='col-12'>
-              <div className='d-flex justify-content-between align-items-center mb-3'>
-                <h2>Encuesta: Seguridad</h2>
+              {/* <div className='d-flex justify-content-between align-items-center mb-3'> */}
+              <div className='cuadro_princal'>
+                <div className='titulo_cuadro'>Seguridad</div>
               </div>
             </div>
             {/* <div className='col-12'> */}

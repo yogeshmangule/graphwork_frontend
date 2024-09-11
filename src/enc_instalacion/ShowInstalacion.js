@@ -236,7 +236,7 @@ const CompShowInstalacion = () => {
                     <div className='row'>
                         <div className='col-12'>
                             <div className='cuadro_princal'>
-                                <div className='parent-label titulo_cuadro'>Encuesta: Instalacion y Funcionamiento</div>
+                                <div className='titulo_cuadro'>Instalacion y Funcionamiento</div>
                             </div>
                         </div>
 

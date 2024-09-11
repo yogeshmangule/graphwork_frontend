@@ -192,8 +192,8 @@ const ShowEntorno = () => {
       <Sidebar>
         <div className="container-fluid mt-2">
           <div className="row mb-3">
-            <div className="col-12">
-              <h2 className="titulo_cuadro text-justify">Encuesta: Entorno</h2>
+            <div className='cuadro_princal'>
+              <h2 className="titulo_cuadro text-justify">Entorno</h2>
             </div>
           </div>
 

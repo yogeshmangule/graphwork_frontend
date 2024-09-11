@@ -57,7 +57,6 @@ const DashboardComponent = () => {
         }
 
         .titulo_cuadro {
-          font-size: 1.5rem;
           font-weight: bold;
           margin-bottom: 0px;
               text-align: left;
@@ -78,18 +77,13 @@ const DashboardComponent = () => {
             padding: 0 20px;
           }
 
-          .titulo_cuadro {
-            font-size: 1.25rem; 
-          }
+         
 
         
         }
 
         @media (max-width: 480px) {
-          .titulo_cuadro {
-            font-size: 1rem;
-          }
-
+        
           
 
           .data-table-container {

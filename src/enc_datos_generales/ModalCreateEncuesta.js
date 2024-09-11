@@ -143,7 +143,7 @@ const ModalCreateEncuesta = () => {
       <div className="principal">
         <div className="secundario">
           <Button
-            className="parent-right btn btn-success btn-ladda"
+            className="parent-right btn btn-success btn-ladda w-auto"
             color="success"
             onClick={toggleEncuestaModal}
           >

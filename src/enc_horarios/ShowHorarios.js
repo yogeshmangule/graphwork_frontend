@@ -331,8 +331,8 @@ const CompShowHorarios = () => {
       <Header />
       <Sidebar>
         <div className="content-container">
-          <div className="header-container">
-            <div className="title">Encuesta: Horarios</div>
+          <div className='cuadro_princal'>
+            <div className="titulo_cuadro">Horarios</div>
             <ShowModal
               className="btn btn-success"
               isOpen={isModalOpen}

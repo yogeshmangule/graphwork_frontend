@@ -182,8 +182,8 @@ const ShowPrecio = () => {
       <Header />
       <Sidebar >
         <div >
-          <div className="w-100" style={{ textAlign: 'left' }}>
-            <div className=" titulo_cuadro">Encuesta: Precios</div>
+          <div className='cuadro_princal'>
+            <div className=" titulo_cuadro">Precios</div>
           </div>
 
           {/* <div className="col-12 mt-3 d-flex justify-content-center"> */}

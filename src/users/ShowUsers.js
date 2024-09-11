@@ -373,7 +373,7 @@ const CompShowUsers = () => {
         <div className='mt-2 row'>
 
           <div className='cuadro_princal'>
-            <div className='parent-label titulo_cuadro '>Usuarios</div>
+            <div className='titulo_cuadro '>Usuarios</div>
 
             <ShowModal className='parent-rigth btn btn-success btn-ladda' isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
           </div>

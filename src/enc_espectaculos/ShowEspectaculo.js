@@ -229,7 +229,7 @@ const ShowEspectaculo = () => {
       <Sidebar>
         <div className='mt-2 row'>
           <div className='cuadro_princal'>
-            <div className='titulo_cuadro text-start'>Encuesta: Espectaculo</div>
+            <div className='titulo_cuadro'>Espectaculo</div>
           </div>
 
           {/* <div className=' d-flex align-items-center col'> */}

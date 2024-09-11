@@ -123,24 +123,25 @@ const CompShowEncusta = () => {
           },
         });
       }
-  
+
       // Sorting the response data by 'id_establecimiento'
-      const sortedEncuestas = res.data.sort((a, b) => a.Id_estab - b.Id_estab);
-  
+      const sortedEncuestas = res.data.sort((a, b) => a.ID - b.ID);
+
       setEncuesta(sortedEncuestas); // Set the sorted data to state
     } catch (error) {
       console.error(error);
     }
   };
-  
+
 
   return (
     <div className="comp-show-users">
       <Header />
       <Sidebar>
         <div className="content-container">
-          <div className="header-container">
-            <div className="title">Encuesta: Datos Generales</div>
+          {/* <div className="header-container"> */}
+          <div className='cuadro_princal'>
+            <div className="titulo_cuadro">Datos Generales</div>
             <ShowModal
               className="btn btn-success"
               isOpen={isModalOpen}

@@ -187,7 +187,7 @@ const ShowValoracion = () => {
         <div className='mt-2 row'>
           <div className='col-12'>
             <div className='cuadro_princal'>
-              <h2 className='titulo_cuadro'>Encuesta: Valoración</h2>
+              <h2 className='titulo_cuadro'>Valoración</h2>
             </div>
           </div>
 

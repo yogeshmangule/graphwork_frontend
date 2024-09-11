@@ -266,7 +266,7 @@ const ShowServicio = () => {
         <div className="row mt-2">
           <div className="col-md-12">
             <div className="cuadro_princal">
-              <div className="titulo_cuadro text-start">Encuesta: Servicio</div>
+              <div className="titulo_cuadro">Servicio</div>
             </div>
           </div>
         </div>
