@@ -493,7 +493,7 @@ const CompEditEncuesta = ({ id, getEncuestas, abrirModal }) => {
 
           <div className='mb-3'>
             <label className='parent-label form-label'>Escenario</label>
-            <Form.Select value={escenario} onChange={(e) => setEscenario(e.target.value)} className="form-control">
+            <Form.Select value={escenario ? "Si" : "No"} onChange={(e) => setEscenario(e.target.value === "Si" ? true : false)} className="form-control">
               <option value="">Selecciona una opción</option>
               <option value="Si">Si</option>
               <option value="No">No</option>
@@ -502,7 +502,7 @@ const CompEditEncuesta = ({ id, getEncuestas, abrirModal }) => {
 
           <div className='mb-3'>
             <label className='parent-label form-label'>Dispone de zona de mesas (% ocupación superficie local):</label>
-            <Form.Select value={zonamesas} onChange={(e) => setZonamesas(e.target.value)} className="form-control">
+            <Form.Select value={zonamesas ? "Si" : "No"} onChange={(e) => setZonamesas(e.target.value === "Si" ? true : false)} className="form-control">
               {options.map((opt) => (
                 <option key={opt.value} value={opt.value}>
                   {opt.label}
@@ -556,7 +556,7 @@ const CompEditEncuesta = ({ id, getEncuestas, abrirModal }) => {
 
           <div className='mb-3'>
             <label className='parent-label form-label'>Climatización Temperatura:</label>
-            <Form.Select value={climatizacion} onChange={(e) => setClimatizacion(e.target.value)} className="form-control">
+            <Form.Select value={climatizacion ? "Si" : "No"} onChange={(e) => setClimatizacion(e.target.value === "Si" ? true : false)} className="form-control">
               {options.map((opt) => (
                 <option key={opt.value} value={opt.value}>
                   {opt.label}
@@ -589,7 +589,7 @@ const CompEditEncuesta = ({ id, getEncuestas, abrirModal }) => {
 
           <div className='mb-3'>
             <label className='parent-label form-label'>Limpieza de los servicios en sesión:</label>
-            <Form.Select value={limp_ensesion} onChange={(e) => setLimp_ensesion(e.target.value)} className="form-control">
+            <Form.Select value={limp_ensesion ? "Si" : "No"} onChange={(e) => setLimp_ensesion(e.target.value === "Si" ? true : false)} className="form-control">
               <option value="">Selecciona una opción</option>
               <option value="Si">Si</option>
               <option value="No">No</option>

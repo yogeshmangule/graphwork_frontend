@@ -458,8 +458,8 @@ const CompEditEncuesta = ({ id, getEntornos, abrirModal }) => {
         <div className="mb-3">
           <label className='parent-label form-label'>Cola reservas:</label>
           <Form.Select
-            value={cola_reservas}
-            onChange={(e) => setColaReservas(e.target.value)}
+            value={cola_reservas ? "Si" : "No"}
+            onChange={(e) => setColaReservas(e.target.value === "Si" ? true : false)}
             className="form-control"
           >
             <option value="">Selecciona una opción</option>
@@ -471,8 +471,8 @@ const CompEditEncuesta = ({ id, getEntornos, abrirModal }) => {
         <div className="mb-3">
           <label className='parent-label form-label'>Cola VIP:</label>
           <Form.Select
-            value={cola_vip}
-            onChange={(e) => setColaVip(e.target.value)}
+            value={cola_vip ? "Si" : "No"}
+            onChange={(e) => setColaVip(e.target.value === "Si" ? true : false)}
             className="form-control"
           >
             <option value="">Selecciona una opción</option>
@@ -498,8 +498,8 @@ const CompEditEncuesta = ({ id, getEntornos, abrirModal }) => {
         <div className="mb-3">
           <label className='parent-label form-label'>Hay lateros y/o gente haciendo botellón en el exterior:</label>
           <Form.Select
-            value={botellon_ext}
-            onChange={(e) => setBotellonExterior(e.target.value)}
+            value={botellon_ext ? "Si" : "No"}
+            onChange={(e) => setBotellonExterior(e.target.value === "Si" ? true : false)}
             className="form-control"
           >
             <option value="">Selecciona una opción</option>
@@ -511,8 +511,8 @@ const CompEditEncuesta = ({ id, getEntornos, abrirModal }) => {
         <div className="mb-3">
           <label className='parent-label form-label'>Hay pancartas de protesta de los vecinos:</label>
           <Form.Select
-            value={protestas}
-            onChange={(e) => setProtestas(e.target.value)}
+            value={protestas ? "Si" : "No"}
+            onChange={(e) => setProtestas(e.target.value === "Si" ? true : false)}
             className="form-control"
           >
             <option value="">Selecciona una opción</option>

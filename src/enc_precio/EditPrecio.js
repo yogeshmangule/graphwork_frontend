@@ -611,10 +611,10 @@ const CompEditPrecios = ({ id, abrirModal, getEncuestas }) => {
       setIdiomaOtroTu(response.data.idioma_otro_tu);
       setIdiomaOtroSe(response.data.idioma_otro_se);
       setIdiomaOtroVe(response.data.idioma_otro_ve);
-      setSenalIdiomas(response.data.senal_idiomas);
-      setSenalIdiomasCualIngles(response.data.senal_idiomas_cual_ingles);
-      setSenalIdiomasCualFrances(response.data.senal_idiomas_cual_frances);
-      setSenalIdiomasCualOtro(response.data.senal_idiomas_cual_otro);
+      setSenalIdiomas(response.data.señal_idiomas);
+      setSenalIdiomasCualIngles(response.data.señal_idiomas_cual_ingles);
+      setSenalIdiomasCualFrances(response.data.señal_idiomas_cual_frances);
+      setSenalIdiomasCualOtro(response.data.señal_idiomas_cual_otro);
       setPersAttGrupos(response.data.pers_att_grupos);
       setPersAttGruposCual(response.data.pers_att_grupos_cual);
       setVentaOnlineIdiomas(response.data.venta_online_idiomas);
